@@ -1,0 +1,11 @@
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.csproj.AssemblyReference.cache
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.Login.resources
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.MenuPasajes.resources
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.MenuPrincipal.resources
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.MenuVuelos.resources
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.Properties.Resources.resources
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.csproj.GenerateResource.cache
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.AssemblyInfoInputs.cache
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.AssemblyInfo.cs
+C:\Users\juans\source\ParcialLaboratorio2doCuatri2D2022\Vista\Vista\obj\Release\net5.0-windows\Vista.csproj.CoreCompileInputs.cache
