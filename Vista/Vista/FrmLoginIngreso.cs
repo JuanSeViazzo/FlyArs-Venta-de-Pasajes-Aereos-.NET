@@ -141,5 +141,13 @@ namespace Vista
                     this.Close();
             }
         }
+
+        private void tb_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_Ingresar_Click(this, new EventArgs());
+            }
+        }
     }
 }

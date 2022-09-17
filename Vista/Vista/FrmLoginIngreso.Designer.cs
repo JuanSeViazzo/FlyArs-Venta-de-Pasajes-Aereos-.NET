@@ -77,7 +77,7 @@
             // pb_avionFrontal
             // 
             this.pb_avionFrontal.Image = global::Vista.Properties.Resources.avion2;
-            this.pb_avionFrontal.Location = new System.Drawing.Point(2, -5);
+            this.pb_avionFrontal.Location = new System.Drawing.Point(-22, -169);
             this.pb_avionFrontal.Name = "pb_avionFrontal";
             this.pb_avionFrontal.Size = new System.Drawing.Size(574, 358);
             this.pb_avionFrontal.TabIndex = 3;
@@ -128,6 +128,7 @@
             this.tb_password.PlaceholderText = "Ingrese contraseña";
             this.tb_password.Size = new System.Drawing.Size(132, 23);
             this.tb_password.TabIndex = 7;
+            this.tb_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_password_KeyDown);
             // 
             // tb_usuario
             // 
