@@ -9,9 +9,7 @@ namespace Logica
 {
     public static class Validaciones
     {
-
-
-
+        private static Exception validarNumero;
 
         public static string ValidarString(string dato)
         {

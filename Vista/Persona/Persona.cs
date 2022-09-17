@@ -66,13 +66,20 @@ namespace Logica
             try
             {
                 Validaciones.ValidarSoloNumero(documento);
-                this.documento = documento; 
+
+                this.documento = documento;
+
             }
             catch (Exception)
             {
 
                 throw new Exception("Error en Documento");
             }
+
+
+
+
+
 
             try
             {

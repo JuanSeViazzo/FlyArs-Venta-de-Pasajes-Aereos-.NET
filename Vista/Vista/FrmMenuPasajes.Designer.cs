@@ -108,7 +108,7 @@
             this.Controls.Add(this.btn_VenderPasaje);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmMenuPasajes";
-            this.Text = "FrmMenuPasajes";
+            this.Text = "Gestion de Pasajes";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

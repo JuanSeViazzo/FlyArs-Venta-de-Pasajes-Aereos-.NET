@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Logica;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 
 namespace Vista
 {
@@ -19,12 +13,12 @@ namespace Vista
         {
             InitializeComponent();
         }
-       private void FrmClientes_Load(object sender, EventArgs e)
+        private void FrmClientes_Load(object sender, EventArgs e)
         {
-           
 
 
-            
+
+
 
             pasajeros.Columns.Add("Nombre");
             pasajeros.Columns.Add("Apellido");
@@ -35,12 +29,12 @@ namespace Vista
             pasajeros.Columns.Add("Fecha de nacimiento");
             pasajeros.Columns.Add("Sexo");
 
-            for (int i = 0; i < Pasajero.ListaDePasajeros.Count; i++)
+            for (int i = 0; i < GestionDeAerolinea.ListaDePasajeros.Count; i++)
             {
 
-                pasajeros.Rows.Add(Pasajero.ListaDePasajeros[i].Nombre, Pasajero.ListaDePasajeros[i].Apellido, Pasajero.ListaDePasajeros[i].TipoDocumento1,
-                Pasajero.ListaDePasajeros[i].Documento, Pasajero.ListaDePasajeros[i].Edad, Pasajero.ListaDePasajeros[i].Nacionalidad,
-                Pasajero.ListaDePasajeros[i].FechaDeNacimiento, Pasajero.ListaDePasajeros[i].TipoDeSexo1);
+                pasajeros.Rows.Add(GestionDeAerolinea.ListaDePasajeros[i].Nombre, GestionDeAerolinea.ListaDePasajeros[i].Apellido, GestionDeAerolinea.ListaDePasajeros[i].TipoDocumento1,
+                GestionDeAerolinea.ListaDePasajeros[i].Documento, GestionDeAerolinea.ListaDePasajeros[i].Edad, GestionDeAerolinea.ListaDePasajeros[i].Nacionalidad,
+                GestionDeAerolinea.ListaDePasajeros[i].FechaDeNacimiento, GestionDeAerolinea.ListaDePasajeros[i].TipoDeSexo1);
 
             }
 
@@ -54,35 +48,47 @@ namespace Vista
 
 
 
+
         private void txt_filtroNombre_TextChanged(object sender, EventArgs e)
         {
-            pasajeros.DefaultView.RowFilter = $"Edad LIKE '{txt_filtroNombre.Text}%'";
+            pasajeros.DefaultView.RowFilter = $"Nacionalidad LIKE '{txt_filtroNombre.Text}%'";
 
         }
-
 
         private void txt_FiltroDNI_TextChanged(object sender, EventArgs e)
         {
             pasajeros.DefaultView.RowFilter = $"Documento LIKE '{txt_FiltroDNI.Text}%'";
 
         }
-        private void dgv_clientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string documento;
+
             try
             {
-                string documento = Convert.ToString(this.dgv_clientes.SelectedRows[0].Cells[3].Value);
-                MessageBox.Show(documento);
+                int row = e.RowIndex;
+                int column = e.ColumnIndex;
+                documento = dgv_clientes.Rows[row].Cells[3].Value.ToString();
+                
+                
+                DialogResult resultado = MessageBox.Show($"{documento}", "DNI N°: ",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+
+                if (DialogResult.Yes == resultado && documento is not null)
+                {
+                    FrmModificarPasajero pasajero = new FrmModificarPasajero(documento);
+                    pasajero.ShowDialog();
+                }
             }
             catch (Exception)
             {
 
                 return;
             }
+
         }
 
-
     }
-  
-
 
 }

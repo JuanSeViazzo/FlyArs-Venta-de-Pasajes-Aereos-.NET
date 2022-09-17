@@ -43,9 +43,11 @@
             this.dgv_clientes.GridColor = System.Drawing.Color.Red;
             this.dgv_clientes.Location = new System.Drawing.Point(2, 307);
             this.dgv_clientes.Name = "dgv_clientes";
+            this.dgv_clientes.ReadOnly = true;
             this.dgv_clientes.RowTemplate.Height = 25;
             this.dgv_clientes.Size = new System.Drawing.Size(1097, 354);
             this.dgv_clientes.TabIndex = 0;
+            this.dgv_clientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellContentDoubleClick);
             // 
             // txt_filtroNombre
             // 
@@ -53,6 +55,7 @@
             this.txt_filtroNombre.Name = "txt_filtroNombre";
             this.txt_filtroNombre.Size = new System.Drawing.Size(129, 23);
             this.txt_filtroNombre.TabIndex = 2;
+            this.txt_filtroNombre.TextChanged += new System.EventHandler(this.txt_filtroNombre_TextChanged);
             // 
             // txt_FiltroDNI
             // 
@@ -71,7 +74,7 @@
             this.Controls.Add(this.txt_filtroNombre);
             this.Controls.Add(this.dgv_clientes);
             this.Name = "FrmClientes";
-            this.Text = "FrmClientes";
+            this.Text = "Listado de Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);

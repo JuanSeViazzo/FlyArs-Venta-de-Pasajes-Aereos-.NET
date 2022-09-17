@@ -84,9 +84,9 @@ namespace Logica
             //y me traigo cada pasajero y lo sumo a la lista.
             for (int i = 0; i < listaDePasajes.Count; i++)
             {
-                if (listaDePasajes[i].DniDePasajero == Pasajero.ListaDePasajeros[i].Documento)
+                if (listaDePasajes[i].DniDePasajero == GestionDeAerolinea.ListaDePasajeros[i].Documento)
                 {
-                    listaDePasajeros.Add(Pasajero.ListaDePasajeros[i]);
+                    listaDePasajeros.Add(GestionDeAerolinea.ListaDePasajeros[i]);
                 }
             }
             return listaDePasajeros;
