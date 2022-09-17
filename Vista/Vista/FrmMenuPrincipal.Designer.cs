@@ -138,6 +138,7 @@
             this.btn_MenuPasajeros.TabIndex = 13;
             this.btn_MenuPasajeros.Text = "Menu Pasajeros";
             this.btn_MenuPasajeros.UseVisualStyleBackColor = true;
+            this.btn_MenuPasajeros.Click += new System.EventHandler(this.btn_MenuPasajeros_Click);
             // 
             // btn_Soporte
             // 
@@ -177,7 +178,7 @@
             this.lbl_HoraActualMenuPrincipal.TabIndex = 17;
             this.lbl_HoraActualMenuPrincipal.Text = "Hora actual: ";
             // 
-            // MenuPrincipal
+            // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,7 +197,7 @@
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MenuPrincipal";
+            this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);

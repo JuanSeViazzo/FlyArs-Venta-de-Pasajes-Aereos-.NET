@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
+using Logica;
 
 
 
@@ -19,6 +20,7 @@ namespace Vista
         public Timer timer;
 
         public Timer Timer { get => timer; }
+
 
         public FrmLoginIngreso()
         {
@@ -38,6 +40,22 @@ namespace Vista
             pc_LoginNo.Visible = false;
             lbl_IngresoOkNo.Visible = false;
             ManejoDeVista.ReproducirMusica();
+
+            Pasajero pasajero1 = new Pasajero("Sebastian", "Viazzo", Persona.TipoDocumento.DNI, "34222503", "33", "argentino", new DateTime(1988, 12, 17), Persona.TipoDeSexo.Masculino);
+            Pasajero pasajero2 = new Pasajero("Lucas", "Rodriguez", Persona.TipoDocumento.DNI, "35003321", "30", "argentino", new DateTime(1990, 07, 15), Persona.TipoDeSexo.Masculino);
+            Pasajero pasajero3 = new Pasajero("Marina", "Rodriguez", Persona.TipoDocumento.DNI, "38000132", "33", "argentino", new DateTime(1992, 04, 22), Persona.TipoDeSexo.Femenino);
+            Pasajero pasajero4 = new Pasajero("Ignacio", "Smirlian", Persona.TipoDocumento.Pasaporte, "37213986", "25", "Italiano", new DateTime(1998, 06, 10), Persona.TipoDeSexo.Masculino);
+            Pasajero pasajero5 = new Pasajero("Thierry", "Henry", Persona.TipoDocumento.Pasaporte, "34222503", "48", "Frances", new DateTime(1974, 03, 19), Persona.TipoDeSexo.Masculino);
+            Pasajero pasajero6 = new Pasajero("Diego", "Maradona", Persona.TipoDocumento.DNI, "24323788", "60", "argentino", new DateTime(1960, 01, 15), Persona.TipoDeSexo.Masculino);
+            Pasajero pasajero7 = new Pasajero("Lionel", "Messi", Persona.TipoDocumento.DNI, "32198605", "35", "argentino", new DateTime(1985, 11, 15), Persona.TipoDeSexo.Masculino);
+
+            Pasajero.ListaDePasajeros.Add(pasajero1);
+            Pasajero.ListaDePasajeros.Add(pasajero2);
+            Pasajero.ListaDePasajeros.Add(pasajero3);
+            Pasajero.ListaDePasajeros.Add(pasajero4);
+            Pasajero.ListaDePasajeros.Add(pasajero5);
+            Pasajero.ListaDePasajeros.Add(pasajero6);
+            Pasajero.ListaDePasajeros.Add(pasajero7);
 
         }
 
