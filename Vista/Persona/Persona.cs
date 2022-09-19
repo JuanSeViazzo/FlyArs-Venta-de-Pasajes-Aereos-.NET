@@ -15,8 +15,9 @@ namespace Logica
         }
         public enum TipoDeSexo
         {
-            Masculino,
-            Femenino
+            
+            Femenino,
+            Masculino
         }
 
         private string nombre;
@@ -109,7 +110,7 @@ namespace Logica
             sb.Append($"Nombre: {nombre}");
             sb.AppendLine($" --- Apellido: {apellido}");
             sb.AppendLine($"Sexo: {tipoDeSexo}");
-            sb.Append($"Tipo documento: {tipoDeDocumento}");
+            sb.AppendLine($"Tipo documento: {tipoDeDocumento}");
             sb.AppendLine($" --- Documento N°: {documento}");
             sb.AppendLine($"Fecha de nacimiento: {fechaDeNacimiento.ToString("dd-MM-yyyy")}");
             sb.AppendLine($"Edad: {edad}");

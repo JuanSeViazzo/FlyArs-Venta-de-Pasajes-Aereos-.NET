@@ -12,10 +12,15 @@ namespace Vista
 {
     public partial class FrmMenuPrincipal : Form
     {
-        public FrmMenuPrincipal()
+        private FrmMenuPrincipal()
         {
             InitializeComponent();
             
+        }
+
+        public FrmMenuPrincipal(string dato) :this()
+        {
+            this.lbl_Usuario.Text= dato;
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -38,23 +43,10 @@ namespace Vista
         }
 
 
-        public void MostrarUsuario(string Usuario)
-        {
-            
-            this.lbl_Usuario.Text = this.lbl_Usuario.Text + "  " + Usuario;
-        }
-
-        public void MostrarHora(string Hora)
-        {
-
-            this.lbl_HoraActualMenuPrincipal.Text = this.lbl_HoraActualMenuPrincipal.Text + "  " + Hora;
-            
-            
-        }
 
         private void btn_MenuPasajeros_Click(object sender, EventArgs e)
         {
-            FrmClientes frmClientes = new FrmClientes();    
+            FrmClientes frmClientes = new FrmClientes();
             frmClientes.ShowDialog();   
         }
     }

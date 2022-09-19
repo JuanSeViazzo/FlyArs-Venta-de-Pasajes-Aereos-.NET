@@ -22,7 +22,7 @@ namespace Vista
         {
             Persona.TipoDeSexo sexoElegido = Persona.TipoDeSexo.Femenino;
 
-            foreach (RadioButton radioButton in grp_Sexo.Controls)
+            foreach (RadioButton radioButton in grpSex.Controls)
             {
                 if (radioButton.Checked)
                 {
@@ -33,10 +33,10 @@ namespace Vista
 
             try
             {
-                pasajero = new Pasajero(txt_nombre.Text, Txt_apellido.Text, (Persona.TipoDocumento)cmb_tipoDeDocumento.SelectedItem,
-                Txt_numeroDeDocumento.Text, txt_edad.Text, txt_nacionalidad.Text, calendar_nacimiento.SelectionStart, sexoElegido);
+                pasajero = new Pasajero(txtNombre.Text, txtApellido.Text, (Persona.TipoDocumento)cmb_tipoDeDocumento.SelectedItem,
+                Txt_numeroDeDocumento.Text, txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
 
-                rtb_DatosDelCliente.Text = pasajero.Mostrar();
+                rtbPasajero.Text = pasajero.Mostrar();
 
                 GestionDeAerolinea.CargarPasajeroEnLineaAerea(pasajero);
 
@@ -44,7 +44,7 @@ namespace Vista
             catch (Exception ex)
             {
                 lbl_errorExcep.Text = ex.Message;
-                rtb_DatosDelCliente.Clear();
+                rtbPasajero.Clear();
 
             }
 

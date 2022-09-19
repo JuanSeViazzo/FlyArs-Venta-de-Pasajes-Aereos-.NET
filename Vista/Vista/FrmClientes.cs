@@ -8,17 +8,13 @@ namespace Vista
     public partial class FrmClientes : Form
     {
         DataTable pasajeros = new DataTable();
-
+        string estado = "inactivo";
         public FrmClientes()
         {
             InitializeComponent();
         }
         private void FrmClientes_Load(object sender, EventArgs e)
         {
-
-
-
-
 
             pasajeros.Columns.Add("Nombre");
             pasajeros.Columns.Add("Apellido");
@@ -66,29 +62,61 @@ namespace Vista
         {
             string documento;
 
-            try
+            if (estado == "inactivo")
             {
-                int row = e.RowIndex;
-                int column = e.ColumnIndex;
-                documento = dgv_clientes.Rows[row].Cells[3].Value.ToString();
-                
-                
-                DialogResult resultado = MessageBox.Show($"{documento}", "DNI N°: ",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
 
-                if (DialogResult.Yes == resultado && documento is not null)
+            }
+            else
+            {
+                try
                 {
-                    FrmModificarPasajero pasajero = new FrmModificarPasajero(documento);
-                    pasajero.ShowDialog();
+                    int row = e.RowIndex;
+                    int column = e.ColumnIndex;
+                    documento = dgv_clientes.Rows[row].Cells[3].Value.ToString();
+
+                    ;
+                    DialogResult resultado = MessageBox.Show($"{documento}", "DNI N°: ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if (DialogResult.Yes == resultado && documento is not null)
+                    {
+                        if (estado == "modificar")
+                        {
+                            FrmModificarCliente frmModificarCliente = new FrmModificarCliente(documento);
+                            this.Hide();
+                            frmModificarCliente.ShowDialog();
+                        }
+                        else
+                        {
+                            if (estado == "eliminar")
+                            {
+                                FrmEliminarCliente frmEliminarCliente = new FrmEliminarCliente(documento);
+                                this.Hide();
+                                frmEliminarCliente.ShowDialog();
+                            }
+                              
+                        }
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return;
                 }
             }
-            catch (Exception)
-            {
-
-                return;
-            }
+            
 
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            estado = "modificar";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            estado = "eliminar";
+        }
     }
 
 }

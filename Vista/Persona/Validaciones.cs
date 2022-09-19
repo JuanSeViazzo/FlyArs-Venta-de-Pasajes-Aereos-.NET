@@ -41,7 +41,7 @@ namespace Logica
         }
 
 
-        public static string ValidarContraseña(string dato)
+        public static string ValidarPassword(string dato)
         {
 
             Match matchMayusculas = Regex.Match(dato, @"[A-Z]");

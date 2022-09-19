@@ -58,10 +58,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_aceptarPasajero.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAceptarModificacion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAABiJJREFUWEftV3lQlVUU/xDhASqLGyIuoYTroBaD27i0iU2iWZGWJplauWRZaUml
+        wQAADsEBuJFr7QAABiJJREFUWEftV3lQlVUU/xDhASqLGyIuoYTroBaD27i0iU2iWZGWJplauWRZaUml
         NuZoi2OkOY4ZBOISaTo2lSOJ+1LTlEvh0miQlmKZAsr64HR/530HL6/3PZY30/QHv5k73/fOPfee3/2d
         e8/9nkH/czQS9BSNBD1FgwlWVVVx09/1pts9Qb0IOgevrKykiooKKi8v56e08nL1VA39ur+81wd1JqgH
         QGC73c7vtUEfpz+d7fLujDoR1CeCQoILeRcpdW06LZz/FiW9vLC6LXh1MX20OpXOn8tlPyGAhoVhDn1O
@@ -93,10 +93,10 @@
   <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="btn_Cancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCancelarModificacion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAA+JJREFUWEftlrlKLVsQhh1BQUVQjAx8A0Uzx0dQzNREzAycEXwLcwPRBxAjIxVz
+        wQAADsEBuJFr7QAAA+JJREFUWEftlrlKLVsQhh1BQUVQjAx8A0Uzx0dQzNREzAycEXwLcwPRBxAjIxVz
         M+fcSEzEGZzW4atz/qbs091278253GD/UHT3Gqq+rjVWhf+5KoDlqgJYrkoC/Pr6MvPvaaY2paoQYDzo
         +/t7+Pj4sO8kqd730Xte5Qb0QeJQgNzf30f28PDwrQ3v+i4K+SOgdxiH29vbCzMzM6G7uzs0NTWFlpaW
         0NzcHFpbW0NfX19YWVkJx8fHf1r//hHvK49yAaLPz097osPDQwOoqqrKZePj4+Hq6sr68oNFIDMBk+DW
