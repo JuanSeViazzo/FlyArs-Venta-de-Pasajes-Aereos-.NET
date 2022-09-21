@@ -77,9 +77,9 @@
             // pb_avionFrontal
             // 
             this.pb_avionFrontal.Image = global::Vista.Properties.Resources.avion2;
-            this.pb_avionFrontal.Location = new System.Drawing.Point(-22, -169);
+            this.pb_avionFrontal.Location = new System.Drawing.Point(-2, -10);
             this.pb_avionFrontal.Name = "pb_avionFrontal";
-            this.pb_avionFrontal.Size = new System.Drawing.Size(574, 358);
+            this.pb_avionFrontal.Size = new System.Drawing.Size(715, 474);
             this.pb_avionFrontal.TabIndex = 3;
             this.pb_avionFrontal.TabStop = false;
             // 

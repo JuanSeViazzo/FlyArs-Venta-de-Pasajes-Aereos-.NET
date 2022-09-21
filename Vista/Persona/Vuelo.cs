@@ -1,43 +1,95 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 
 namespace Logica
 {
+    public enum DestinosNacionales
+    {
+        SantaRosa,
+        Bariloche,
+        Corrientes,
+        Córdoba,
+        Jujuy,
+        Mendoza,
+        Neuquén,
+        Posadas,
+        Iguazú,
+        Salta,
+        Santiago_del_Estero,
+        Trelew,
+        Tucumán,
+        Puerto_Madryn,
+        Ushuaia,
+        Buenos_Aires
+    }
+
+    public enum DestinosInternacionales
+    {
+        Recife_Brasil,
+        Roma_Italia,
+        Acapulco_México,
+        Miami_EEUU
+    }
+
     public class Vuelo
     {
 
 
         DateTime horaDePartida;
+        DateTime horaDeLlegada;
         private Avion avion;
         private bool ofreceComida;
         private bool tieneWifi;
-        private List<int> listaIdPasajes;
+        private List<Pasajero> listaDePasajeros;
         private string codigoDeVuelo;
-        private static List<Vuelo> listaDeVuelos;
+        private DestinosInternacionales destinosInternacionales;
+        private DestinosNacionales destinosNacionales;
 
-        static Vuelo()
+        public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
+        public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
+        public Avion Avion { get => avion; set => avion = value; }
+        public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
+        public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
+        public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
+        public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
+        public DestinosInternacionales DestinosInternacionales { get => destinosInternacionales; set => destinosInternacionales = value; }
+        public DestinosNacionales DestinosNacionales { get => destinosNacionales; set => destinosNacionales = value; }
+
+        private Vuelo()
         {
-            listaDeVuelos = new List<Vuelo>();  
+            listaDePasajeros = new List<Pasajero>();
         }
-
-        public Vuelo(DateTime horaDePartida, Avion avion, bool ofreceComida, bool tieneWifi, string codigoDeVuelo)
+        public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi, 
+            string codigoDeVuelo, DestinosNacionales destinosNacionales, DestinosInternacionales destinosInternacionales) : this()
         {
             this.horaDePartida = horaDePartida;
+            this.horaDeLlegada = horaDeLlegada;
             this.avion = avion;
             this.ofreceComida = ofreceComida;
             this.tieneWifi = tieneWifi;
-            this.listaIdPasajes = new List<int>();
             this.codigoDeVuelo = codigoDeVuelo;
+            this.destinosInternacionales = destinosInternacionales;
+            this.destinosNacionales = destinosNacionales;
+
         }
 
-        public List<int> IdPasaje { get => listaIdPasajes; }
-        public DateTime HoraDePartida { get => horaDePartida;}
-        public Avion Avion { get => avion;}
-        public bool OfreceComida { get => ofreceComida;}
-        public bool TieneWifi { get => tieneWifi;}
-        public List<int> ListaIdPasajes { get => listaIdPasajes;}
-        public string CodigoDeVuelo { get => codigoDeVuelo;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,36 +113,36 @@ namespace Logica
         // Vuelo volar = new Vuelo();
 
 
-        public List<Pasaje> obtenerListaDePasajes()
-        {
-            List<Pasaje> listaDePasajes = null;
+        //public List<Pasaje> obtenerListaDePasajes()
+        //{
+        //    List<Pasaje> listaDePasajes = null;
 
-            for(int i = 0; i < ListaIdPasajes.Count; i++)
-            {
-                listaDePasajes.Add(Pasaje.obtenerPasajePorId(codigoDeVuelo));
-            }
+        //    for (int i = 0; i < listaIdPasajes.Count; i++)
+        //    {
+        //        listaDePasajes.Add(Pasaje.obtenerPasajePorId(codigoDeVuelo));
+        //    }
 
-            return listaDePasajes;
+        //    return listaDePasajes;
 
-        }
+        //}
 
-        public List<Pasajero> obtenerListaDePasajeros()
-        {   //lista que voy a devolver
-            List<Pasajero> listaDePasajeros = null;
-           //lista de pasajes del avion
-            List<Pasaje> listaDePasajes = obtenerListaDePasajes();
+        //public List<Cliente> obtenerListaDePersonas()
+        //{   //lista que voy a devolver
+        //    List<Cliente> ListaDePersonas = null;
+        //    //lista de pasajes del avion
+        //    List<Pasaje> listaDePasajes = obtenerListaDePasajes();
 
-            //recorro la lista de pasajes del avion, y de cada pasaje saco el dni, ese dni lo comparo con la lista generica de pasajeros
-            //y me traigo cada pasajero y lo sumo a la lista.
-            for (int i = 0; i < listaDePasajes.Count; i++)
-            {
-                if (listaDePasajes[i].DniDePasajero == GestionDeAerolinea.ListaDePasajeros[i].Documento)
-                {
-                    listaDePasajeros.Add(GestionDeAerolinea.ListaDePasajeros[i]);
-                }
-            }
-            return listaDePasajeros;
-        }
+        //    //recorro la lista de pasajes del avion, y de cada pasaje saco el dni, ese dni lo comparo con la lista generica de pasajeros
+        //    //y me traigo cada pasajero y lo sumo a la lista.
+        //    for (int i = 0; i < listaDePasajes.Count; i++)
+        //    {
+        //        if (listaDePasajes[i].DniDePasajero == GestionDeAerolinea.ListaDePersonas[i].Documento)
+        //        {
+        //            GestionDeAerolinea.ListaDePersonas.Add(GestionDeAerolinea.ListaDePersonas[i]);
+        //        }
+        //    }
+        //    return ListaDePersonas;
+        //}
 
 
 

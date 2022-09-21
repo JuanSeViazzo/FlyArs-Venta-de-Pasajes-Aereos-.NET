@@ -13,10 +13,10 @@ namespace Vista
 {
     public partial class FrmModificarCliente : Form
     {
-        string documentoPasajero;
-        Pasajero pasajeroAux;
-        Pasajero pasajeroNuevo;
-        public FrmModificarCliente(string documento)
+        int documentoPasajero;
+        Persona pasajeroAux;
+        Persona pasajeroNuevo;
+        public FrmModificarCliente(int documento)
         {
             InitializeComponent();
             this.documentoPasajero = documento;
@@ -26,7 +26,7 @@ namespace Vista
         {
             
             pasajeroAux = GestionDeAerolinea.obtenerPasajeroPorDni(documentoPasajero);
-            rtb_PasajeroAModificar.Text = pasajeroAux.Mostrar();
+            rtb_PasajeroAModificar.Text = pasajeroAux.ToString();
             cmbTipoDeDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
             MostrarPasajero();
 
@@ -39,7 +39,7 @@ namespace Vista
             txtApellido.Text = pasajeroAux.Apellido;
             txtEdad.Text = pasajeroAux.Edad;    
             txtNacionalidad.Text = pasajeroAux.Nacionalidad;
-            txtDocumento.Text = pasajeroAux.Documento;
+            txtDocumento.Text = Convert.ToString(pasajeroAux.Documento);
             cmbTipoDeDocumento.SelectedIndex = (int)pasajeroAux.TipoDocumento1;
             calMyDate.SelectionStart = pasajeroAux.FechaDeNacimiento;
             if (pasajeroAux.TipoDeSexo1 is Persona.TipoDeSexo.Femenino)
@@ -51,7 +51,7 @@ namespace Vista
 
         private void btn_ModificarPasajero_Click(object sender, EventArgs e)
         {
-            Pasajero pasajero;
+            Cliente cliente;
 
             Persona.TipoDeSexo sexoElegido;
 
@@ -63,15 +63,18 @@ namespace Vista
                 sexoElegido = Persona.TipoDeSexo.Masculino;
             }
 
-            try
+            try 
             {
-                pasajero = new Pasajero(txtNombre.Text, txtApellido.Text, (Persona.TipoDocumento)cmbTipoDeDocumento.SelectedItem,
-                txtDocumento.Text, txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
-                pasajeroNuevo = pasajero;
+                //Persona.Nombre = txtNombre;
 
-                rtb_PasajeroAModificar.Text = pasajero.Mostrar();
 
-                GestionDeAerolinea.ModificarPasajeroEnLineaAerea(pasajero, txtDocumento.Text);
+                cliente = new Cliente(txtNombre.Text, txtApellido.Text, (Persona.TipoDocumento)cmbTipoDeDocumento.SelectedItem,
+                int.Parse(txtDocumento.Text), txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
+                pasajeroNuevo = cliente;
+
+                rtb_PasajeroAModificar.Text = cliente.ToString();
+
+                GestionDeAerolinea.ModificarPasajeroEnLineaAerea(cliente, int.Parse(txtDocumento.Text));
 
             }
             catch (Exception ex)
@@ -82,7 +85,7 @@ namespace Vista
 
                 if (resultado is DialogResult.OK)
                 {
-                    GestionDeAerolinea.ListaDePasajeros.Add(pasajeroNuevo);
+                    GestionDeAerolinea.ListaDePersonas.Add(pasajeroNuevo);
                 }
             }
           

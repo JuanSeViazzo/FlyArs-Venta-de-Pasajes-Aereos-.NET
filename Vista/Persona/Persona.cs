@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
-using System.Collections.Generic;
 namespace Logica
 {
-    
-  
+
+
     public abstract class Persona
     {
 
@@ -15,7 +14,7 @@ namespace Logica
         }
         public enum TipoDeSexo
         {
-            
+
             Femenino,
             Masculino
         }
@@ -23,75 +22,71 @@ namespace Logica
         private string nombre;
         private string apellido;
         private TipoDocumento tipoDeDocumento;
-        private string documento;
+        private int documento;
         private string edad;
         private string nacionalidad;
         private DateTime fechaDeNacimiento;
         private TipoDeSexo tipoDeSexo;
 
-        public string Nombre { get => nombre;}
-        public string Apellido { get => apellido;}
-        public TipoDocumento TipoDocumento1 { get => tipoDeDocumento;}
-        public string Documento { get => documento;}
-        public string Edad { get => edad;}
-        public string Nacionalidad { get => nacionalidad;}
-        public DateTime FechaDeNacimiento { get => fechaDeNacimiento;}
-        public TipoDeSexo TipoDeSexo1 { get => tipoDeSexo;}
+        public TipoDocumento TipoDocumento1 { get => tipoDeDocumento; }
+        public string Nacionalidad { get => nacionalidad; }
+        public DateTime FechaDeNacimiento { get => fechaDeNacimiento; }
+        public TipoDeSexo TipoDeSexo1 { get => tipoDeSexo; }
 
-        protected Persona(string nombre, string apellido, TipoDocumento tipoDocumento, string documento, string edad,string nacionalidad,DateTime fechaDeNacimiento,TipoDeSexo sexo)
+        public string Nombre
         {
-
-            try
+            get => nombre;
+            private set
             {
-                Validaciones.ValidarString(nombre);
-                this.nombre = nombre;
+                if (Validaciones.ValidarString(value))
+                    this.nombre = value;
+                else
+                    throw new Exception("Error en nombre");
+            }
+        }
+        public string Apellido
+        {
+            get => apellido;
+            private set
+            {
+                if (Validaciones.ValidarString(value))
+                    this.apellido = value;
+                else
+                    throw new Exception("Error en Apellido");
 
             }
-            catch (Exception)
+
+        }
+        public int Documento
+        {
+            get => documento;
+
+            set
             {
-                throw new Exception("Error en nombre");
+                if (Validaciones.ValidarSoloDocumento(value))
+                    this.documento = value;
+                else
+                    throw new Exception("Error en documento");
             }
-
-            try
+        }
+        public string Edad  
+        { get => edad; 
+            set
             {
-                Validaciones.ValidarString(apellido);
-                this.apellido = apellido;
+                if (!Validaciones.ValidarSoloEdad(value))
+                  this.edad = value;
+                else
+                    throw new Exception("Error en edad");
 
             }
-            catch (Exception)
-            {
-                throw new Exception("Error en Apellido");
-            }
+        }
+        protected Persona(string nombre, string apellido, TipoDocumento tipoDocumento, int documento, string edad, string nacionalidad, DateTime fechaDeNacimiento, TipoDeSexo sexo)
+        {
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Documento = documento;
+            this.Edad = edad;
 
-
-            try
-            {
-                Validaciones.ValidarSoloNumero(documento);
-
-                this.documento = documento;
-
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Error en Documento");
-            }
-
-
-
-
-
-
-            try
-            {
-                Validaciones.ValidarSoloNumero(edad);
-                this.edad = edad;
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Error en Documento");
-            }
 
 
 
@@ -101,10 +96,7 @@ namespace Logica
             this.tipoDeSexo = sexo;
         }
 
-
-
-
-        public virtual string Mostrar()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"Nombre: {nombre}");
@@ -113,15 +105,17 @@ namespace Logica
             sb.AppendLine($"Tipo documento: {tipoDeDocumento}");
             sb.AppendLine($" --- Documento N°: {documento}");
             sb.AppendLine($"Fecha de nacimiento: {fechaDeNacimiento.ToString("dd-MM-yyyy")}");
-            sb.AppendLine($"Edad: {edad}");
+            sb.AppendLine($"Edad: {Edad}");
             sb.AppendLine($"Nacionalidad: {nacionalidad}");
 
             return sb.ToString();
-
         }
 
 
+        public static void ObtenerPersonaPorDNI(string documento)
+        {
 
+        }
 
 
 

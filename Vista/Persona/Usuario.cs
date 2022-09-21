@@ -10,22 +10,22 @@ namespace Logica
     { 
 
 
-        private string legajoEmpleado;
+        private int legajoEmpleado;
         private string password;
         private string user;
-        public string LegajoEmpleado { get => legajoEmpleado;}
+        public int LegajoEmpleado { get => legajoEmpleado;}
         public string Password { get => password; }
         public string User { get => user;}
 
 
-        public Usuario(string user, string password, string nombre, string apellido, string legajoEmpleado, TipoDocumento tipoDocumento, string dni, 
+        public Usuario(string user, string password, string nombre, string apellido, int legajoEmpleado, TipoDocumento tipoDocumento, int dni, 
          string edad, string nacionalidad,DateTime fechaDeNacimiento,TipoDeSexo sexo) : base(nombre, apellido, tipoDocumento, dni, edad, nacionalidad, fechaDeNacimiento,sexo)
         {
 
 
             try
             {
-                Validaciones.ValidarSoloNumero(legajoEmpleado);
+                Validaciones.ValidarSoloDocumento(legajoEmpleado);
                 this.legajoEmpleado = legajoEmpleado;   
 
             }

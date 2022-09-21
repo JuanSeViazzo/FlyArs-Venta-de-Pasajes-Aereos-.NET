@@ -13,21 +13,34 @@ namespace Vista
 {
     public partial class FrmEliminarCliente : Form
     {
-        Pasajero pasajeroAux;
+        Persona clienteAux;
+        int documentoAux;
         private FrmEliminarCliente()
         {
             InitializeComponent();
         }
 
-        public FrmEliminarCliente(string documento) :this()
+        public FrmEliminarCliente(int documento) :this()
         {
-            pasajeroAux = GestionDeAerolinea.obtenerPasajeroPorDni(documento);
+            documentoAux = documento;
+            clienteAux = GestionDeAerolinea.obtenerPasajeroPorDni(documento);
         }
 
         private void FrmEliminarCliente_Load(object sender, EventArgs e)
         {
-            rtbPasajeroAEliminar.Text = pasajeroAux.Mostrar();
+            rtbPasajeroAEliminar.Text = clienteAux.ToString();
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            GestionDeAerolinea.EliminarPasajeroEnLineaAerea(documentoAux);
+
+        }
+
+        private void btnCancelarModificacion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     } 
 }

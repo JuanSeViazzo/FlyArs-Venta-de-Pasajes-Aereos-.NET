@@ -6,7 +6,7 @@ namespace Vista
 {
     public partial class FrmAltaCliente : Form
     {
-        Pasajero pasajero;
+        Persona cliente;
         public FrmAltaCliente()
         {
             InitializeComponent();
@@ -33,12 +33,12 @@ namespace Vista
 
             try
             {
-                pasajero = new Pasajero(txtNombre.Text, txtApellido.Text, (Persona.TipoDocumento)cmb_tipoDeDocumento.SelectedItem,
-                Txt_numeroDeDocumento.Text, txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
+                cliente = new Cliente(txtNombre.Text, txtApellido.Text, (Persona.TipoDocumento)cmb_tipoDeDocumento.SelectedItem,
+                int.Parse(Txt_numeroDeDocumento.Text), txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
 
-                rtbPasajero.Text = pasajero.Mostrar();
+                rtbPasajero.Text = cliente.ToString();
 
-                GestionDeAerolinea.CargarPasajeroEnLineaAerea(pasajero);
+                GestionDeAerolinea.CargarPasajeroEnLineaAerea((Cliente)cliente);
 
             }
             catch (Exception ex)
@@ -48,8 +48,6 @@ namespace Vista
 
             }
 
-            // pasajero.CargarEquipaje(txt_equipajeUno.Text);
-            // pasajero.CargarEquipaje(txt_EquipajeDos.Text);
 
 
         }

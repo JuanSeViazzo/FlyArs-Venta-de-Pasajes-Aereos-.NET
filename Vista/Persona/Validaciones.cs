@@ -11,32 +11,34 @@ namespace Logica
     {
         private static Exception validarNumero;
 
-        public static string ValidarString(string dato)
+        public static bool ValidarString(string dato)
         {
 
-            if (!String.IsNullOrEmpty(dato) && dato.All(char.IsLetter))
-            {
-                return dato;
-            }
-            else
-            {
-                throw new Exception();
-            }
+            return !String.IsNullOrEmpty(dato) && dato.All(char.IsLetter);
+            
 
         }
 
 
-        public static int ValidarSoloNumero(string dato)
+        public static bool ValidarSoloDocumento(int dato)
+        {
+            return dato >= 1000000 && dato <= 99999999;
+
+            
+        }
+
+
+        public static bool ValidarSoloEdad(string dato)
         {
             int valor;
+            return !int.TryParse(dato, out valor) && valor > 0 && valor < 150;
 
-            if(int.TryParse(dato,out valor))
-            {
-                return valor;
-            }else
-            {
-                throw new Exception();
-            }
+        }
+
+        public static bool ValidarSoloNumero(string dato)
+        {
+            int valor;
+            return !int.TryParse(dato, out valor);
 
         }
 

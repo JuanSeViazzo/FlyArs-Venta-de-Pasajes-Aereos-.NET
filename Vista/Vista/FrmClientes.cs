@@ -7,7 +7,7 @@ namespace Vista
 {
     public partial class FrmClientes : Form
     {
-        DataTable pasajeros = new DataTable();
+        DataTable clientes = new DataTable();
         string estado = "inactivo";
         public FrmClientes()
         {
@@ -16,25 +16,25 @@ namespace Vista
         private void FrmClientes_Load(object sender, EventArgs e)
         {
 
-            pasajeros.Columns.Add("Nombre");
-            pasajeros.Columns.Add("Apellido");
-            pasajeros.Columns.Add("Tipo de Documento");
-            pasajeros.Columns.Add("Documento");
-            pasajeros.Columns.Add("Edad");
-            pasajeros.Columns.Add("Nacionalidad");
-            pasajeros.Columns.Add("Fecha de nacimiento");
-            pasajeros.Columns.Add("Sexo");
+            clientes.Columns.Add("Nombre");
+            clientes.Columns.Add("Apellido");
+            clientes.Columns.Add("Tipo de Documento");
+            clientes.Columns.Add("Documento");
+            clientes.Columns.Add("Edad");
+            clientes.Columns.Add("Nacionalidad");
+            clientes.Columns.Add("Fecha de nacimiento");
+            clientes.Columns.Add("Sexo");
 
-            for (int i = 0; i < GestionDeAerolinea.ListaDePasajeros.Count; i++)
+            for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
             {
 
-                pasajeros.Rows.Add(GestionDeAerolinea.ListaDePasajeros[i].Nombre, GestionDeAerolinea.ListaDePasajeros[i].Apellido, GestionDeAerolinea.ListaDePasajeros[i].TipoDocumento1,
-                GestionDeAerolinea.ListaDePasajeros[i].Documento, GestionDeAerolinea.ListaDePasajeros[i].Edad, GestionDeAerolinea.ListaDePasajeros[i].Nacionalidad,
-                GestionDeAerolinea.ListaDePasajeros[i].FechaDeNacimiento, GestionDeAerolinea.ListaDePasajeros[i].TipoDeSexo1);
+                clientes.Rows.Add(GestionDeAerolinea.ListaDePersonas[i].Nombre, GestionDeAerolinea.ListaDePersonas[i].Apellido, GestionDeAerolinea.ListaDePersonas[i].TipoDocumento1,
+                GestionDeAerolinea.ListaDePersonas[i].Documento, GestionDeAerolinea.ListaDePersonas[i].Edad, GestionDeAerolinea.ListaDePersonas[i].Nacionalidad,
+                GestionDeAerolinea.ListaDePersonas[i].FechaDeNacimiento, GestionDeAerolinea.ListaDePersonas[i].TipoDeSexo1);
 
             }
 
-            dgv_clientes.DataSource = pasajeros;
+            dgv_clientes.DataSource = clientes;
 
             if (dgv_clientes.CurrentRow == null)
             {
@@ -47,20 +47,20 @@ namespace Vista
 
         private void txt_filtroNombre_TextChanged(object sender, EventArgs e)
         {
-            pasajeros.DefaultView.RowFilter = $"Nacionalidad LIKE '{txt_filtroNombre.Text}%'";
+            clientes.DefaultView.RowFilter = $"Nacionalidad LIKE '{txt_filtroNombre.Text}%'";
 
         }
 
         private void txt_FiltroDNI_TextChanged(object sender, EventArgs e)
         {
-            pasajeros.DefaultView.RowFilter = $"Documento LIKE '{txt_FiltroDNI.Text}%'";
+            clientes.DefaultView.RowFilter = $"Documento LIKE '{txt_FiltroDNI.Text}%'";
 
         }
 
 
         private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string documento;
+            int documento;
 
             if (estado == "inactivo")
             {
@@ -72,12 +72,12 @@ namespace Vista
                 {
                     int row = e.RowIndex;
                     int column = e.ColumnIndex;
-                    documento = dgv_clientes.Rows[row].Cells[3].Value.ToString();
+                    documento = int.Parse(dgv_clientes.Rows[row].Cells[3].Value.ToString());
 
                     ;
                     DialogResult resultado = MessageBox.Show($"{documento}", "DNI N°: ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                    if (DialogResult.Yes == resultado && documento is not null)
+                    if (DialogResult.Yes == resultado && documento > 10000000)
                     {
                         if (estado == "modificar")
                         {
@@ -92,6 +92,11 @@ namespace Vista
                                 FrmEliminarCliente frmEliminarCliente = new FrmEliminarCliente(documento);
                                 this.Hide();
                                 frmEliminarCliente.ShowDialog();
+                            }else
+                            {
+                                FrmVentaPasaje frmVentaPasaje = new FrmVentaPasaje(documento);
+                                this.Hide();
+                                frmVentaPasaje.ShowDialog();    
                             }
                               
                         }
@@ -116,6 +121,12 @@ namespace Vista
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             estado = "eliminar";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            estado = "venta";
+
         }
     }
 

@@ -55,3 +55,4 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmClientes.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmEliminarCliente.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmModificarCliente.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmElegirVuelo.resources

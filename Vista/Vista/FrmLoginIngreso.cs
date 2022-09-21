@@ -19,7 +19,7 @@ namespace Vista
 
         public Timer timer;
 
-        public Timer Timer { get => timer; }
+   
 
 
         public FrmLoginIngreso()
@@ -39,7 +39,8 @@ namespace Vista
             pc_LoginNo.Visible = false;
             lbl_IngresoOkNo.Visible = false;
             ManejoDeVista.ReproducirMusica();
-            GestionDeAerolinea.HarcodeoPasajeros();
+            BaseDeDatosHardCodeo.HarcodeoPasajeros();
+            BaseDeDatosHardCodeo.HarcodeoDeVuelos();
 
         }
 

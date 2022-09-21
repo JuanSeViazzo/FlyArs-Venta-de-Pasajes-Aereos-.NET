@@ -6,30 +6,30 @@ namespace Logica
     public class GestionDeAerolinea
     {
 
-        private static List<Pasajero> listaDePasajeros;
-        private static List<Usuario> listaDeUsuarios;
+        private static List<Vuelo> listaDeVuelos;
 
+        private static List<Persona> listaDePersonas;
+
+        public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
+        public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
 
         static GestionDeAerolinea()
         {
-            listaDePasajeros = new List<Pasajero>();
-            listaDeUsuarios = new List<Usuario>();
+     
+            listaDePersonas = new List<Persona>();
+            listaDeVuelos = new List<Vuelo>();  
         }
 
-        public static List<Pasajero> ListaDePasajeros { get => listaDePasajeros; }
-        public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; }
 
 
-
-
-        public static Pasajero obtenerPasajeroPorDni(string dni)
+        public static Cliente obtenerPasajeroPorDni(int dni)
         {
-            Pasajero pasajero = null;
-            for (int i = 0; i < GestionDeAerolinea.listaDePasajeros.Count; i++)
+            Cliente pasajero = null;
+            for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
             {
-                if (dni == listaDePasajeros[i].Documento)
+                if (dni == ListaDePersonas[i].Documento)
                 {
-                    pasajero = listaDePasajeros[i];
+                    pasajero = (Cliente)ListaDePersonas[i];
                     break;
                 }
             }
@@ -37,27 +37,12 @@ namespace Logica
         }
 
 
-        //public static Pasajero ModificarPasajero(Pasajero pasajero)
-        //{
-        //    if (pasajero is not null)
-        //    {
-
-        //    }
-        //}
-
-
-
-
-
-
-
-
-        public static bool CargarPasajeroEnLineaAerea(Pasajero pasajero)
+        public static bool CargarPasajeroEnLineaAerea(Cliente pasajero)
         {
 
             if (!GestionDeAerolinea.ValidarPasajeroEnLineaAerea(pasajero.Documento))
             {
-                GestionDeAerolinea.ListaDePasajeros.Add(pasajero);
+                GestionDeAerolinea.ListaDePersonas.Add(pasajero);
                 return true;
             }
             else
@@ -66,17 +51,17 @@ namespace Logica
         }
 
 
-        public static void ModificarPasajeroEnLineaAerea(Pasajero pasajero, string documento)
+        public static void ModificarPasajeroEnLineaAerea(Cliente pasajero, int documento)
         {
             int flag = 0;
 
             if (pasajero is not null)
             {
-                for (int i = 0; i < listaDePasajeros.Count; i++)
+                for (int i = 0; i < ListaDePersonas.Count; i++)
                 {
-                    if (listaDePasajeros[i].Documento == documento)
+                    if (ListaDePersonas[i].Documento == documento)
                     {
-                        listaDePasajeros[i] = pasajero;
+                        ListaDePersonas[i] = pasajero;
                         break;
                     }else
                     {
@@ -95,13 +80,30 @@ namespace Logica
         }
 
 
+        public static void EliminarPasajeroEnLineaAerea(int documento)
+        {
+            if (documento > 10000000)
+            {
+                for (int i = 0; i < ListaDePersonas.Count; i++)
+                {
+                    if (ListaDePersonas[i].Documento == documento)
+                    {
+                        ListaDePersonas.Remove(ListaDePersonas[i]);
+                        break;
+                    } 
+                }
+            }
+        }
 
 
-        public static bool ValidarPasajeroEnLineaAerea(string dni)
+
+
+
+        public static bool ValidarPasajeroEnLineaAerea(int dni)
         {
 
 
-            foreach (Pasajero item in GestionDeAerolinea.listaDePasajeros)
+            foreach (Cliente item in GestionDeAerolinea.ListaDePersonas)
             {
 
                 if (item.Documento == dni)
@@ -114,41 +116,16 @@ namespace Logica
 
         }
 
-        public static void HarcodeoPasajeros()
-        {
-            Pasajero pasajero1 = new Pasajero("Sebastian", "Viazzo", Persona.TipoDocumento.DNI, "34262507", "33", "argentino", new DateTime(1988, 12, 17), Persona.TipoDeSexo.Masculino);
-            Pasajero pasajero2 = new Pasajero("Lucas", "Rodriguez", Persona.TipoDocumento.DNI, "35003321", "30", "argentino", new DateTime(1990, 07, 15), Persona.TipoDeSexo.Masculino);
-            Pasajero pasajero3 = new Pasajero("Marina", "Rodriguez", Persona.TipoDocumento.DNI, "38000132", "33", "argentino", new DateTime(1992, 04, 22), Persona.TipoDeSexo.Femenino);
-            Pasajero pasajero4 = new Pasajero("Ignacio", "Smirlian", Persona.TipoDocumento.Pasaporte, "37213986", "25", "Italiano", new DateTime(1998, 06, 10), Persona.TipoDeSexo.Masculino);
-            Pasajero pasajero5 = new Pasajero("Thierry", "Henry", Persona.TipoDocumento.Pasaporte, "34222503", "48", "Frances", new DateTime(1974, 03, 19), Persona.TipoDeSexo.Masculino);
-            Pasajero pasajero6 = new Pasajero("Diego", "Maradona", Persona.TipoDocumento.DNI, "24323788", "60", "argentino", new DateTime(1960, 01, 15), Persona.TipoDeSexo.Masculino);
-            Pasajero pasajero7 = new Pasajero("Lionel", "Messi", Persona.TipoDocumento.DNI, "32198605", "35", "argentino", new DateTime(1985, 11, 15), Persona.TipoDeSexo.Masculino);
+        
 
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero1);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero2);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero3);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero4);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero5);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero6);
-            GestionDeAerolinea.ListaDePasajeros.Add(pasajero7);
-        }
-
-        public static void HarcodeoDeUsuarios()
-        {
-            Usuario usuario1 = new Usuario("LuquitaPeposo", "Rufruf123", "Lucas", "Rodriguez", "1001", Persona.TipoDocumento.DNI, "35232444", "30", "Argentino", new DateTime(1985, 11, 15), Persona.TipoDeSexo.Masculino);
-
-            GestionDeAerolinea.listaDeUsuarios.Add(usuario1);
-
-
-
-        }
+        
 
 
 
         public static bool ValidarUsuario(string user)
         {
 
-            foreach (Usuario item in GestionDeAerolinea.listaDeUsuarios)
+            foreach (Usuario item in GestionDeAerolinea.listaDePersonas)
             {
                 if (item.User == user)
                 {
