@@ -28,11 +28,14 @@ namespace Vista
             vuelos.Columns.Add("Limite en Bodega");
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
+            vuelos.Columns.Add("Cantidad de baños");
 
             for (int i = 0; i < GestionDeAerolinea.ListaDeVuelos.Count; i++)
             {
                 string wifi;
                 string comida;
+                string destino;
+                string origen;
 
                 if (GestionDeAerolinea.ListaDeVuelos[i].TieneWifi)
                     wifi = "Si";
@@ -45,11 +48,25 @@ namespace Vista
                 else
                     comida = "No";
 
+                if (GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString().Contains('_'))
+                {
+                    origen = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString().Replace('_',' ');
+                }
+                else
+                    origen = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString();
+
+                if (GestionDeAerolinea.ListaDeVuelos[i].DestinosInternacionales.ToString().Contains('_'))
+                {
+                    destino = GestionDeAerolinea.ListaDeVuelos[i].DestinosInternacionales.ToString().Replace('_', '|');
+                }
+                else
+                    destino = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString();
+
                 vuelos.Rows.Add(GestionDeAerolinea.ListaDeVuelos[i].CodigoDeVuelo, GestionDeAerolinea.ListaDeVuelos[i].Avion.Matricula,
-                    GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales,
-                GestionDeAerolinea.ListaDeVuelos[i].DestinosInternacionales, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida,
-                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos,
-                GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega,wifi, GestionDeAerolinea.ListaDeVuelos[i].OfreceComida);
+                    origen,
+                destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("MM/dd/yyyy hh:mm tt"),
+                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("MM/dd/yyyy hh:mm tt"), GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos,
+                GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega,wifi,comida,GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
 
             }
 

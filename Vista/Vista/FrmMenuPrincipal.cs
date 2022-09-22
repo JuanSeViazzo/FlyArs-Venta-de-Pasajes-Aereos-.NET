@@ -49,5 +49,11 @@ namespace Vista
             FrmClientes frmClientes = new FrmClientes();
             frmClientes.ShowDialog();   
         }
+
+        private void btn_MenuVuelos_Click(object sender, EventArgs e)
+        {
+            FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo();
+            frmElegirVuelo.ShowDialog();
+        }
     }
 }

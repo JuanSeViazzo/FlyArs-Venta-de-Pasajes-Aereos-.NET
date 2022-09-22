@@ -25,10 +25,10 @@ namespace Logica
 
     public enum DestinosInternacionales
     {
-        Recife_Brasil,
-        Roma_Italia,
-        Acapulco_México,
-        Miami_EEUU
+        Recife_Brasil_,
+        Roma_Italia_,
+        Acapulco_México_,
+        Miami_EEUU_
     }
 
     public class Vuelo
@@ -52,7 +52,17 @@ namespace Logica
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
         public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
         public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
-        public DestinosInternacionales DestinosInternacionales { get => destinosInternacionales; set => destinosInternacionales = value; }
+        
+        public DestinosInternacionales DestinosInternacionales 
+        { get => 
+                destinosInternacionales;
+
+             set
+            {
+             
+                destinosInternacionales = value;    
+            }
+        }
         public DestinosNacionales DestinosNacionales { get => destinosNacionales; set => destinosNacionales = value; }
 
         private Vuelo()
@@ -62,14 +72,17 @@ namespace Logica
         public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi, 
             string codigoDeVuelo, DestinosNacionales destinosNacionales, DestinosInternacionales destinosInternacionales) : this()
         {
+
+
+
             this.horaDePartida = horaDePartida;
             this.horaDeLlegada = horaDeLlegada;
             this.avion = avion;
             this.ofreceComida = ofreceComida;
             this.tieneWifi = tieneWifi;
             this.codigoDeVuelo = codigoDeVuelo;
-            this.destinosInternacionales = destinosInternacionales;
-            this.destinosNacionales = destinosNacionales;
+            this.DestinosInternacionales = destinosInternacionales;
+            this.DestinosNacionales = destinosNacionales;
 
         }
 

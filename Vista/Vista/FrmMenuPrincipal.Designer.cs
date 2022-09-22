@@ -90,6 +90,7 @@
             this.btn_MenuVuelos.TabIndex = 9;
             this.btn_MenuVuelos.Text = "Menu Vuelos";
             this.btn_MenuVuelos.UseVisualStyleBackColor = true;
+            this.btn_MenuVuelos.Click += new System.EventHandler(this.btn_MenuVuelos_Click);
             // 
             // btn_Estadisticas
             // 

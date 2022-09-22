@@ -77,7 +77,7 @@
             this.btnElegirVuelo.Name = "btnElegirVuelo";
             this.btnElegirVuelo.Size = new System.Drawing.Size(132, 61);
             this.btnElegirVuelo.TabIndex = 18;
-            this.btnElegirVuelo.Text = "Elegir Vuelo";
+            this.btnElegirVuelo.Text = "Buscar";
             this.btnElegirVuelo.UseVisualStyleBackColor = true;
             this.btnElegirVuelo.Click += new System.EventHandler(this.btnElegirVuelo_Click);
             // 
