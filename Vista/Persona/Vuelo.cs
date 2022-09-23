@@ -1,38 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+
 
 namespace Logica
 {
-    public enum DestinosNacionales
-    {
-        SantaRosa,
-        Bariloche,
-        Corrientes,
-        Córdoba,
-        Jujuy,
-        Mendoza,
-        Neuquén,
-        Posadas,
-        Iguazú,
-        Salta,
-        Santiago_del_Estero,
-        Trelew,
-        Tucumán,
-        Puerto_Madryn,
-        Ushuaia,
-        Buenos_Aires
-    }
-
-    public enum DestinosInternacionales
-    {
-        Recife_Brasil_,
-        Roma_Italia_,
-        Acapulco_México_,
-        Miami_EEUU_
-    }
+     
 
     public class Vuelo
     {
+
 
 
         DateTime horaDePartida;
@@ -42,35 +19,28 @@ namespace Logica
         private bool tieneWifi;
         private List<Pasajero> listaDePasajeros;
         private string codigoDeVuelo;
-        private DestinosInternacionales destinosInternacionales;
-        private DestinosNacionales destinosNacionales;
-
-        public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
-        public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
+        private string destino;
+        private string origen;
+       
+ 
         public Avion Avion { get => avion; set => avion = value; }
         public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
         public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
         public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
-        
-        public DestinosInternacionales DestinosInternacionales 
-        { get => 
-                destinosInternacionales;
-
-             set
-            {
-             
-                destinosInternacionales = value;    
-            }
-        }
-        public DestinosNacionales DestinosNacionales { get => destinosNacionales; set => destinosNacionales = value; }
+  
+        public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
+        public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
+        public string Destino { get => destino; set => destino = value; }
+        public string Origen { get => origen; set => origen = value; }
 
         private Vuelo()
         {
             listaDePasajeros = new List<Pasajero>();
+            
         }
         public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi, 
-            string codigoDeVuelo, DestinosNacionales destinosNacionales, DestinosInternacionales destinosInternacionales) : this()
+            string codigoDeVuelo, int origen,int destino) : this()
         {
 
 
@@ -81,14 +51,34 @@ namespace Logica
             this.ofreceComida = ofreceComida;
             this.tieneWifi = tieneWifi;
             this.codigoDeVuelo = codigoDeVuelo;
-            this.DestinosInternacionales = destinosInternacionales;
-            this.DestinosNacionales = destinosNacionales;
+            this.destino = CargarDestinoOrigen(destino);
+            this.origen = CargarDestinoOrigen(origen);   
 
+
+        }
+      
+        private static string CargarDestinoOrigen(int valor)
+        {
+
+            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.listaDeAeropuertos)
+            {
+                if (item.Key == valor)
+                {
+                    return item.Value;
+                }
+            }
+
+            throw new Exception("Error en cargar destino/origen");
         }
 
 
-
-
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Codigo de Vuelo {codigoDeVuelo}");
+            
+            return sb.ToString();
+        }
 
 
 

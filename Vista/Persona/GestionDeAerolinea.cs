@@ -12,12 +12,15 @@ namespace Logica
 
         public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
         public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
+        public static Dictionary<int,string> listaDeAeropuertos;
 
         static GestionDeAerolinea()
         {
      
             listaDePersonas = new List<Persona>();
-            listaDeVuelos = new List<Vuelo>();  
+            listaDeVuelos = new List<Vuelo>();
+            listaDeAeropuertos = new Dictionary<int, string>();
+
         }
 
 
@@ -25,7 +28,7 @@ namespace Logica
         public static Cliente obtenerPasajeroPorDni(int dni)
         {
             Cliente pasajero = null;
-            for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
+            for (int i = 0; i < ListaDePersonas.Count; i++)
             {
                 if (dni == ListaDePersonas[i].Documento)
                 {
@@ -35,6 +38,25 @@ namespace Logica
             }
             return pasajero;
         }
+
+        public static Vuelo obtenerVueloPorCodigo(string codigoDeVuelo)
+        {
+            Vuelo vuelo = null;
+
+            for (int i = 0; i < ListaDeVuelos.Count; i++)
+            {
+                if(codigoDeVuelo == listaDeVuelos[i].CodigoDeVuelo)
+                {
+                    vuelo = (Vuelo)ListaDeVuelos[i];
+                    break;
+                }
+
+
+            }
+
+            return vuelo;
+        }
+
 
 
         public static bool CargarPasajeroEnLineaAerea(Cliente pasajero)

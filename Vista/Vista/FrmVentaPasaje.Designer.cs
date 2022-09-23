@@ -32,6 +32,7 @@
             this.btnTraerCliente = new System.Windows.Forms.Button();
             this.rtbPasajero = new System.Windows.Forms.RichTextBox();
             this.btnElegirVuelo = new System.Windows.Forms.Button();
+            this.rtbVuelo = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btn_VenderPasaje
@@ -62,9 +63,9 @@
             // 
             // rtbPasajero
             // 
-            this.rtbPasajero.Location = new System.Drawing.Point(417, 59);
+            this.rtbPasajero.Location = new System.Drawing.Point(214, 156);
             this.rtbPasajero.Name = "rtbPasajero";
-            this.rtbPasajero.Size = new System.Drawing.Size(274, 380);
+            this.rtbPasajero.Size = new System.Drawing.Size(302, 261);
             this.rtbPasajero.TabIndex = 17;
             this.rtbPasajero.Text = "";
             // 
@@ -81,11 +82,20 @@
             this.btnElegirVuelo.UseVisualStyleBackColor = true;
             this.btnElegirVuelo.Click += new System.EventHandler(this.btnElegirVuelo_Click);
             // 
+            // rtbVuelo
+            // 
+            this.rtbVuelo.Location = new System.Drawing.Point(569, 156);
+            this.rtbVuelo.Name = "rtbVuelo";
+            this.rtbVuelo.Size = new System.Drawing.Size(302, 261);
+            this.rtbVuelo.TabIndex = 19;
+            this.rtbVuelo.Text = "";
+            // 
             // FrmVentaPasaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 584);
+            this.ClientSize = new System.Drawing.Size(1022, 584);
+            this.Controls.Add(this.rtbVuelo);
             this.Controls.Add(this.btnElegirVuelo);
             this.Controls.Add(this.rtbPasajero);
             this.Controls.Add(this.btnTraerCliente);
@@ -104,5 +114,6 @@
         private System.Windows.Forms.Button btnTraerCliente;
         private System.Windows.Forms.RichTextBox rtbPasajero;
         private System.Windows.Forms.Button btnElegirVuelo;
+        private System.Windows.Forms.RichTextBox rtbVuelo;
     }
 }

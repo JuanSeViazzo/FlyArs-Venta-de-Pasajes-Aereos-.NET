@@ -15,6 +15,8 @@ namespace Vista
     {
         int documento;
         Persona clienteAux;
+        string codigoDeVuelo;
+        Vuelo vueloAux;
         public FrmVentaPasaje()
         {
             InitializeComponent();
@@ -26,6 +28,12 @@ namespace Vista
             clienteAux = GestionDeAerolinea.obtenerPasajeroPorDni(documento);
         }
 
+        public FrmVentaPasaje(string codigoDeVuelo) : this()
+        {
+            this.codigoDeVuelo = codigoDeVuelo;
+            vueloAux = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
+        }
+
         private void btn_VenderPasaje_Click(object sender, EventArgs e)
         {
             FrmAltaCliente frmAltaCliente = new FrmAltaCliente();
@@ -35,7 +43,7 @@ namespace Vista
         private void btnTraerCliente_Click(object sender, EventArgs e)
         {
             FrmClientes frmClientes = new FrmClientes();
-            frmClientes.ShowDialog();   
+            frmClientes.Show();   
         }
 
         private void FrmVentaPasaje_Load(object sender, EventArgs e)
@@ -45,13 +53,18 @@ namespace Vista
                 rtbPasajero.Text = clienteAux.ToString();
 
             }
+            if(vueloAux is not null)
+            {
+                rtbVuelo.Text = vueloAux.ToString();    
+            }
+
 
         }
 
         private void btnElegirVuelo_Click(object sender, EventArgs e)
         {
             FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo();
-            frmElegirVuelo.ShowDialog();    
+            frmElegirVuelo.Show();    
         }
     }
 }

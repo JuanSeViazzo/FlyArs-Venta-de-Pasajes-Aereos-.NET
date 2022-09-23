@@ -123,7 +123,7 @@ namespace Vista
             estado = "eliminar";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVenderPasaje_Click(object sender, EventArgs e)
         {
             estado = "venta";
 

@@ -7,6 +7,9 @@ namespace Vista
 {
     public partial class FrmElegirVuelo : Form
     {
+        DataTable vuelos = new DataTable();
+        string estado = "inactivo";
+
         public FrmElegirVuelo()
         {
             InitializeComponent();
@@ -14,7 +17,6 @@ namespace Vista
 
         private void FrmElegirVuelo_Load(object sender, EventArgs e)
         {
-            DataTable vuelos = new DataTable();
             string estado = "inactivo";
 
 
@@ -48,24 +50,11 @@ namespace Vista
                 else
                     comida = "No";
 
-                if (GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString().Contains('_'))
-                {
-                    origen = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString().Replace('_',' ');
-                }
-                else
-                    origen = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString();
-
-                if (GestionDeAerolinea.ListaDeVuelos[i].DestinosInternacionales.ToString().Contains('_'))
-                {
-                    destino = GestionDeAerolinea.ListaDeVuelos[i].DestinosInternacionales.ToString().Replace('_', '|');
-                }
-                else
-                    destino = GestionDeAerolinea.ListaDeVuelos[i].DestinosNacionales.ToString();
 
                 vuelos.Rows.Add(GestionDeAerolinea.ListaDeVuelos[i].CodigoDeVuelo, GestionDeAerolinea.ListaDeVuelos[i].Avion.Matricula,
-                    origen,
-                destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("MM/dd/yyyy hh:mm tt"),
-                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("MM/dd/yyyy hh:mm tt"), GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos,
+                    GestionDeAerolinea.ListaDeVuelos[i].Origen,
+                GestionDeAerolinea.ListaDeVuelos[i].Destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("dd/MM/yyyy hh:mm tt"),
+                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"), GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos,
                 GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega,wifi,comida,GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
 
             }
@@ -78,5 +67,115 @@ namespace Vista
             }
 
         }
+
+
+        private void txtFiltroOrigen_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtFiltroOrigen.Text))
+            {
+                vuelos.DefaultView.RowFilter = $"Origen LIKE '{txtFiltroOrigen.Text}%'";
+            }
+            if (!string.IsNullOrEmpty(txtFiltroDestino.Text))
+            {
+                vuelos.DefaultView.RowFilter = $"Destino LIKE '{txtFiltroDestino.Text}%'";
+
+            }
+            if (!string.IsNullOrEmpty(txtFiltroFecha.Text))
+            {
+                vuelos.DefaultView.RowFilter = $"Salida LIKE '{txtFiltroFecha.Text}%' AND Origen LIKE '{txtFiltroOrigen.Text}%' AND Destino LIKE '{txtFiltroDestino.Text}%'";
+
+            }
+        }
+
+        private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigoDeVuelo;
+
+            if (estado == "inactivo")
+            {
+
+            }
+            else
+            {
+                try
+                {
+                    int row = e.RowIndex;
+                    int column = e.ColumnIndex;
+                    codigoDeVuelo = dgv_clientes.Rows[row].Cells[0].Value.ToString();
+
+                    ;
+                    DialogResult resultado = MessageBox.Show($"{codigoDeVuelo}", "DNI N°: ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if (DialogResult.Yes == resultado)
+                    {
+                        if (estado == "modificar")
+                        {
+                            FrmVentaPasaje frmVentaDePasaje = new FrmVentaPasaje(codigoDeVuelo);
+                            this.Hide();
+                            frmVentaDePasaje.ShowDialog();
+                        }
+                        //else
+                        //{
+                        //    if (estado == "eliminar")
+                        //    {
+                        //        FrmEliminarCliente frmEliminarCliente = new FrmEliminarCliente(documento);
+                        //        this.Hide();
+                        //        frmEliminarCliente.ShowDialog();
+                        //    }
+                        //    else
+                        //    {
+                        //        FrmVentaPasaje frmVentaPasaje = new FrmVentaPasaje(documento);
+                        //        this.Hide();
+                        //        frmVentaPasaje.ShowDialog();
+                        //    }
+
+                        //}
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return;
+                }
+            }
+
+
+        }
+
+  
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            estado = "eliminar";
+        }
+
+        private void btnVenderPasaje_Click(object sender, EventArgs e)
+        {
+            estado = "venta";
+
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            estado = "modificar";
+
+        }
     }
-}
+
+
+
+        //private void txtFiltroDestino_TextChanged(object sender, EventArgs e)
+        //{
+
+        //    vuelos.DefaultView.RowFilter = $"Destino LIKE '{txtFiltroDestino.Text}%'";
+
+        //}
+
+        //private void txtFiltroFecha_TextChanged(object sender, EventArgs e)
+        //{
+        //    vuelos.DefaultView.RowFilter = $"Salida LIKE '{txtFiltroFecha.Text}%'";
+
+        //}
+    }
+
