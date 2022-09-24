@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Logica
 {
-     
+
 
     public class Vuelo
     {
@@ -21,26 +21,32 @@ namespace Logica
         private string codigoDeVuelo;
         private string destino;
         private string origen;
-       
- 
+        private int asientosDisponibles;
+
+
         public Avion Avion { get => avion; set => avion = value; }
         public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
         public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
         public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
-  
+
         public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
         public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
         public string Destino { get => destino; set => destino = value; }
         public string Origen { get => origen; set => origen = value; }
+        public int AsientosDisponibles
+        {
+            get => asientosDisponibles = avion.CantidadDeAsientos - listaDePasajeros.Count;
+
+        }
 
         private Vuelo()
         {
             listaDePasajeros = new List<Pasajero>();
-            
+
         }
-        public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi, 
-            string codigoDeVuelo, int origen,int destino) : this()
+        public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi,
+            string codigoDeVuelo, int origen, int destino) : this()
         {
 
 
@@ -52,15 +58,15 @@ namespace Logica
             this.tieneWifi = tieneWifi;
             this.codigoDeVuelo = codigoDeVuelo;
             this.destino = CargarDestinoOrigen(destino);
-            this.origen = CargarDestinoOrigen(origen);   
+            this.origen = CargarDestinoOrigen(origen);
 
 
         }
-      
+
         private static string CargarDestinoOrigen(int valor)
         {
 
-            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.listaDeAeropuertos)
+            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.ListaDeAeropuertos)
             {
                 if (item.Key == valor)
                 {
@@ -76,7 +82,7 @@ namespace Logica
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Codigo de Vuelo {codigoDeVuelo}");
-            
+
             return sb.ToString();
         }
 

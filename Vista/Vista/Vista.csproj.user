@@ -4,7 +4,7 @@
     <Compile Update="FrmAltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmClientes.cs">
+    <Compile Update="FrmListaDeClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmElegirVuelo.cs">
@@ -22,7 +22,7 @@
     <Compile Update="FrmMenuVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmVentaPasaje.cs">
+    <Compile Update="FrmVenderPasaje.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmLoginIngreso.cs">

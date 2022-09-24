@@ -19,7 +19,7 @@ namespace Vista
 
         private void btn_VenderPasaje_Click(object sender, EventArgs e)
         {
-            FrmVentaPasaje formVentaPasaje = new FrmVentaPasaje();
+            FrmVenderPasaje formVentaPasaje = new FrmVenderPasaje();
             formVentaPasaje.ShowDialog();   
         }
     }

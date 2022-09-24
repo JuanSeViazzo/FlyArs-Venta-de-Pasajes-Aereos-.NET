@@ -46,7 +46,7 @@ namespace Vista
 
         private void btn_MenuPasajeros_Click(object sender, EventArgs e)
         {
-            FrmClientes frmClientes = new FrmClientes();
+            FrmListaDeClientes frmClientes = new FrmListaDeClientes();
             frmClientes.ShowDialog();   
         }
 

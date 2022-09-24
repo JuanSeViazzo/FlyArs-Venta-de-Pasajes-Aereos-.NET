@@ -7,16 +7,19 @@ namespace Logica
     {
 
         private static List<Vuelo> listaDeVuelos;
-
+        private static Dictionary<int, string> listaDeAeropuertos;
         private static List<Persona> listaDePersonas;
+        private static List<Pasaje> listaDePasajes;
+
 
         public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
         public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
-        public static Dictionary<int,string> listaDeAeropuertos;
+        public static List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
+        public static Dictionary<int, string> ListaDeAeropuertos { get => listaDeAeropuertos; set => listaDeAeropuertos = value; }
 
         static GestionDeAerolinea()
         {
-     
+            listaDePasajes = new List<Pasaje>();
             listaDePersonas = new List<Persona>();
             listaDeVuelos = new List<Vuelo>();
             listaDeAeropuertos = new Dictionary<int, string>();
@@ -45,9 +48,9 @@ namespace Logica
 
             for (int i = 0; i < ListaDeVuelos.Count; i++)
             {
-                if(codigoDeVuelo == listaDeVuelos[i].CodigoDeVuelo)
+                if (codigoDeVuelo == listaDeVuelos[i].CodigoDeVuelo)
                 {
-                    vuelo = (Vuelo)ListaDeVuelos[i];
+                    vuelo = ListaDeVuelos[i];
                     break;
                 }
 
@@ -85,13 +88,14 @@ namespace Logica
                     {
                         ListaDePersonas[i] = pasajero;
                         break;
-                    }else
+                    }
+                    else
                     {
                         flag = 1;
                     }
 
                 }
-                if (flag ==1)
+                if (flag == 1)
                 {
                     throw new("Pasajero no encontrado en la lista,\n desea cargarlo con un nuevo DNI?");
                 }
@@ -112,7 +116,7 @@ namespace Logica
                     {
                         ListaDePersonas.Remove(ListaDePersonas[i]);
                         break;
-                    } 
+                    }
                 }
             }
         }
@@ -138,9 +142,9 @@ namespace Logica
 
         }
 
-        
 
-        
+
+
 
 
 
@@ -163,7 +167,20 @@ namespace Logica
 
 
 
+        internal static Pasaje obtenerPasajePorId(string id)
+        {
+            Pasaje pasaje = null;
 
+            for (int i = 0; i < ListaDePasajes.Count; i++)
+            {
+                if (id == ListaDePasajes[i].CodigoDeVuelo)
+                {
+                    pasaje = ListaDePasajes[i];
+                    break;
+                }
+            }
+            return pasaje;
+        }
 
 
 

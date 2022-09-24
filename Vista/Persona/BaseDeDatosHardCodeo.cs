@@ -143,27 +143,27 @@ namespace Logica
 
         public static void HarcodeoDeDestinos()
         {
-            GestionDeAerolinea.listaDeAeropuertos.Add(1, "Santa Rosa");
-            GestionDeAerolinea.listaDeAeropuertos.Add(2, "Bariloche");
-            GestionDeAerolinea.listaDeAeropuertos.Add(3, "Corrientes");
-            GestionDeAerolinea.listaDeAeropuertos.Add(4, "Córdoba");
-            GestionDeAerolinea.listaDeAeropuertos.Add(5, "Jujuy");
-            GestionDeAerolinea.listaDeAeropuertos.Add(6, "Mendoza");
-            GestionDeAerolinea.listaDeAeropuertos.Add(7, "Neuquén");
-            GestionDeAerolinea.listaDeAeropuertos.Add(8, "Posadas");
-            GestionDeAerolinea.listaDeAeropuertos.Add(9, "Iguazú");
-            GestionDeAerolinea.listaDeAeropuertos.Add(10, "Salta");
-            GestionDeAerolinea.listaDeAeropuertos.Add(11, "Santiago del Estero");
-            GestionDeAerolinea.listaDeAeropuertos.Add(12, "Trelew");
-            GestionDeAerolinea.listaDeAeropuertos.Add(13, "Tucumán");
-            GestionDeAerolinea.listaDeAeropuertos.Add(14, "Trelew");
-            GestionDeAerolinea.listaDeAeropuertos.Add(15, "Puerto Madryn");
-            GestionDeAerolinea.listaDeAeropuertos.Add(16, "Ushuaia");
-            GestionDeAerolinea.listaDeAeropuertos.Add(17, "Buenos Aires");
-            GestionDeAerolinea.listaDeAeropuertos.Add(1000, "Recife(Brasil)");
-            GestionDeAerolinea.listaDeAeropuertos.Add(1001, "Roma(Italia)");
-            GestionDeAerolinea.listaDeAeropuertos.Add(1002, "Acapulco(Mexico)");
-            GestionDeAerolinea.listaDeAeropuertos.Add(1003, "Miami(EEUU)");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(1, "Santa Rosa");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(2, "Bariloche");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(3, "Corrientes");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(4, "Córdoba");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(5, "Jujuy");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(6, "Mendoza");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(7, "Neuquén");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(8, "Posadas");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(9, "Iguazú");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(10, "Salta");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(11, "Santiago del Estero");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(12, "Trelew");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(13, "Tucumán");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(14, "Trelew");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(15, "Puerto Madryn");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(16, "Ushuaia");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(17, "Buenos Aires");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(1000, "Recife(Brasil)");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(1001, "Roma(Italia)");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(1002, "Acapulco(Mexico)");
+            GestionDeAerolinea.ListaDeAeropuertos.Add(1003, "Miami(EEUU)");
 
         }
 

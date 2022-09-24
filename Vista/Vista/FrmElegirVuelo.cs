@@ -9,7 +9,7 @@ namespace Vista
     {
         DataTable vuelos = new DataTable();
         string estado = "inactivo";
-
+        public Vuelo vueloElegido;
         public FrmElegirVuelo()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Vista
             vuelos.Columns.Add("Destino");
             vuelos.Columns.Add("Salida");
             vuelos.Columns.Add("Llegada");
-            vuelos.Columns.Add("Cantidad Maxima de Pasajeros");
+            vuelos.Columns.Add("Lugares disponibles");
             vuelos.Columns.Add("Limite en Bodega");
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
@@ -54,7 +54,8 @@ namespace Vista
                 vuelos.Rows.Add(GestionDeAerolinea.ListaDeVuelos[i].CodigoDeVuelo, GestionDeAerolinea.ListaDeVuelos[i].Avion.Matricula,
                     GestionDeAerolinea.ListaDeVuelos[i].Origen,
                 GestionDeAerolinea.ListaDeVuelos[i].Destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("dd/MM/yyyy hh:mm tt"),
-                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"), GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos,
+                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"),($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponibles}" +
+                $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos}"),
                 GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega,wifi,comida,GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
 
             }
@@ -110,9 +111,8 @@ namespace Vista
                     {
                         if (estado == "modificar")
                         {
-                            FrmVentaPasaje frmVentaDePasaje = new FrmVentaPasaje(codigoDeVuelo);
-                            this.Hide();
-                            frmVentaDePasaje.ShowDialog();
+                            vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
+                            this.DialogResult = DialogResult.OK;
                         }
                         //else
                         //{
@@ -124,9 +124,8 @@ namespace Vista
                         //    }
                         //    else
                         //    {
-                        //        FrmVentaPasaje frmVentaPasaje = new FrmVentaPasaje(documento);
-                        //        this.Hide();
-                        //        frmVentaPasaje.ShowDialog();
+                        //       vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
+                        //         this.DialogResult = DialogResult.OK;
                         //    }
 
                         //}
