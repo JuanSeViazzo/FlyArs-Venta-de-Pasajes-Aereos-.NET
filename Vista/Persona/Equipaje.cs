@@ -4,33 +4,22 @@
 
     public class Equipaje
     {
-        public enum TipoDeEquipaje
-        {
-            Veintiuno,
-            Veinticinco,
-            DeMano
-        }
+      
 
-        private string codigoDePasaje;
         private int numeroDeOrden;
-        private TipoDeEquipaje tipoDeEquipaje;
+        private int dniDelPasajero;
+        private int pesoDelEquipaje;
 
-        public Equipaje(string codigoDePasaje, int numeroDeOrden, TipoDeEquipaje tipoDeEquipaje)
+        public Equipaje(int numeroDeOrden , int dniDelPasajero,int pesoDelEquipaje)
         {
-            this.codigoDePasaje = codigoDePasaje;
             this.numeroDeOrden = numeroDeOrden;
-            this.tipoDeEquipaje = tipoDeEquipaje;
+            this.dniDelPasajero = dniDelPasajero;
+            this.pesoDelEquipaje = pesoDelEquipaje;
         }
 
-        public string CodigoDePasaje { get => codigoDePasaje; set => codigoDePasaje = value; }
-        public int NumeroDeOrden { get => numeroDeOrden; set => numeroDeOrden = value; }
-        public TipoDeEquipaje TipoDeEquipaje1 { get => tipoDeEquipaje; set => tipoDeEquipaje = value; }
-
-
-
-
-
-
+        public int NumeroDeOrden { get => numeroDeOrden;}
+        public int DniDelPasajero { get => dniDelPasajero;}
+        public int PesoDelEquipaje { get => pesoDelEquipaje;}
 
 
     }

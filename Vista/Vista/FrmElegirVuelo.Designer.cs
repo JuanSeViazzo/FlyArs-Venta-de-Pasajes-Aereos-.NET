@@ -35,13 +35,14 @@
             this.txtFiltroDestino = new System.Windows.Forms.TextBox();
             this.txtFiltroFecha = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 27);
+            this.label1.Location = new System.Drawing.Point(34, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 3;
@@ -50,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 112);
+            this.label2.Location = new System.Drawing.Point(164, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 4;
@@ -100,19 +101,29 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(644, 308);
+            this.btnModificar.Location = new System.Drawing.Point(714, 307);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(108, 23);
             this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "button1";
+            this.btnModificar.Text = "Seleccionar Vuelo";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(600, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Limpiar Filtro";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmElegirVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1479, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtFiltroFecha);
             this.Controls.Add(this.txtFiltroDestino);
@@ -137,5 +148,6 @@
         private System.Windows.Forms.TextBox txtFiltroDestino;
         private System.Windows.Forms.TextBox txtFiltroFecha;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button button1;
     }
 }

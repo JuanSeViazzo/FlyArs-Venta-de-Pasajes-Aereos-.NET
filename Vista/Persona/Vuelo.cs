@@ -17,7 +17,8 @@ namespace Logica
         private Avion avion;
         private bool ofreceComida;
         private bool tieneWifi;
-        private List<Pasajero> listaDePasajeros;
+        private List<Pasajero> listaDePasajerosPremium;
+        private List<Pasajero> listaDePasajerosTurista;
         private string codigoDeVuelo;
         private string destino;
         private string origen;
@@ -27,23 +28,31 @@ namespace Logica
         public Avion Avion { get => avion; set => avion = value; }
         public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
-        public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
+        public List<Pasajero> ListaDePasajeros { get => listaDePasajerosPremium; set => listaDePasajerosPremium = value; }
+        public List<Pasajero> ListaDePasajerosTurista { get => listaDePasajerosTurista; set => listaDePasajerosTurista = value; }
         public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
 
         public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
         public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
         public string Destino { get => destino; set => destino = value; }
         public string Origen { get => origen; set => origen = value; }
-        public int AsientosDisponibles
+        public int AsientosDisponiblesPremium
         {
-            get => asientosDisponibles = avion.CantidadDeAsientos - listaDePasajeros.Count;
+            get => asientosDisponibles = avion.CantidadDeAsientosPremium - listaDePasajerosPremium.Count;
+
+        }
+        public int AsientosDisponiblesTurista
+        {
+            get => asientosDisponibles = avion.CantidadDeAsientosTurista - listaDePasajerosTurista.Count;
 
         }
 
+
+
         private Vuelo()
         {
-            listaDePasajeros = new List<Pasajero>();
-
+            listaDePasajerosTurista = new List<Pasajero>();
+            listaDePasajerosPremium = new List<Pasajero>();
         }
         public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi,
             string codigoDeVuelo, int origen, int destino) : this()

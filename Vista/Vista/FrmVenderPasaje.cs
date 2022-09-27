@@ -20,7 +20,7 @@ namespace Vista
         Pasaje pasajeAux;
         Pasajero pasajeroAux;
         List<Equipaje> listaDeEquipaje;
-
+        
 
         public Vuelo VueloAux { get => vueloAux;}
 
@@ -28,6 +28,7 @@ namespace Vista
         {
             listaDeEquipaje = new List<Equipaje>();
             InitializeComponent();
+
         }
 
         public FrmVenderPasaje(int documento) : this()
@@ -52,19 +53,6 @@ namespace Vista
         }
 
 
-        private void btnTraerCliente_Click(object sender, EventArgs e)
-        {
-            FrmListaDeClientes frmClientes = new FrmListaDeClientes();
-            frmClientes.ShowDialog();
-            if(frmClientes.DialogResult == DialogResult.OK)
-            {
-                clienteAux = frmClientes.clienteElegido;
-                rtbCliente.Text = clienteAux.ToString();
-
-
-            }
-        }
-
         private void btnElegirVuelo_Click(object sender, EventArgs e)
         {
             FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo();
@@ -77,16 +65,23 @@ namespace Vista
 
         }
 
-        private void btnCrearPasajero_Click(object sender, EventArgs e)
+        private void btnCargarPasajero_Click(object sender, EventArgs e)
         {
-            string codigoDePasaje = ($"{vueloAux.CodigoDeVuelo[0]}")+($"{vueloAux.CodigoDeVuelo[1]}");
+            
+            frmCargarPasajero frmCargarPasajero = new frmCargarPasajero(vueloAux.CodigoDeVuelo);
+            frmCargarPasajero.ShowDialog();
+            if(frmCargarPasajero.DialogResult == DialogResult.OK)
+            {
+                pasajeroAux = frmCargarPasajero.pasajeroElegido;
+                rtbPasajero.Text = pasajeroAux.ToString();
+            }
 
-            pasajeroAux = new Pasajero(clienteAux.Documento,codigoDePasaje,vueloAux.CodigoDeVuelo, listaDeEquipaje, clienteAux.Nombre, clienteAux.Apellido); ;
-        rtbPasajero.Text = pasajeroAux.ToString();
-
-            listaDeEquipaje.Reverse();
 
         }
+
+        
+
+       
     }
 }
 

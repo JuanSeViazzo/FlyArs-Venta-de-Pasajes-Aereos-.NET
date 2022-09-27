@@ -16,6 +16,7 @@ namespace Logica
         private float precioDePasaje;
         private string origen;
         private string destino;
+        private string categoriaPasaje;
 
 
 
@@ -25,17 +26,8 @@ namespace Logica
         public string NombrePasajero { get => nombrePasajero;}
         public float PrecioDePasaje { get => precioDePasaje;}
         public string ApellidoDePasajero { get => apellidoDePasajero;}
-
-
-
-
-
-
-
-
-
-
-
-
+        public string Origen { get => origen; }
+        public string Destino { get => destino;}
+        public string CategoriaPasaje { get => categoriaPasaje; }
     }
 }

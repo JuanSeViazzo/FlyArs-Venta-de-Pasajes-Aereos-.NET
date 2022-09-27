@@ -2,9 +2,17 @@
 
 namespace Logica
 {
-    public class BaseDeDatosHardCodeo
+    public static class BaseDeDatosHardCodeo
     {
+        static BaseDeDatosHardCodeo()
+        {
+            BaseDeDatosHardCodeo.HarcodeoDeClientes();
+            BaseDeDatosHardCodeo.HarcodeoDeDestinos();
+            BaseDeDatosHardCodeo.HarcodeoDeVuelos();
 
+        }
+
+        public static string nombre;
 
 
 
@@ -43,13 +51,13 @@ namespace Logica
         {
             Random rand = new Random();
 
-            Avion Airbus380 = new Avion(656, "LV-380UL", 150000, 20);
-            Avion Boeing777 = new Avion(550, "LV-777UL", 13000, 18);
-            Avion Boeing767 = new Avion(304, "LV-767LA", 100000, 14);
-            Avion AirbusA350 = new Avion(412, "LV-350LA", 100000, 14);
-            Avion Boeing737 = new Avion(220, "LV-737MA", 5500, 8);
-            Avion Airbus320 = new Avion(150, "LV-320MA", 3750, 8);
-            Avion Airbus330 = new Avion(335, "LV-330MA", 7000, 10);
+            Avion Airbus380 = new Avion(130, 524, "LV-380UL", 150000, 20);
+            Avion Boeing777 = new Avion(110, 450, "LV-777UL", 13000, 18);
+            Avion Boeing767 = new Avion(60, 244, "LV-767LA", 100000, 14);
+            Avion AirbusA350 = new Avion(82, 330, "LV-350LA", 100000, 14);
+            Avion Boeing737 = new Avion(44, 176, "LV-737MA", 5500, 8);
+            Avion Airbus320 = new Avion(30, 120, "LV-320MA", 3750, 8);
+            Avion Airbus330 = new Avion(68, 268, "LV-330MA", 7000, 10);
 
 
             Vuelo Airbus380BueRom = new Vuelo(DateTime.Today.AddMinutes(10), DateTime.Today.AddHours(11).AddMinutes(25),
@@ -88,7 +96,6 @@ namespace Logica
             Vuelo AirbusA350IgrDry = new Vuelo(DateTime.Today.AddDays(1).AddMinutes(24), DateTime.Today.AddHours(3),
                 AirbusA350, true, true, "IGRLV350ALDRY", 9, 15);
 
-
             Vuelo Airbus737RsaCor = new Vuelo(DateTime.Today.AddDays(3), DateTime.Today.AddHours(2),
                 Boeing737, true, true, "RSALV737LACOR", 1, 4);
             Vuelo Airbus737CnoBrc = new Vuelo(DateTime.Today.AddDays(2), DateTime.Today.AddHours(2),
@@ -98,7 +105,14 @@ namespace Logica
             Vuelo Airbus737MdzDry = new Vuelo(DateTime.Today.AddDays(5), DateTime.Today.AddHours(3),
                 Boeing737, true, true, "MDZLV737ALDRY", 6, 15);
 
-
+            Vuelo Airbus320TucTre = new Vuelo(DateTime.Today.AddDays(3), DateTime.Today.AddHours(2),
+                Airbus320, true, true, "TUCLV737LATRE", 13, 14);
+            Vuelo Airbus320JujBrc = new Vuelo(DateTime.Today.AddDays(2), DateTime.Today.AddHours(2),
+                Airbus320, true, true, "JUJLV737LABRC", 5, 2);
+            Vuelo Airbus320JujIgr = new Vuelo(DateTime.Today.AddDays(4), DateTime.Today.AddHours(3),
+                Airbus320, true, true, "JUJLV737ALIGR", 5, 9);
+            Vuelo Airbus320MdzDry = new Vuelo(DateTime.Today.AddDays(5), DateTime.Today.AddHours(3),
+                Airbus320, true, true, "MDZLV737ALDRY", 6, 15);
 
 
 
@@ -118,11 +132,15 @@ namespace Logica
             GestionDeAerolinea.ListaDeVuelos.Add(AirbusA350IgrDry);
             GestionDeAerolinea.ListaDeVuelos.Add(AirbusA350CnoCor);
             GestionDeAerolinea.ListaDeVuelos.Add(AirbusA350JujMdz);
-            GestionDeAerolinea.ListaDeVuelos.Add(AirbusA350RsaBrc); 
+            GestionDeAerolinea.ListaDeVuelos.Add(AirbusA350RsaBrc);
             GestionDeAerolinea.ListaDeVuelos.Add(Airbus737RsaCor);
             GestionDeAerolinea.ListaDeVuelos.Add(Airbus737CnoBrc);
             GestionDeAerolinea.ListaDeVuelos.Add(Airbus737MdzDry);
             GestionDeAerolinea.ListaDeVuelos.Add(Airbus737JujIgr);
+            GestionDeAerolinea.ListaDeVuelos.Add(Airbus320MdzDry);
+            GestionDeAerolinea.ListaDeVuelos.Add(Airbus320JujIgr);
+            GestionDeAerolinea.ListaDeVuelos.Add(Airbus320TucTre);
+            GestionDeAerolinea.ListaDeVuelos.Add(Airbus320JujBrc);
 
 
 

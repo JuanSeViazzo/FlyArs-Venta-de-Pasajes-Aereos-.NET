@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Logica
 {
-    public class GestionDeAerolinea
+    public static class GestionDeAerolinea
     {
 
         private static List<Vuelo> listaDeVuelos;

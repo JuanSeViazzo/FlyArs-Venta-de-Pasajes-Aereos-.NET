@@ -17,20 +17,31 @@ namespace Vista
 
         private void FrmElegirVuelo_Load(object sender, EventArgs e)
         {
+            CargarDataGrid();
             string estado = "inactivo";
 
+        }
 
+        private void CargarDataGrid()
+        {
             vuelos.Columns.Add("Codigo De Vuelo");
             vuelos.Columns.Add("Matricula De Avion");
             vuelos.Columns.Add("Origen");
             vuelos.Columns.Add("Destino");
             vuelos.Columns.Add("Salida");
             vuelos.Columns.Add("Llegada");
-            vuelos.Columns.Add("Lugares disponibles");
+            vuelos.Columns.Add("Lugares Premium");
+            vuelos.Columns.Add("Lugares Turistas");
             vuelos.Columns.Add("Limite en Bodega");
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
             vuelos.Columns.Add("Cantidad de baños");
+            CargarItemsDataTable();
+        }
+
+        private void CargarItemsDataTable()
+        {
+
 
             for (int i = 0; i < GestionDeAerolinea.ListaDeVuelos.Count; i++)
             {
@@ -54,9 +65,10 @@ namespace Vista
                 vuelos.Rows.Add(GestionDeAerolinea.ListaDeVuelos[i].CodigoDeVuelo, GestionDeAerolinea.ListaDeVuelos[i].Avion.Matricula,
                     GestionDeAerolinea.ListaDeVuelos[i].Origen,
                 GestionDeAerolinea.ListaDeVuelos[i].Destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("dd/MM/yyyy hh:mm tt"),
-                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"),($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponibles}" +
-                $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientos}"),
-                GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega,wifi,comida,GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
+                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesPremium}" +
+                $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosPremium}"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesTurista}" +
+                $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosTurista}"),
+                GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega, wifi, comida, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
 
             }
 
@@ -66,9 +78,7 @@ namespace Vista
             {
                 return;
             }
-
         }
-
 
         private void txtFiltroOrigen_TextChanged(object sender, EventArgs e)
         {
@@ -86,6 +96,8 @@ namespace Vista
                 vuelos.DefaultView.RowFilter = $"Salida LIKE '{txtFiltroFecha.Text}%' AND Origen LIKE '{txtFiltroOrigen.Text}%' AND Destino LIKE '{txtFiltroDestino.Text}%'";
 
             }
+          
+
         }
 
         private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -160,6 +172,8 @@ namespace Vista
             estado = "modificar";
 
         }
+
+       
     }
 
 

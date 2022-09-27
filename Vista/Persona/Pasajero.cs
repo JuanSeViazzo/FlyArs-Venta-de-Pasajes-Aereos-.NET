@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 using System.Text;
 namespace Logica
 {
+    public enum ClaseDePasajero
+    {
+        Turista,
+        Premium
+    }
+
     public class Pasajero
     {
-
+     
 
 
         private int documento;
@@ -17,9 +23,10 @@ namespace Logica
         private List<Equipaje> listaDeEquipajes;
         private string nombreCliente;
         private string apellidoCliente;
+        private ClaseDePasajero claseDePasajero;
 
 
-        public Pasajero(int documento, string codigoDePasaje, string codigoDeVuelo, List<Equipaje> listaDeEquipajes, string nombreCliente, string apellidoCliente)
+        public Pasajero(int documento, string codigoDePasaje, string codigoDeVuelo, List<Equipaje> listaDeEquipajes, string nombreCliente, string apellidoCliente, ClaseDePasajero claseDePasajero)
         {
             this.documento = documento;
             this.codigoDePasaje = codigoDePasaje;
@@ -27,7 +34,7 @@ namespace Logica
             this.listaDeEquipajes = listaDeEquipajes;
             this.nombreCliente = nombreCliente;
             this.apellidoCliente = apellidoCliente;
-
+            this.claseDePasajero = claseDePasajero; 
         }
 
         public int Documento { get => documento;}
@@ -36,17 +43,14 @@ namespace Logica
         public List<Equipaje> ListaDeEquipajes { get => listaDeEquipajes;}
         public string NombreCliente { get => nombreCliente;}
         public string ApellidoCliente { get => apellidoCliente;}
-
-
-
-
+        public ClaseDePasajero ClaseDePasajero1 { get => claseDePasajero;}
 
         public override string ToString()
         {
 
 
             StringBuilder sb = new StringBuilder(); 
-            sb.AppendLine($"{codigoDePasaje} {nombreCliente} ");
+            sb.AppendLine($"{codigoDePasaje} {codigoDeVuelo} nombreCliente} {ApellidoCliente} {claseDePasajero}");
             return sb.ToString();   
 
 

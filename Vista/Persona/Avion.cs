@@ -10,20 +10,23 @@ namespace Logica
         //private Dictionary<int, string> destinosNacionales;
         //private Dictionary<int, string> destinosDesdeBuenosAires;
 
-        private int cantidadDeAsientos;
+        private int cantidadDeAsientosTurista;
+        private int cantidadDeAsientosPremium;
         private string matricula;
         private int capacidadDeBodega;
         private int cantidadDeBanios;
 
-        public Avion(int cantidadDeAsientos, string matricula, int capacidadDeBodega, int cantidadDeBanios)
+        public Avion(int cantidadDeAsientosPremium, int cantidadDeAsientosTurista, string matricula, int capacidadDeBodega, int cantidadDeBanios)
         {
-            this.CantidadDeAsientos = cantidadDeAsientos;
+            this.CantidadDeAsientosPremium = cantidadDeAsientosPremium;
+            this.CantidadDeAsientosTurista = cantidadDeAsientosTurista;
             this.Matricula = matricula;
             this.CapacidadDeBodega = capacidadDeBodega;
             this.CantidadDeBanios = cantidadDeBanios;
         }
 
-        public int CantidadDeAsientos { get => cantidadDeAsientos; set => cantidadDeAsientos = value; }
+        public int CantidadDeAsientosTurista { get => cantidadDeAsientosTurista; set => cantidadDeAsientosTurista = value; }
+        public int CantidadDeAsientosPremium { get => cantidadDeAsientosPremium; set => cantidadDeAsientosPremium = value; }
         public string Matricula { get => matricula; set => matricula = value; }
         public int CapacidadDeBodega { get => capacidadDeBodega; set => capacidadDeBodega = value; }
         public int CantidadDeBanios { get => cantidadDeBanios; set => cantidadDeBanios = value; }

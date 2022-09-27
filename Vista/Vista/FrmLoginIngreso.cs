@@ -39,9 +39,7 @@ namespace Vista
             pc_LoginNo.Visible = false;
             lbl_IngresoOkNo.Visible = false;
             ManejoDeVista.ReproducirMusica();
-            BaseDeDatosHardCodeo.HarcodeoDeClientes();
-            BaseDeDatosHardCodeo.HarcodeoDeDestinos();
-            BaseDeDatosHardCodeo.HarcodeoDeVuelos();
+            BaseDeDatosHardCodeo.nombre = "1";
 
         }
 
