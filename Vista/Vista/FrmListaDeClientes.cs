@@ -16,7 +16,13 @@ namespace Vista
         }
         private void FrmClientes_Load(object sender, EventArgs e)
         {
+            IniciarDataGrid();
+            CargarDataGrid();
+        }
 
+        private void IniciarDataGrid()
+        {
+           
             clientes.Columns.Add("Nombre");
             clientes.Columns.Add("Apellido");
             clientes.Columns.Add("Tipo de Documento");
@@ -25,7 +31,10 @@ namespace Vista
             clientes.Columns.Add("Nacionalidad");
             clientes.Columns.Add("Fecha de nacimiento");
             clientes.Columns.Add("Sexo");
+        }
 
+        private void CargarDataGrid()
+        {
             for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
             {
 
@@ -42,9 +51,6 @@ namespace Vista
                 return;
             }
         }
-
-
-
 
         private void txt_filtroNombre_TextChanged(object sender, EventArgs e)
         {
@@ -95,7 +101,7 @@ namespace Vista
                                 frmEliminarCliente.ShowDialog();
                             }else
                             {
-                                clienteElegido = GestionDeAerolinea.obtenerPasajeroPorDni(documento);
+                                clienteElegido = GestionDeAerolinea.obtenerClientePorDni(documento);
                                 this.DialogResult = DialogResult.OK;
                             }
 
@@ -133,7 +139,22 @@ namespace Vista
         {
             FrmAltaCliente frmAltaCliente = new FrmAltaCliente();
             frmAltaCliente.ShowDialog();
+
+            if (frmAltaCliente.DialogResult == DialogResult.OK)
+            {
+
+                clienteElegido = (Cliente)frmAltaCliente.cliente;
+
+
+
+                clientes.Rows.Add(clienteElegido.Nombre, clienteElegido.Apellido,clienteElegido.TipoDocumento1,clienteElegido.Documento,clienteElegido.Edad,
+                    clienteElegido.Nacionalidad,clienteElegido.FechaDeNacimiento,clienteElegido.TipoDeSexo1);
+            }
+
+
         }
+
+       
     }
 
 

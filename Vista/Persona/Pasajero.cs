@@ -48,10 +48,21 @@ namespace Logica
         public override string ToString()
         {
 
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Codigo de Pasaje: {codigoDePasaje}");
+            sb.AppendLine($"Codigo de Vuelo: {codigoDeVuelo} ");
+            sb.AppendLine($"Nombre: {nombreCliente}");
+            sb.AppendLine($"Apellido: {apellidoCliente}"); 
+            sb.AppendLine($"Clase de Pasajero: {claseDePasajero}\n");
 
-            StringBuilder sb = new StringBuilder(); 
-            sb.AppendLine($"{codigoDePasaje} {codigoDeVuelo} nombreCliente} {ApellidoCliente} {claseDePasajero}");
+            foreach (Equipaje item in listaDeEquipajes)
+            {
+                sb.AppendLine($"{item}");
+            }
+            
+            
             return sb.ToString();   
+
 
 
 

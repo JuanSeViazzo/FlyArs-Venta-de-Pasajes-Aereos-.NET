@@ -33,6 +33,8 @@ namespace Logica
         public string CodigoDeVuelo { get => codigoDeVuelo; set => codigoDeVuelo = value; }
 
         public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
+
+
         public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
         public string Destino { get => destino; set => destino = value; }
         public string Origen { get => origen; set => origen = value; }
@@ -46,8 +48,7 @@ namespace Logica
             get => asientosDisponibles = avion.CantidadDeAsientosTurista - listaDePasajerosTurista.Count;
 
         }
-
-
+        public double DuracionDeVuelo { get => (horaDeLlegada-horaDePartida).TotalHours;}
 
         private Vuelo()
         {
@@ -75,7 +76,7 @@ namespace Logica
         private static string CargarDestinoOrigen(int valor)
         {
 
-            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.ListaDeAeropuertos)
+            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.DiccionarioDeAeropuertos)
             {
                 if (item.Key == valor)
                 {

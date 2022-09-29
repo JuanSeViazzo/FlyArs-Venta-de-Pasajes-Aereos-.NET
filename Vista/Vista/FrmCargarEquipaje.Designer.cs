@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargarEquipaje));
             this.nmrSegundoEquipaje = new System.Windows.Forms.NumericUpDown();
             this.nmrPrimerEquipaje = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,6 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nmrDeMano = new System.Windows.Forms.NumericUpDown();
             this.rtbCliente = new System.Windows.Forms.RichTextBox();
+            this.btnCancelarModificacion = new System.Windows.Forms.Button();
+            this.btnAceptarModificacion = new System.Windows.Forms.Button();
+            this.btnConfirmarCarga = new System.Windows.Forms.Button();
+            this.lstEquipaje = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmrSegundoEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrPrimerEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDeMano)).BeginInit();
@@ -43,9 +48,9 @@
             // nmrSegundoEquipaje
             // 
             this.nmrSegundoEquipaje.BackColor = System.Drawing.Color.White;
-            this.nmrSegundoEquipaje.Location = new System.Drawing.Point(392, 228);
+            this.nmrSegundoEquipaje.Location = new System.Drawing.Point(345, 228);
             this.nmrSegundoEquipaje.Maximum = new decimal(new int[] {
-            25,
+            21,
             0,
             0,
             0});
@@ -56,7 +61,7 @@
             // nmrPrimerEquipaje
             // 
             this.nmrPrimerEquipaje.BackColor = System.Drawing.Color.White;
-            this.nmrPrimerEquipaje.Location = new System.Drawing.Point(392, 175);
+            this.nmrPrimerEquipaje.Location = new System.Drawing.Point(345, 175);
             this.nmrPrimerEquipaje.Maximum = new decimal(new int[] {
             25,
             0,
@@ -69,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(356, 210);
+            this.label3.Location = new System.Drawing.Point(324, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 45;
@@ -78,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 157);
+            this.label2.Location = new System.Drawing.Point(324, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 44;
@@ -87,7 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 101);
+            this.label1.Location = new System.Drawing.Point(314, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 43;
@@ -96,7 +101,7 @@
             // nmrDeMano
             // 
             this.nmrDeMano.BackColor = System.Drawing.Color.White;
-            this.nmrDeMano.Location = new System.Drawing.Point(392, 119);
+            this.nmrDeMano.Location = new System.Drawing.Point(345, 119);
             this.nmrDeMano.Maximum = new decimal(new int[] {
             1,
             0,
@@ -108,17 +113,71 @@
             // 
             // rtbCliente
             // 
-            this.rtbCliente.Location = new System.Drawing.Point(12, 98);
+            this.rtbCliente.Location = new System.Drawing.Point(31, 98);
             this.rtbCliente.Name = "rtbCliente";
             this.rtbCliente.Size = new System.Drawing.Size(277, 246);
             this.rtbCliente.TabIndex = 48;
             this.rtbCliente.Text = "";
             // 
+            // btnCancelarModificacion
+            // 
+            this.btnCancelarModificacion.BackColor = System.Drawing.Color.White;
+            this.btnCancelarModificacion.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelarModificacion.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarModificacion.Image")));
+            this.btnCancelarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarModificacion.Location = new System.Drawing.Point(422, 457);
+            this.btnCancelarModificacion.Name = "btnCancelarModificacion";
+            this.btnCancelarModificacion.Size = new System.Drawing.Size(113, 38);
+            this.btnCancelarModificacion.TabIndex = 51;
+            this.btnCancelarModificacion.Text = "Cancelar";
+            this.btnCancelarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarModificacion.UseVisualStyleBackColor = false;
+            // 
+            // btnAceptarModificacion
+            // 
+            this.btnAceptarModificacion.BackColor = System.Drawing.Color.White;
+            this.btnAceptarModificacion.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAceptarModificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAceptarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarModificacion.Image")));
+            this.btnAceptarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarModificacion.Location = new System.Drawing.Point(586, 457);
+            this.btnAceptarModificacion.Name = "btnAceptarModificacion";
+            this.btnAceptarModificacion.Size = new System.Drawing.Size(113, 38);
+            this.btnAceptarModificacion.TabIndex = 50;
+            this.btnAceptarModificacion.Text = "Cargar";
+            this.btnAceptarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptarModificacion.UseVisualStyleBackColor = false;
+            this.btnAceptarModificacion.Click += new System.EventHandler(this.btnAceptarModificacion_Click);
+            // 
+            // btnConfirmarCarga
+            // 
+            this.btnConfirmarCarga.Location = new System.Drawing.Point(422, 350);
+            this.btnConfirmarCarga.Name = "btnConfirmarCarga";
+            this.btnConfirmarCarga.Size = new System.Drawing.Size(277, 23);
+            this.btnConfirmarCarga.TabIndex = 52;
+            this.btnConfirmarCarga.Text = "button1";
+            this.btnConfirmarCarga.UseVisualStyleBackColor = true;
+            this.btnConfirmarCarga.Click += new System.EventHandler(this.btnConfirmarCarga_Click);
+            // 
+            // lstEquipaje
+            // 
+            this.lstEquipaje.FormattingEnabled = true;
+            this.lstEquipaje.ItemHeight = 15;
+            this.lstEquipaje.Location = new System.Drawing.Point(422, 98);
+            this.lstEquipaje.Name = "lstEquipaje";
+            this.lstEquipaje.Size = new System.Drawing.Size(277, 244);
+            this.lstEquipaje.TabIndex = 53;
+            // 
             // FrmCargarEquipaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 507);
+            this.Controls.Add(this.lstEquipaje);
+            this.Controls.Add(this.btnConfirmarCarga);
+            this.Controls.Add(this.btnCancelarModificacion);
+            this.Controls.Add(this.btnAceptarModificacion);
             this.Controls.Add(this.rtbCliente);
             this.Controls.Add(this.nmrSegundoEquipaje);
             this.Controls.Add(this.nmrPrimerEquipaje);
@@ -126,8 +185,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nmrDeMano);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCargarEquipaje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCargarEquipaje";
+            this.Load += new System.EventHandler(this.FrmCargarEquipaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrSegundoEquipaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrPrimerEquipaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDeMano)).EndInit();
@@ -145,5 +208,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nmrDeMano;
         private System.Windows.Forms.RichTextBox rtbCliente;
+        private System.Windows.Forms.Button btnCancelarModificacion;
+        private System.Windows.Forms.Button btnAceptarModificacion;
+        private System.Windows.Forms.Button btnConfirmarCarga;
+        private System.Windows.Forms.ListBox lstEquipaje;
     }
 }

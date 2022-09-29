@@ -15,7 +15,7 @@ namespace Logica
         public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
         public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
         public static List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
-        public static Dictionary<int, string> ListaDeAeropuertos { get => listaDeAeropuertos; set => listaDeAeropuertos = value; }
+        public static Dictionary<int, string> DiccionarioDeAeropuertos { get => listaDeAeropuertos; set => listaDeAeropuertos = value; }
 
         static GestionDeAerolinea()
         {
@@ -28,7 +28,7 @@ namespace Logica
 
 
 
-        public static Cliente obtenerPasajeroPorDni(int dni)
+        public static Cliente obtenerClientePorDni(int dni)
         {
             Cliente pasajero = null;
             for (int i = 0; i < ListaDePersonas.Count; i++)
@@ -62,12 +62,12 @@ namespace Logica
 
 
 
-        public static bool CargarPasajeroEnLineaAerea(Cliente pasajero)
+        public static bool CargarClienteEnLineaAerea(Cliente cliente)
         {
 
-            if (!GestionDeAerolinea.ValidarPasajeroEnLineaAerea(pasajero.Documento))
+            if (!GestionDeAerolinea.ValidarPasajeroEnLineaAerea(cliente.Documento))
             {
-                GestionDeAerolinea.ListaDePersonas.Add(pasajero);
+                GestionDeAerolinea.ListaDePersonas.Add(cliente);
                 return true;
             }
             else
@@ -167,13 +167,13 @@ namespace Logica
 
 
 
-        internal static Pasaje obtenerPasajePorId(string id)
+        internal static Pasaje obtenerPasajePorId(string codigoVuelo)
         {
             Pasaje pasaje = null;
 
             for (int i = 0; i < ListaDePasajes.Count; i++)
             {
-                if (id == ListaDePasajes[i].CodigoDeVuelo)
+                if (codigoVuelo == ListaDePasajes[i].CodigoDeVuelo)
                 {
                     pasaje = ListaDePasajes[i];
                     break;

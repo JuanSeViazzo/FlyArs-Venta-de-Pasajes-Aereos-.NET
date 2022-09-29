@@ -23,7 +23,7 @@ namespace Vista
         public FrmEliminarCliente(int documento) :this()
         {
             documentoAux = documento;
-            clienteAux = GestionDeAerolinea.obtenerPasajeroPorDni(documento);
+            clienteAux = GestionDeAerolinea.obtenerClientePorDni(documento);
         }
 
         private void FrmEliminarCliente_Load(object sender, EventArgs e)

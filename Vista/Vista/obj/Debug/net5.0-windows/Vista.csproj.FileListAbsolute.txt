@@ -58,3 +58,4 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmVenderPasaje.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.frmCargarPasajero.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmCargarEquipaje.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmFacturar.resources

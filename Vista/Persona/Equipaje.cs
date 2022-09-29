@@ -1,4 +1,7 @@
-﻿namespace Logica
+﻿
+using System.Text;
+
+namespace Logica 
 {
 
 
@@ -20,6 +23,18 @@
         public int NumeroDeOrden { get => numeroDeOrden;}
         public int DniDelPasajero { get => dniDelPasajero;}
         public int PesoDelEquipaje { get => pesoDelEquipaje;}
+
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Numero de orden: {numeroDeOrden}");
+            sb.AppendLine($"Peso del equipaje {pesoDelEquipaje}");
+
+            return sb.ToString();   
+
+
+        }
 
 
     }

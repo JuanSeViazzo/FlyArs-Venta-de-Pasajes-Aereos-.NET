@@ -36,6 +36,9 @@ namespace Vista
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
             vuelos.Columns.Add("Cantidad de baños");
+            dgv_clientes.DataSource = vuelos;
+
+
             CargarItemsDataTable();
         }
 

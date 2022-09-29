@@ -25,7 +25,7 @@ namespace Vista
         private void ModificarPasajero_Load(object sender, EventArgs e)
         {
             
-            pasajeroAux = GestionDeAerolinea.obtenerPasajeroPorDni(documentoPasajero);
+            pasajeroAux = GestionDeAerolinea.obtenerClientePorDni(documentoPasajero);
             rtb_PasajeroAModificar.Text = pasajeroAux.ToString();
             cmbTipoDeDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
             MostrarPasajero();

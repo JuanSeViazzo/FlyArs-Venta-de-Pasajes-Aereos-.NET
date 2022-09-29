@@ -6,7 +6,7 @@ namespace Vista
 {
     public partial class FrmAltaCliente : Form
     {
-        Persona cliente;
+        public Persona cliente;
         public FrmAltaCliente()
         {
             InitializeComponent();
@@ -14,7 +14,6 @@ namespace Vista
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             cmb_tipoDeDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
-            // cmb_TipoDeEquipaje.DataSource = Enum.GetValues(typeof(Equipaje.TipoDeEquipaje));
 
         }
 
@@ -38,7 +37,9 @@ namespace Vista
 
                 rtbPasajero.Text = cliente.ToString();
 
-                GestionDeAerolinea.CargarPasajeroEnLineaAerea((Cliente)cliente);
+                GestionDeAerolinea.CargarClienteEnLineaAerea((Cliente)cliente);
+
+                this.DialogResult = DialogResult.OK;
 
             }
             catch (Exception ex)

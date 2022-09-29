@@ -89,6 +89,7 @@
             this.btnAceptarModificacion.Text = "Cargar";
             this.btnAceptarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarModificacion.UseVisualStyleBackColor = false;
+            this.btnAceptarModificacion.Click += new System.EventHandler(this.btnAceptarModificacion_Click);
             // 
             // btnCargarPasajero
             // 
