@@ -32,7 +32,7 @@
             this.rtbCliente = new System.Windows.Forms.RichTextBox();
             this.btnTraerCliente = new System.Windows.Forms.Button();
             this.btnCancelarModificacion = new System.Windows.Forms.Button();
-            this.btnAceptarModificacion = new System.Windows.Forms.Button();
+            this.btnAceptarCargaDePasajero = new System.Windows.Forms.Button();
             this.btnCargarPasajero = new System.Windows.Forms.Button();
             this.rdbPremium = new System.Windows.Forms.RadioButton();
             this.rdbTurista = new System.Windows.Forms.RadioButton();
@@ -75,21 +75,21 @@
             this.btnCancelarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarModificacion.UseVisualStyleBackColor = false;
             // 
-            // btnAceptarModificacion
+            // btnAceptarCargaDePasajero
             // 
-            this.btnAceptarModificacion.BackColor = System.Drawing.Color.White;
-            this.btnAceptarModificacion.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAceptarModificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAceptarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarModificacion.Image")));
-            this.btnAceptarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarModificacion.Location = new System.Drawing.Point(459, 459);
-            this.btnAceptarModificacion.Name = "btnAceptarModificacion";
-            this.btnAceptarModificacion.Size = new System.Drawing.Size(113, 38);
-            this.btnAceptarModificacion.TabIndex = 27;
-            this.btnAceptarModificacion.Text = "Cargar";
-            this.btnAceptarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptarModificacion.UseVisualStyleBackColor = false;
-            this.btnAceptarModificacion.Click += new System.EventHandler(this.btnAceptarModificacion_Click);
+            this.btnAceptarCargaDePasajero.BackColor = System.Drawing.Color.White;
+            this.btnAceptarCargaDePasajero.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAceptarCargaDePasajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAceptarCargaDePasajero.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarCargaDePasajero.Image")));
+            this.btnAceptarCargaDePasajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptarCargaDePasajero.Location = new System.Drawing.Point(459, 459);
+            this.btnAceptarCargaDePasajero.Name = "btnAceptarCargaDePasajero";
+            this.btnAceptarCargaDePasajero.Size = new System.Drawing.Size(113, 38);
+            this.btnAceptarCargaDePasajero.TabIndex = 27;
+            this.btnAceptarCargaDePasajero.Text = "Cargar";
+            this.btnAceptarCargaDePasajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptarCargaDePasajero.UseVisualStyleBackColor = false;
+            this.btnAceptarCargaDePasajero.Click += new System.EventHandler(this.btnAceptarCargaDePasajero_Click);
             // 
             // btnCargarPasajero
             // 
@@ -144,7 +144,7 @@
             this.Controls.Add(this.rdbTurista);
             this.Controls.Add(this.btnCargarPasajero);
             this.Controls.Add(this.btnCancelarModificacion);
-            this.Controls.Add(this.btnAceptarModificacion);
+            this.Controls.Add(this.btnAceptarCargaDePasajero);
             this.Controls.Add(this.rtbCliente);
             this.Controls.Add(this.btnTraerCliente);
             this.Name = "frmCargarPasajero";
@@ -161,7 +161,7 @@
         private System.Windows.Forms.RichTextBox rtbCliente;
         private System.Windows.Forms.Button btnTraerCliente;
         private System.Windows.Forms.Button btnCancelarModificacion;
-        private System.Windows.Forms.Button btnAceptarModificacion;
+        private System.Windows.Forms.Button btnAceptarCargaDePasajero;
         private System.Windows.Forms.Button btnCargarPasajero;
         private System.Windows.Forms.RadioButton rdbPremium;
         private System.Windows.Forms.RadioButton rdbTurista;

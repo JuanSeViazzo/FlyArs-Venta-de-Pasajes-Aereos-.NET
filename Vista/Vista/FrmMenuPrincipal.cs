@@ -15,7 +15,6 @@ namespace Vista
         private FrmMenuPrincipal()
         {
             InitializeComponent();
-            
         }
 
         public FrmMenuPrincipal(string dato) :this()
@@ -26,34 +25,33 @@ namespace Vista
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             ManejoDeVista.PausarMusica();
-
         }
 
         private void btn_MenuPasajes_Click(object sender, EventArgs e)
         {
             FrmMenuPasajes frmMenuPasajes = new FrmMenuPasajes();
             frmMenuPasajes.ShowDialog();    
-
-
         }
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-
         private void btn_MenuPasajeros_Click(object sender, EventArgs e)
         {
-            FrmListaDeClientes frmClientes = new FrmListaDeClientes();
+            FrmListaDeClientes frmClientes = new FrmListaDeClientes(0);
             frmClientes.ShowDialog();   
         }
 
         private void btn_MenuVuelos_Click(object sender, EventArgs e)
         {
-            FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo();
+            FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo(1);
             frmElegirVuelo.ShowDialog();
+        }
+
+        private void btn_Estadisticas_Click(object sender, EventArgs e)
+        {
+            FrmEstadisticas frmEstadisticas = new FrmEstadisticas();
+            frmEstadisticas.ShowDialog(); 
         }
     }
 }

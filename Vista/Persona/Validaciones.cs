@@ -49,7 +49,7 @@ namespace Logica
             Match matchMayusculas = Regex.Match(dato, @"[A-Z]");
             Match matchEspeciales = Regex.Match(dato, @"[ñÑ\-_¿.#¡*@!=]");
 
-            if (dato.Length == 8 && matchEspeciales.Success && matchEspeciales.Success)
+            if (dato.Length > 8 && matchEspeciales.Success && matchEspeciales.Success)
             {
                 return dato;
             }else

@@ -34,8 +34,6 @@
             this.btn_MenuPasajes = new System.Windows.Forms.Button();
             this.btn_MenuVuelos = new System.Windows.Forms.Button();
             this.btn_Estadisticas = new System.Windows.Forms.Button();
-            this.btn_Destinos = new System.Windows.Forms.Button();
-            this.btn_Aeronaves = new System.Windows.Forms.Button();
             this.btn_MenuPasajeros = new System.Windows.Forms.Button();
             this.btn_Soporte = new System.Windows.Forms.Button();
             this.lbl_Usuario = new System.Windows.Forms.Label();
@@ -97,36 +95,13 @@
             this.btn_Estadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Estadisticas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Estadisticas.Location = new System.Drawing.Point(12, 119);
+            this.btn_Estadisticas.Location = new System.Drawing.Point(683, 215);
             this.btn_Estadisticas.Name = "btn_Estadisticas";
             this.btn_Estadisticas.Size = new System.Drawing.Size(132, 61);
             this.btn_Estadisticas.TabIndex = 10;
             this.btn_Estadisticas.Text = "Estadisticas";
             this.btn_Estadisticas.UseVisualStyleBackColor = true;
-            // 
-            // btn_Destinos
-            // 
-            this.btn_Destinos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Destinos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Destinos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Destinos.Location = new System.Drawing.Point(683, 119);
-            this.btn_Destinos.Name = "btn_Destinos";
-            this.btn_Destinos.Size = new System.Drawing.Size(132, 61);
-            this.btn_Destinos.TabIndex = 11;
-            this.btn_Destinos.Text = "Destinos";
-            this.btn_Destinos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Aeronaves
-            // 
-            this.btn_Aeronaves.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Aeronaves.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Aeronaves.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Aeronaves.Location = new System.Drawing.Point(683, 215);
-            this.btn_Aeronaves.Name = "btn_Aeronaves";
-            this.btn_Aeronaves.Size = new System.Drawing.Size(132, 61);
-            this.btn_Aeronaves.TabIndex = 12;
-            this.btn_Aeronaves.Text = "Flota";
-            this.btn_Aeronaves.UseVisualStyleBackColor = true;
+            this.btn_Estadisticas.Click += new System.EventHandler(this.btn_Estadisticas_Click);
             // 
             // btn_MenuPasajeros
             // 
@@ -189,8 +164,6 @@
             this.Controls.Add(this.lbl_Usuario);
             this.Controls.Add(this.btn_Soporte);
             this.Controls.Add(this.btn_MenuPasajeros);
-            this.Controls.Add(this.btn_Aeronaves);
-            this.Controls.Add(this.btn_Destinos);
             this.Controls.Add(this.btn_Estadisticas);
             this.Controls.Add(this.btn_MenuVuelos);
             this.Controls.Add(this.btn_MenuPasajes);
@@ -215,8 +188,6 @@
         private System.Windows.Forms.Button btn_MenuPasajes;
         private System.Windows.Forms.Button btn_MenuVuelos;
         private System.Windows.Forms.Button btn_Estadisticas;
-        private System.Windows.Forms.Button btn_Destinos;
-        private System.Windows.Forms.Button btn_Aeronaves;
         private System.Windows.Forms.Button btn_MenuPasajeros;
         private System.Windows.Forms.Button btn_Soporte;
         private System.Windows.Forms.Label lbl_Usuario;

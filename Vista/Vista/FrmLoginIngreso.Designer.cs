@@ -38,6 +38,7 @@
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_usuario = new System.Windows.Forms.TextBox();
             this.lbl_IngresoOkNo = new System.Windows.Forms.Label();
+            this.btnAutoLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pc_LoginOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_LoginNo)).BeginInit();
@@ -57,7 +58,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.FLYARG;
-            this.pictureBox2.Location = new System.Drawing.Point(-48, -136);
+            this.pictureBox2.Location = new System.Drawing.Point(-28, -142);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(600, 600);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -77,7 +78,7 @@
             // pb_avionFrontal
             // 
             this.pb_avionFrontal.Image = global::Vista.Properties.Resources.avion2;
-            this.pb_avionFrontal.Location = new System.Drawing.Point(-7, -10);
+            this.pb_avionFrontal.Location = new System.Drawing.Point(-28, -16);
             this.pb_avionFrontal.Name = "pb_avionFrontal";
             this.pb_avionFrontal.Size = new System.Drawing.Size(715, 474);
             this.pb_avionFrontal.TabIndex = 3;
@@ -125,6 +126,7 @@
             // 
             this.tb_password.Location = new System.Drawing.Point(223, 224);
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "Ingrese contraseña";
             this.tb_password.Size = new System.Drawing.Size(132, 23);
             this.tb_password.TabIndex = 7;
@@ -148,6 +150,22 @@
             this.lbl_IngresoOkNo.TabIndex = 9;
             this.lbl_IngresoOkNo.Text = "label1";
             // 
+            // btnAutoLogin
+            // 
+            this.btnAutoLogin.BackColor = System.Drawing.Color.White;
+            this.btnAutoLogin.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAutoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAutoLogin.Image = global::Vista.Properties.Resources.check_ok1;
+            this.btnAutoLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAutoLogin.Location = new System.Drawing.Point(223, 302);
+            this.btnAutoLogin.Name = "btnAutoLogin";
+            this.btnAutoLogin.Size = new System.Drawing.Size(132, 43);
+            this.btnAutoLogin.TabIndex = 10;
+            this.btnAutoLogin.Text = "Auto Login";
+            this.btnAutoLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAutoLogin.UseVisualStyleBackColor = false;
+            this.btnAutoLogin.Click += new System.EventHandler(this.btnAutoLogin_Click);
+            // 
             // FrmLoginIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -155,6 +173,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(543, 457);
             this.Controls.Add(this.pb_avionFrontal);
+            this.Controls.Add(this.btnAutoLogin);
             this.Controls.Add(this.lbl_IngresoOkNo);
             this.Controls.Add(this.pc_LoginNo);
             this.Controls.Add(this.pc_LoginOk);
@@ -194,5 +213,7 @@
         private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.TextBox tb_usuario;
         private System.Windows.Forms.Label lbl_IngresoOkNo;
+        private System.Windows.Forms.Button btnLoginAutomatico;
+        private System.Windows.Forms.Button btnAutoLogin;
     }
 }

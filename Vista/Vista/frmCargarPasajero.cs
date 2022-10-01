@@ -23,12 +23,13 @@ namespace Vista
         {
             vueloAux = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
             btnCargarPasajero.Enabled = false;
+            btnAceptarCargaDePasajero.Enabled = false;
         }
 
 
         private void btnTraerCliente_Click(object sender, EventArgs e)
         {
-            FrmListaDeClientes frmClientes = new FrmListaDeClientes();
+            FrmListaDeClientes frmClientes = new FrmListaDeClientes(1);
             frmClientes.ShowDialog();
             if (frmClientes.DialogResult == DialogResult.OK)
             {
@@ -69,11 +70,11 @@ namespace Vista
 
             rtbPasajero.Text = pasajero.ToString();
 
-
+            btnAceptarCargaDePasajero.Enabled = true;
 
         }
 
-        private void btnAceptarModificacion_Click(object sender, EventArgs e)
+        private void btnAceptarCargaDePasajero_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }

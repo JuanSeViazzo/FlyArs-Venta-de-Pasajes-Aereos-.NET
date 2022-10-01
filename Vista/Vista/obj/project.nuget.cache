@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9u9OKdXWlIEKHuiXyXNlxRNQl5oZTNyGf3Y7hCXjol4fvW/eRA1MMBEYQsaker0RR/lPJTd6TKxwlnv8u92I3w==",
+  "dgSpecHash": "Vvhh5aKp56bNX8z5NmwLIfPeLKvEin6BFl9DkOWA1iLaQZNMEcRJOPITkSVRWU6sgb/JTE7Lk3fCLWVDjHBchQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\juans\\source\\JuanSViazzo2DLabo2-1erParcial\\Vista\\Vista\\Vista.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\juans\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
+    "C:\\Users\\juans\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

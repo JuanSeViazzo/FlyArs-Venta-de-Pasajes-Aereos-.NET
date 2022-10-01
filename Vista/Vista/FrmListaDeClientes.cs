@@ -10,10 +10,18 @@ namespace Vista
         DataTable clientes = new DataTable();
         string estado = "inactivo";
         public Cliente clienteElegido;
-        public FrmListaDeClientes()
+        private FrmListaDeClientes()
         {
             InitializeComponent();
         }
+
+        public FrmListaDeClientes(int dato) : this()
+        {
+            if (dato == 0)
+                btnVenderPasaje.Visible = false;
+        }
+
+
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             IniciarDataGrid();
@@ -22,7 +30,7 @@ namespace Vista
 
         private void IniciarDataGrid()
         {
-           
+
             clientes.Columns.Add("Nombre");
             clientes.Columns.Add("Apellido");
             clientes.Columns.Add("Tipo de Documento");
@@ -37,10 +45,14 @@ namespace Vista
         {
             for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
             {
+                if (GestionDeAerolinea.ListaDePersonas[i] is Cliente clienteAux)
+                {
+                    clientes.Rows.Add(clienteAux.Nombre, clienteAux.Apellido, clienteAux.TipoDocumento1,
+                    clienteAux.Documento, clienteAux.Edad, clienteAux.Nacionalidad,
+                    clienteAux.FechaDeNacimiento, clienteAux.TipoDeSexo1);
+                }
 
-                clientes.Rows.Add(GestionDeAerolinea.ListaDePersonas[i].Nombre, GestionDeAerolinea.ListaDePersonas[i].Apellido, GestionDeAerolinea.ListaDePersonas[i].TipoDocumento1,
-                GestionDeAerolinea.ListaDePersonas[i].Documento, GestionDeAerolinea.ListaDePersonas[i].Edad, GestionDeAerolinea.ListaDePersonas[i].Nacionalidad,
-                GestionDeAerolinea.ListaDePersonas[i].FechaDeNacimiento, GestionDeAerolinea.ListaDePersonas[i].TipoDeSexo1);
+
 
             }
 
@@ -82,7 +94,7 @@ namespace Vista
                     documento = int.Parse(dgv_clientes.Rows[row].Cells[3].Value.ToString());
 
                     ;
-                    DialogResult resultado = MessageBox.Show($"{documento}", "DNI N°: ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    DialogResult resultado = MessageBox.Show($"DNI N°{documento} desea avanzar?", "Cliente Seleccionado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (DialogResult.Yes == resultado && documento > 10000000)
                     {
@@ -99,7 +111,8 @@ namespace Vista
                                 FrmEliminarCliente frmEliminarCliente = new FrmEliminarCliente(documento);
                                 this.Hide();
                                 frmEliminarCliente.ShowDialog();
-                            }else
+                            }
+                            else
                             {
                                 clienteElegido = GestionDeAerolinea.obtenerClientePorDni(documento);
                                 this.DialogResult = DialogResult.OK;
@@ -115,7 +128,7 @@ namespace Vista
                     return;
                 }
             }
-            
+
 
         }
 
@@ -147,14 +160,14 @@ namespace Vista
 
 
 
-                clientes.Rows.Add(clienteElegido.Nombre, clienteElegido.Apellido,clienteElegido.TipoDocumento1,clienteElegido.Documento,clienteElegido.Edad,
-                    clienteElegido.Nacionalidad,clienteElegido.FechaDeNacimiento,clienteElegido.TipoDeSexo1);
+                clientes.Rows.Add(clienteElegido.Nombre, clienteElegido.Apellido, clienteElegido.TipoDocumento1, clienteElegido.Documento, clienteElegido.Edad,
+                    clienteElegido.Nacionalidad, clienteElegido.FechaDeNacimiento, clienteElegido.TipoDeSexo1);
             }
 
 
         }
 
-       
+
     }
 
 

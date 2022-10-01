@@ -10,18 +10,21 @@ namespace Logica
         private static Dictionary<int, string> listaDeAeropuertos;
         private static List<Persona> listaDePersonas;
         private static List<Pasaje> listaDePasajes;
+        private static List<Avion> listaDeAviones;  
 
 
         public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
         public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
         public static List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
         public static Dictionary<int, string> DiccionarioDeAeropuertos { get => listaDeAeropuertos; set => listaDeAeropuertos = value; }
+        public static List<Avion> ListaDeAviones { get => listaDeAviones; set => listaDeAviones = value; }
 
         static GestionDeAerolinea()
         {
             listaDePasajes = new List<Pasaje>();
             listaDePersonas = new List<Persona>();
             listaDeVuelos = new List<Vuelo>();
+            listaDeAviones = new List<Avion>();
             listaDeAeropuertos = new Dictionary<int, string>();
 
         }
@@ -41,6 +44,53 @@ namespace Logica
             }
             return pasajero;
         }
+
+        public static Avion ObtenerAvionPorMatricula(string matricula)
+        {
+            Avion avion = null;
+
+            foreach (Avion item in listaDeAviones)
+            {
+                if (matricula == item.Matricula)
+                {
+                    avion = item;
+                    break;
+                }
+            }
+
+            return avion;
+
+
+        }
+
+        public static void SubirPasajeroAlAvion(List<Pasaje> listaDePasajes, List<Pasajero> listaDePasajeros)
+        {
+            Vuelo vueloAux;
+            Pasajero pasajeroAux;
+
+            foreach (Pasaje itemPasaje in listaDePasajes)
+            {
+                vueloAux = GestionDeAerolinea.obtenerVueloPorCodigo(itemPasaje.CodigoDeVuelo);
+
+                foreach (Pasajero itemPasajeros in listaDePasajeros)
+                {
+                    if (itemPasaje.DniDePasajero == itemPasajeros.Documento)
+                    {
+                        if (itemPasaje is PasajePremium)
+                            vueloAux.ListaDePasajerosPremium.Add(itemPasajeros);
+                        else
+                            vueloAux.ListaDePasajerosTurista.Add(itemPasajeros);
+
+                    }
+
+                }
+
+            }
+        }
+
+
+
+
 
         public static Vuelo obtenerVueloPorCodigo(string codigoDeVuelo)
         {

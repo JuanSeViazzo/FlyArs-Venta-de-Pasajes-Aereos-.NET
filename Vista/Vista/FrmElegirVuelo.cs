@@ -8,17 +8,29 @@ namespace Vista
     public partial class FrmElegirVuelo : Form
     {
         DataTable vuelos = new DataTable();
+        DataTable vuelosAux = new DataTable();
         string estado = "inactivo";
         public Vuelo vueloElegido;
-        public FrmElegirVuelo()
+        private FrmElegirVuelo()
         {
             InitializeComponent();
         }
+        public FrmElegirVuelo(int numero) : this()
+        {
+            if (numero == 1)
+            {
+                btnSeleccionarVuelo.Visible = false;
+            }
+        }
+
 
         private void FrmElegirVuelo_Load(object sender, EventArgs e)
         {
             CargarDataGrid();
             string estado = "inactivo";
+            lblDestino.Text = "Filtrar por Destino";
+            lblOrigen.Text = "Filtrar por Origen";
+            lblFechaDePartida.Text = "Filtrar por Fecha de Partida";
 
         }
 
@@ -36,7 +48,7 @@ namespace Vista
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
             vuelos.Columns.Add("Cantidad de baños");
-            dgv_clientes.DataSource = vuelos;
+            dgv_vuelos.DataSource = vuelos;
 
 
             CargarItemsDataTable();
@@ -50,8 +62,7 @@ namespace Vista
             {
                 string wifi;
                 string comida;
-                string destino;
-                string origen;
+               
 
                 if (GestionDeAerolinea.ListaDeVuelos[i].TieneWifi)
                     wifi = "Si";
@@ -75,9 +86,11 @@ namespace Vista
 
             }
 
-            dgv_clientes.DataSource = vuelos;
+            vuelosAux = vuelos;
 
-            if (dgv_clientes.CurrentRow == null)
+            dgv_vuelos.DataSource = vuelos;
+
+            if (dgv_vuelos.CurrentRow == null)
             {
                 return;
             }
@@ -99,7 +112,7 @@ namespace Vista
                 vuelos.DefaultView.RowFilter = $"Salida LIKE '{txtFiltroFecha.Text}%' AND Origen LIKE '{txtFiltroOrigen.Text}%' AND Destino LIKE '{txtFiltroDestino.Text}%'";
 
             }
-          
+
 
         }
 
@@ -117,14 +130,14 @@ namespace Vista
                 {
                     int row = e.RowIndex;
                     int column = e.ColumnIndex;
-                    codigoDeVuelo = dgv_clientes.Rows[row].Cells[0].Value.ToString();
+                    codigoDeVuelo = dgv_vuelos.Rows[row].Cells[0].Value.ToString();
 
                     ;
-                    DialogResult resultado = MessageBox.Show($"{codigoDeVuelo}", "DNI N°: ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    DialogResult resultado = MessageBox.Show($"Codigo De Vuelo: {codigoDeVuelo} \n desea avanzar? ", "Vuelo Elegido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (DialogResult.Yes == resultado)
                     {
-                        if (estado == "modificar")
+                        if (estado == "venderVuelo")
                         {
                             vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
                             this.DialogResult = DialogResult.OK;
@@ -157,41 +170,32 @@ namespace Vista
 
         }
 
-  
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            estado = "eliminar";
-        }
 
-        private void btnVenderPasaje_Click(object sender, EventArgs e)
+
+        private void btnSeleccionarVuelo_Click_1(object sender, EventArgs e)
         {
-            estado = "venta";
+            estado = "venderVuelo";
 
         }
 
-        private void btnModificar_Click_1(object sender, EventArgs e)
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
-            estado = "modificar";
+            dgv_vuelos.DataSource = null;
+            dgv_vuelos.Columns.Clear();
+            dgv_vuelos.Rows.Clear();
+            dgv_vuelos.DataSource = vuelosAux;
 
         }
 
-       
+        private void btnCargarVuelo_Click(object sender, EventArgs e)
+        {
+            FrmCargarVuelo frmCargarVuelo = new FrmCargarVuelo();
+            frmCargarVuelo.ShowDialog();
+
+
+        }
     }
 
-
-
-        //private void txtFiltroDestino_TextChanged(object sender, EventArgs e)
-        //{
-
-        //    vuelos.DefaultView.RowFilter = $"Destino LIKE '{txtFiltroDestino.Text}%'";
-
-        //}
-
-        //private void txtFiltroFecha_TextChanged(object sender, EventArgs e)
-        //{
-        //    vuelos.DefaultView.RowFilter = $"Salida LIKE '{txtFiltroFecha.Text}%'";
-
-        //}
-    }
+}
 

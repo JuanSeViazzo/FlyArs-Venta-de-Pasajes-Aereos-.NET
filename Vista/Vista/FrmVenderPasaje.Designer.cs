@@ -137,6 +137,7 @@
             this.btnAceptarModificacion.Text = "Cerrar Venta";
             this.btnAceptarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptarModificacion.UseVisualStyleBackColor = false;
+            this.btnAceptarModificacion.Click += new System.EventHandler(this.btnAceptarModificacion_Click);
             // 
             // btnFacturar
             // 
@@ -185,6 +186,7 @@
             this.btnCargarOtroPasajero.TabIndex = 35;
             this.btnCargarOtroPasajero.Text = "Cargar otro Pasajero";
             this.btnCargarOtroPasajero.UseVisualStyleBackColor = false;
+            this.btnCargarOtroPasajero.Click += new System.EventHandler(this.btnCargarOtroPasajero_Click);
             // 
             // dgvListaDePasajes
             // 

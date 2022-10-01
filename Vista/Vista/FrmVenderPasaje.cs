@@ -16,7 +16,8 @@ namespace Vista
         Vuelo vueloAux;
         Pasaje pasajeAux;
         Pasajero pasajeroAux;
-        List<Pasaje> ListaDePasajes;
+        List<Pasajero> listaDePasajeros;
+        List<Pasaje> listaDePasajes;
         string facturacion;
         float montoFacturado;
 
@@ -26,7 +27,8 @@ namespace Vista
         public FrmVenderPasaje()
         {
             InitializeComponent();
-            ListaDePasajes = new List<Pasaje>();    
+            listaDePasajes = new List<Pasaje>();   
+            listaDePasajeros = new List<Pasajero>();
 
         }
 
@@ -50,7 +52,8 @@ namespace Vista
             btnCargarEquipaje.Enabled = false;
             btnFacturar.Enabled = false;
             btnSubirPasajero.Enabled = false;
-
+            btnAceptarModificacion.Enabled = false;
+            btnCargarOtroPasajero.Enabled = false;
         }
         private void CargarDataGrid()
         {
@@ -73,7 +76,7 @@ namespace Vista
         {
             dgvListaDePasajes.DataSource = null;
 
-            foreach (Pasaje item in ListaDePasajes)
+            foreach (Pasaje item in listaDePasajes)
             {
                 if (item is PasajeTurista pasajeAux)
                 {
@@ -101,7 +104,7 @@ namespace Vista
 
         private void btnElegirVuelo_Click(object sender, EventArgs e)
         {
-            FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo();
+            FrmElegirVuelo frmElegirVuelo = new FrmElegirVuelo(2);
             frmElegirVuelo.ShowDialog();
             if (frmElegirVuelo.DialogResult == DialogResult.OK)
             {
@@ -134,8 +137,9 @@ namespace Vista
             frmCargarEquipaje.ShowDialog();
             if (frmCargarEquipaje.DialogResult == DialogResult.OK)
             {
-                rtbEquipaje.Text = pasajeroAux.ToString();
                 pasajeroAux = frmCargarEquipaje.pasajeroAux;
+                rtbEquipaje.Text = pasajeroAux.ToString();
+                listaDePasajeros.Add(pasajeroAux);
                 btnFacturar.Enabled = true;
 
             }
@@ -187,14 +191,31 @@ namespace Vista
                                     pasajeAuxP.Origen, pasajeAuxP.HoraDeSalida, pasajeAuxP.Destino, pasajeAuxP.HoraDeLlegada);
 
             }
-            ListaDePasajes.Add(pasajeAux);
+            listaDePasajes.Add(pasajeAux);
+
+            btnAceptarModificacion.Enabled = true;
+            btnCargarOtroPasajero.Enabled = true;
 
 
-
-          // CargarItemsDataTable();
 
         }
 
+        private void btnAceptarModificacion_Click(object sender, EventArgs e)
+        {
+            GestionDeAerolinea.SubirPasajeroAlAvion(listaDePasajes,listaDePasajeros);
+
+            this.Close();
+
+
+        }
+
+        private void btnCargarOtroPasajero_Click(object sender, EventArgs e)
+        {
+            rtbEquipaje.Clear();
+            rtbFacturacion.Clear();
+            rtbPasajero.Clear();
+            rtbVuelo.Clear();   
+        }
     }
 
 

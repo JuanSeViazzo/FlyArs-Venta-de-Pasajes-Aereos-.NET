@@ -29,44 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPasajes));
-            this.btn_AnularPasaje = new System.Windows.Forms.Button();
-            this.btn_ModificarPasaje = new System.Windows.Forms.Button();
             this.btn_VenderPasaje = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_AnularPasaje
-            // 
-            this.btn_AnularPasaje.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AnularPasaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_AnularPasaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_AnularPasaje.Location = new System.Drawing.Point(12, 305);
-            this.btn_AnularPasaje.Name = "btn_AnularPasaje";
-            this.btn_AnularPasaje.Size = new System.Drawing.Size(132, 61);
-            this.btn_AnularPasaje.TabIndex = 6;
-            this.btn_AnularPasaje.Text = "Anular \r\nPasaje";
-            this.btn_AnularPasaje.UseVisualStyleBackColor = true;
-            // 
-            // btn_ModificarPasaje
-            // 
-            this.btn_ModificarPasaje.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ModificarPasaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_ModificarPasaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ModificarPasaje.Location = new System.Drawing.Point(12, 161);
-            this.btn_ModificarPasaje.Name = "btn_ModificarPasaje";
-            this.btn_ModificarPasaje.Size = new System.Drawing.Size(132, 61);
-            this.btn_ModificarPasaje.TabIndex = 5;
-            this.btn_ModificarPasaje.Text = "Modificar Pasaje";
-            this.btn_ModificarPasaje.UseVisualStyleBackColor = true;
-            // 
             // btn_VenderPasaje
             // 
             this.btn_VenderPasaje.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_VenderPasaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_VenderPasaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_VenderPasaje.Location = new System.Drawing.Point(12, 12);
+            this.btn_VenderPasaje.Location = new System.Drawing.Point(12, 133);
             this.btn_VenderPasaje.Name = "btn_VenderPasaje";
             this.btn_VenderPasaje.Size = new System.Drawing.Size(132, 61);
             this.btn_VenderPasaje.TabIndex = 4;
@@ -79,7 +53,7 @@
             this.btn_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Salir.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salir.Location = new System.Drawing.Point(12, 441);
+            this.btn_Salir.Location = new System.Drawing.Point(12, 321);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(132, 61);
             this.btn_Salir.TabIndex = 8;
@@ -103,8 +77,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(762, 524);
             this.Controls.Add(this.btn_Salir);
-            this.Controls.Add(this.btn_AnularPasaje);
-            this.Controls.Add(this.btn_ModificarPasaje);
             this.Controls.Add(this.btn_VenderPasaje);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmMenuPasajes";
@@ -116,9 +88,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_AnularPasaje;
-        private System.Windows.Forms.Button btn_ModificarPasaje;
         private System.Windows.Forms.Button btn_VenderPasaje;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.PictureBox pictureBox1;

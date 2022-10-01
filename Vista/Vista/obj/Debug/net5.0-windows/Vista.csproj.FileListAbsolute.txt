@@ -59,3 +59,6 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.frmCargarPasajero.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmCargarEquipaje.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmFacturar.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmCargarVuelo.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\bin\Debug\net5.0-windows\DocumentFormat.OpenXml.dll
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmEstadisticas.resources

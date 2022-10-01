@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "elLuasrbJ/ACt0M2PmB8S7Q/Qt/+Ht2rCzlKGaxgunO/5U0ok+AXQr2kiV5fJcQw7th0yLs7tfI91iZWev02bg==",
+  "dgSpecHash": "rqm8rlm4NECvt+jT+NvxDTvTB6t21AwR3Lw1jOyeNtjtRk3pTkbdelOfd5Ea/6UAu68dLRxymwlrTatmySR69w==",
   "success": true,
   "projectFilePath": "C:\\Users\\juans\\source\\JuanSViazzo2DLabo2-1erParcial\\Vista\\Persona\\Logica.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\juans\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
+    "C:\\Users\\juans\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

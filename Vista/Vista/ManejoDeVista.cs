@@ -39,7 +39,7 @@ namespace Vista
             soundPlayer.Play();
         }
 
-
+        
         public static void PausarMusica()
         {
             SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.cpwJAt5k_888a76891a3e148017cb0a3f859454ed);

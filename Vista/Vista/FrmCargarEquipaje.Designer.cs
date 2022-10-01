@@ -40,6 +40,7 @@
             this.btnAceptarModificacion = new System.Windows.Forms.Button();
             this.btnConfirmarCarga = new System.Windows.Forms.Button();
             this.lstEquipaje = new System.Windows.Forms.ListBox();
+            this.lblMaximo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nmrSegundoEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrPrimerEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDeMano)).BeginInit();
@@ -63,7 +64,7 @@
             this.nmrPrimerEquipaje.BackColor = System.Drawing.Color.White;
             this.nmrPrimerEquipaje.Location = new System.Drawing.Point(345, 175);
             this.nmrPrimerEquipaje.Maximum = new decimal(new int[] {
-            25,
+            50000000,
             0,
             0,
             0});
@@ -152,12 +153,13 @@
             // 
             // btnConfirmarCarga
             // 
+            this.btnConfirmarCarga.BackColor = System.Drawing.Color.White;
             this.btnConfirmarCarga.Location = new System.Drawing.Point(422, 350);
             this.btnConfirmarCarga.Name = "btnConfirmarCarga";
             this.btnConfirmarCarga.Size = new System.Drawing.Size(277, 23);
             this.btnConfirmarCarga.TabIndex = 52;
-            this.btnConfirmarCarga.Text = "button1";
-            this.btnConfirmarCarga.UseVisualStyleBackColor = true;
+            this.btnConfirmarCarga.Text = "Registrar Equipaje";
+            this.btnConfirmarCarga.UseVisualStyleBackColor = false;
             this.btnConfirmarCarga.Click += new System.EventHandler(this.btnConfirmarCarga_Click);
             // 
             // lstEquipaje
@@ -169,11 +171,24 @@
             this.lstEquipaje.Size = new System.Drawing.Size(277, 244);
             this.lstEquipaje.TabIndex = 53;
             // 
+            // lblMaximo
+            // 
+            this.lblMaximo.AutoSize = true;
+            this.lblMaximo.BackColor = System.Drawing.Color.White;
+            this.lblMaximo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMaximo.ForeColor = System.Drawing.Color.Red;
+            this.lblMaximo.Location = new System.Drawing.Point(422, 390);
+            this.lblMaximo.Name = "lblMaximo";
+            this.lblMaximo.Size = new System.Drawing.Size(95, 18);
+            this.lblMaximo.TabIndex = 54;
+            this.lblMaximo.Text = "lblMaximo";
+            // 
             // FrmCargarEquipaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 507);
+            this.Controls.Add(this.lblMaximo);
             this.Controls.Add(this.lstEquipaje);
             this.Controls.Add(this.btnConfirmarCarga);
             this.Controls.Add(this.btnCancelarModificacion);
@@ -212,5 +227,6 @@
         private System.Windows.Forms.Button btnAceptarModificacion;
         private System.Windows.Forms.Button btnConfirmarCarga;
         private System.Windows.Forms.ListBox lstEquipaje;
+        private System.Windows.Forms.Label lblMaximo;
     }
 }
