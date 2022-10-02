@@ -10,14 +10,15 @@ namespace Logica
         private static Dictionary<int, string> listaDeAeropuertos;
         private static List<Persona> listaDePersonas;
         private static List<Pasaje> listaDePasajes;
-        private static List<Avion> listaDeAviones;  
-
+        private static List<Avion> listaDeAviones;
+        private static List<Pasajero> listaDePasajeros;
 
         public static List<Persona> ListaDePersonas { get => listaDePersonas; set => listaDePersonas = value; }
         public static List<Vuelo> ListaDeVuelos { get => listaDeVuelos; set => listaDeVuelos = value; }
         public static List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
         public static Dictionary<int, string> DiccionarioDeAeropuertos { get => listaDeAeropuertos; set => listaDeAeropuertos = value; }
         public static List<Avion> ListaDeAviones { get => listaDeAviones; set => listaDeAviones = value; }
+        public static List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
 
         static GestionDeAerolinea()
         {
@@ -26,6 +27,7 @@ namespace Logica
             listaDeVuelos = new List<Vuelo>();
             listaDeAviones = new List<Avion>();
             listaDeAeropuertos = new Dictionary<int, string>();
+            listaDePasajeros = new List<Pasajero>();
 
         }
 
@@ -179,13 +181,17 @@ namespace Logica
         {
 
 
-            foreach (Cliente item in GestionDeAerolinea.ListaDePersonas)
+            foreach (Persona item in GestionDeAerolinea.ListaDePersonas)
             {
-
-                if (item.Documento == dni)
+                if (item is Cliente itemAux)
                 {
-                    return true;
+                    if (itemAux.Documento == dni)
+                    {
+                        return true;
+                    }
+
                 }
+
 
             }
             return false;

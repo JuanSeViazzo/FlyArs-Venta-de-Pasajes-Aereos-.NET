@@ -102,7 +102,7 @@
             // 
             // btnSeleccionarVuelo
             // 
-            this.btnSeleccionarVuelo.Location = new System.Drawing.Point(714, 307);
+            this.btnSeleccionarVuelo.Location = new System.Drawing.Point(600, 307);
             this.btnSeleccionarVuelo.Name = "btnSeleccionarVuelo";
             this.btnSeleccionarVuelo.Size = new System.Drawing.Size(108, 23);
             this.btnSeleccionarVuelo.TabIndex = 9;
@@ -143,8 +143,11 @@
             this.Controls.Add(this.dgv_vuelos);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.lblOrigen);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmElegirVuelo";
-            this.Text = "FrmElegirVuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Elegir Vuelo";
             this.Load += new System.EventHandler(this.FrmElegirVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vuelos)).EndInit();
             this.ResumeLayout(false);

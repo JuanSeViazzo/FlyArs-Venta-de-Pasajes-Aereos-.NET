@@ -45,8 +45,8 @@
             this.lbl_errorExcep = new System.Windows.Forms.Label();
             this.lbl_ExceptionErrorApellido = new System.Windows.Forms.Label();
             this.grpSex = new System.Windows.Forms.GroupBox();
-            this.radSexFem = new System.Windows.Forms.RadioButton();
             this.radSexMasc = new System.Windows.Forms.RadioButton();
+            this.radSexFem = new System.Windows.Forms.RadioButton();
             this.btnCancelarModificacion = new System.Windows.Forms.Button();
             this.grpSex.SuspendLayout();
             this.SuspendLayout();
@@ -177,8 +177,8 @@
             // 
             // grpSex
             // 
-            this.grpSex.Controls.Add(this.radSexFem);
             this.grpSex.Controls.Add(this.radSexMasc);
+            this.grpSex.Controls.Add(this.radSexFem);
             this.grpSex.Location = new System.Drawing.Point(389, 94);
             this.grpSex.Name = "grpSex";
             this.grpSex.Size = new System.Drawing.Size(241, 76);
@@ -186,29 +186,29 @@
             this.grpSex.TabStop = false;
             this.grpSex.Text = "groupBox1";
             // 
-            // radSexFem
-            // 
-            this.radSexFem.AutoSize = true;
-            this.radSexFem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radSexFem.Location = new System.Drawing.Point(125, 35);
-            this.radSexFem.Name = "radSexFem";
-            this.radSexFem.Size = new System.Drawing.Size(87, 20);
-            this.radSexFem.TabIndex = 1;
-            this.radSexFem.TabStop = true;
-            this.radSexFem.Text = "Femenino";
-            this.radSexFem.UseVisualStyleBackColor = true;
-            // 
             // radSexMasc
             // 
             this.radSexMasc.AutoSize = true;
             this.radSexMasc.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radSexMasc.Location = new System.Drawing.Point(6, 34);
+            this.radSexMasc.Location = new System.Drawing.Point(125, 35);
             this.radSexMasc.Name = "radSexMasc";
             this.radSexMasc.Size = new System.Drawing.Size(89, 20);
-            this.radSexMasc.TabIndex = 0;
+            this.radSexMasc.TabIndex = 1;
             this.radSexMasc.TabStop = true;
             this.radSexMasc.Text = "Masculino";
             this.radSexMasc.UseVisualStyleBackColor = true;
+            // 
+            // radSexFem
+            // 
+            this.radSexFem.AutoSize = true;
+            this.radSexFem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radSexFem.Location = new System.Drawing.Point(6, 34);
+            this.radSexFem.Name = "radSexFem";
+            this.radSexFem.Size = new System.Drawing.Size(87, 20);
+            this.radSexFem.TabIndex = 0;
+            this.radSexFem.TabStop = true;
+            this.radSexFem.Text = "Femenino";
+            this.radSexFem.UseVisualStyleBackColor = true;
             // 
             // btnCancelarModificacion
             // 
@@ -275,8 +275,8 @@
         private System.Windows.Forms.Label lbl_errorExcep;
         private System.Windows.Forms.Label lbl_ExceptionErrorApellido;
         private System.Windows.Forms.GroupBox grpSex;
-        private System.Windows.Forms.RadioButton radSexFem;
         private System.Windows.Forms.RadioButton radSexMasc;
+        private System.Windows.Forms.RadioButton radSexFem;
         private System.Windows.Forms.Button btnCancelarModificacion;
     }
 }

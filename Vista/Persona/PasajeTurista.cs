@@ -12,20 +12,17 @@ namespace Logica
 
         private string codigoDePasaje;
         private string categoriaPasaje;
-        private float precioDePasaje;
 
         public PasajeTurista(string codigoDePasaje,string codigoDeVuelo, int dniDePasajero, string nombrePasajero, string apellidoDePasajero, 
             string origen,DateTime horaDeSalida, string destino,DateTime horaDeLlegada,string categoriaPasaje,float precioDePasaje)
-            : base(codigoDeVuelo, dniDePasajero, nombrePasajero, apellidoDePasajero, origen,horaDeSalida, destino,horaDeSalida)
+            : base(codigoDeVuelo, dniDePasajero, nombrePasajero, apellidoDePasajero, origen,horaDeSalida, destino,horaDeSalida,precioDePasaje)
         {
             this.CodigoDePasaje = codigoDePasaje;
             this.categoriaPasaje = categoriaPasaje;
-            this.precioDePasaje= precioDePasaje;
 
 
         }
 
-        public float PrecioDePasaje { get => precioDePasaje; }
         public string CategoriaPasaje { get => categoriaPasaje; }
         public string CodigoDePasaje { get => codigoDePasaje;
            
@@ -71,7 +68,6 @@ namespace Logica
         {
             StringBuilder sb = new StringBuilder(); 
             sb.AppendLine(base.ToString());
-            sb.AppendLine($"Precio del Pasaje: {precioDePasaje}");
             sb.AppendLine($"Codigo del pasaje: {codigoDePasaje}");
             sb.AppendLine($"Categoria: {categoriaPasaje}");
 

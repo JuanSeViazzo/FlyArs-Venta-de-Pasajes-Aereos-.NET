@@ -21,12 +21,15 @@ namespace Logica
         private bool tieneWifi;
         private List<Pasajero> listaDePasajerosPremium;
         private List<Pasajero> listaDePasajerosTurista;
+        private List<Pasaje> listaDePasajes;
         private string codigoDeVuelo;
         private string destino;
         private string origen;
         private int asientosDisponibles;
+        private int bodegaDisponible;
 
 
+        public double DuracionDeVuelo { get => (horaDeLlegada-horaDePartida).TotalHours;}
         public Avion Avion { get => avion; set => avion = value; }
         public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
@@ -49,12 +52,18 @@ namespace Logica
             get => asientosDisponibles = avion.CantidadDeAsientosTurista - listaDePasajerosTurista.Count;
 
         }
-        public double DuracionDeVuelo { get => (horaDeLlegada-horaDePartida).TotalHours;}
+        public List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
+
+        public int EspacioBodegaDisponible
+        {
+            get => bodegaDisponible = avion.CapacidadDeBodega - TotalDeBodegaDisponible();
+        }
 
         private Vuelo()
         {
             listaDePasajerosTurista = new List<Pasajero>();
             listaDePasajerosPremium = new List<Pasajero>();
+            listaDePasajes = new List<Pasaje>();
         }
         public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi,
             string codigoDeVuelo, int origen, int destino) : this()
@@ -110,7 +119,7 @@ namespace Logica
         {
             Random r = new Random();
 
-            int horaInt = r.Next(1, 23);
+            int horaInt = r.Next(2, 23);
 
             fecha = fecha.AddHours((double)horaInt);
 
@@ -179,63 +188,32 @@ namespace Logica
 
 
 
+        public int TotalDeBodegaDisponible()
+        {
+            int acumuladorDePeso=0;
+
+            for (int i = 0; i < listaDePasajerosPremium.Count; i++)
+            {
+                for (int j = 0; j < listaDePasajerosPremium[i].ListaDeEquipajes.Count; j++)
+                {
+                    acumuladorDePeso += listaDePasajerosPremium[i].ListaDeEquipajes[j].PesoDelEquipaje;
+                }
+            }
+
+            for (int i = 0; i < listaDePasajerosTurista.Count; i++)
+            {
+                for (int j = 0; j < listaDePasajerosTurista[i].ListaDeEquipajes.Count; j++)
+                {
+                    acumuladorDePeso += listaDePasajerosTurista[i].ListaDeEquipajes[j].PesoDelEquipaje;
+                }
+            }
 
 
 
+            return acumuladorDePeso;
+        }
 
 
-
-
-
-
-        //public static bool obtenerPasajesPorId();
-
-
-
-        //public bool VueloLleno()
-        //{
-        //    if (avion.CantidadMaximaDePasajeros == pasajeros.Count)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-
-        //}
-
-        // Vuelo volar = new Vuelo();
-
-
-        //public List<Pasaje> obtenerListaDePasajes()
-        //{
-        //    List<Pasaje> listaDePasajes = null;
-
-        //    for (int i = 0; i < listaIdPasajes.Count; i++)
-        //    {
-        //        listaDePasajes.Add(Pasaje.obtenerPasajePorId(codigoDeVuelo));
-        //    }
-
-        //    return listaDePasajes;
-
-        //}
-
-        //public List<Cliente> obtenerListaDePersonas()
-        //{   //lista que voy a devolver
-        //    List<Cliente> ListaDePersonas = null;
-        //    //lista de pasajes del avion
-        //    List<Pasaje> listaDePasajes = obtenerListaDePasajes();
-
-        //    //recorro la lista de pasajes del avion, y de cada pasaje saco el dni, ese dni lo comparo con la lista generica de pasajeros
-        //    //y me traigo cada pasajero y lo sumo a la lista.
-        //    for (int i = 0; i < listaDePasajes.Count; i++)
-        //    {
-        //        if (listaDePasajes[i].DniDePasajero == GestionDeAerolinea.ListaDePersonas[i].Documento)
-        //        {
-        //            GestionDeAerolinea.ListaDePersonas.Add(GestionDeAerolinea.ListaDePersonas[i]);
-        //        }
-        //    }
-        //    return ListaDePersonas;
-        //}
 
 
 

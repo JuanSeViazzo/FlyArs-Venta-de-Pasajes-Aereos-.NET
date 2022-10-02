@@ -111,6 +111,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "DG.AdvancedDataGridView": {
+              "target": "Package",
+              "version": "[1.2.27314.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

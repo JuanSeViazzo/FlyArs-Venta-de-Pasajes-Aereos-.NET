@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="FrmDestinoPorFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmAltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,7 +37,7 @@
     <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmMenuVuelos.cs">
+    <Compile Update="FrmMostrarHorasDeVueloPorAvion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVenderPasaje.cs">

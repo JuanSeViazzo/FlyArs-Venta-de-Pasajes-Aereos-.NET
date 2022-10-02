@@ -38,7 +38,7 @@ namespace Vista
             cmbDestino.Items.Clear();
             foreach (KeyValuePair<int, string> item in GestionDeAerolinea.DiccionarioDeAeropuertos)
             {
-                if (cmbOrigen.SelectedIndex != 16)
+                if (cmbOrigen.SelectedIndex != 15)
                 {
                     if (item.Key < 1000)
                         cmbDestino.Items.Add(item.Value);

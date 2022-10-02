@@ -19,7 +19,7 @@ namespace Vista
 
         private void btn_aceptarPasajero_Click(object sender, EventArgs e)
         {
-            Persona.TipoDeSexo sexoElegido = Persona.TipoDeSexo.Femenino;
+            Persona.TipoDeSexo sexoElegido = Persona.TipoDeSexo.Masculino;
 
             foreach (RadioButton radioButton in grpSex.Controls)
             {

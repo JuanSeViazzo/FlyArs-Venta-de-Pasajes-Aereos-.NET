@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Vvhh5aKp56bNX8z5NmwLIfPeLKvEin6BFl9DkOWA1iLaQZNMEcRJOPITkSVRWU6sgb/JTE7Lk3fCLWVDjHBchQ==",
+  "dgSpecHash": "lexBpP1nvM49PImg8a5tnjhSlN1atT0Dv15xJYQAd7ZIcOF/FRboHvLpE6Xzu/aTuaFPBwWkK7eNlwN5R/fqzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\juans\\source\\JuanSViazzo2DLabo2-1erParcial\\Vista\\Vista\\Vista.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\juans\\.nuget\\packages\\dg.advanceddatagridview\\1.2.27314.8\\dg.advanceddatagridview.1.2.27314.8.nupkg.sha512",
     "C:\\Users\\juans\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
     "C:\\Users\\juans\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
   ],

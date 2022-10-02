@@ -34,10 +34,11 @@
             this.btn_MenuPasajes = new System.Windows.Forms.Button();
             this.btn_MenuVuelos = new System.Windows.Forms.Button();
             this.btn_Estadisticas = new System.Windows.Forms.Button();
-            this.btn_MenuPasajeros = new System.Windows.Forms.Button();
+            this.btnMenuClientes = new System.Windows.Forms.Button();
             this.btn_Soporte = new System.Windows.Forms.Button();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_HoraActualMenuPrincipal = new System.Windows.Forms.Label();
+            this.btnMenuPasajeros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,18 +104,18 @@
             this.btn_Estadisticas.UseVisualStyleBackColor = true;
             this.btn_Estadisticas.Click += new System.EventHandler(this.btn_Estadisticas_Click);
             // 
-            // btn_MenuPasajeros
+            // btnMenuClientes
             // 
-            this.btn_MenuPasajeros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MenuPasajeros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_MenuPasajeros.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_MenuPasajeros.Location = new System.Drawing.Point(12, 215);
-            this.btn_MenuPasajeros.Name = "btn_MenuPasajeros";
-            this.btn_MenuPasajeros.Size = new System.Drawing.Size(132, 61);
-            this.btn_MenuPasajeros.TabIndex = 13;
-            this.btn_MenuPasajeros.Text = "Menu Pasajeros";
-            this.btn_MenuPasajeros.UseVisualStyleBackColor = true;
-            this.btn_MenuPasajeros.Click += new System.EventHandler(this.btn_MenuPasajeros_Click);
+            this.btnMenuClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMenuClientes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMenuClientes.Location = new System.Drawing.Point(12, 150);
+            this.btnMenuClientes.Name = "btnMenuClientes";
+            this.btnMenuClientes.Size = new System.Drawing.Size(132, 61);
+            this.btnMenuClientes.TabIndex = 13;
+            this.btnMenuClientes.Text = "Menu Clientes";
+            this.btnMenuClientes.UseVisualStyleBackColor = true;
+            this.btnMenuClientes.Click += new System.EventHandler(this.btnMenuClientes_Click);
             // 
             // btn_Soporte
             // 
@@ -154,16 +155,30 @@
             this.lbl_HoraActualMenuPrincipal.TabIndex = 17;
             this.lbl_HoraActualMenuPrincipal.Text = "Hora actual: ";
             // 
+            // btnMenuPasajeros
+            // 
+            this.btnMenuPasajeros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuPasajeros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMenuPasajeros.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMenuPasajeros.Location = new System.Drawing.Point(12, 255);
+            this.btnMenuPasajeros.Name = "btnMenuPasajeros";
+            this.btnMenuPasajeros.Size = new System.Drawing.Size(132, 61);
+            this.btnMenuPasajeros.TabIndex = 18;
+            this.btnMenuPasajeros.Text = "Menu Pasajeros";
+            this.btnMenuPasajeros.UseVisualStyleBackColor = true;
+            this.btnMenuPasajeros.Click += new System.EventHandler(this.btnMenuPasajeros_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 489);
+            this.Controls.Add(this.btnMenuPasajeros);
             this.Controls.Add(this.lbl_HoraActualMenuPrincipal);
             this.Controls.Add(this.lbl_Usuario);
             this.Controls.Add(this.btn_Soporte);
-            this.Controls.Add(this.btn_MenuPasajeros);
+            this.Controls.Add(this.btnMenuClientes);
             this.Controls.Add(this.btn_Estadisticas);
             this.Controls.Add(this.btn_MenuVuelos);
             this.Controls.Add(this.btn_MenuPasajes);
@@ -188,9 +203,10 @@
         private System.Windows.Forms.Button btn_MenuPasajes;
         private System.Windows.Forms.Button btn_MenuVuelos;
         private System.Windows.Forms.Button btn_Estadisticas;
-        private System.Windows.Forms.Button btn_MenuPasajeros;
+        private System.Windows.Forms.Button btnMenuClientes;
         private System.Windows.Forms.Button btn_Soporte;
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.Label lbl_HoraActualMenuPrincipal;
+        private System.Windows.Forms.Button btnMenuPasajeros;
     }
 }

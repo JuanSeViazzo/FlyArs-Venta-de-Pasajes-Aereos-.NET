@@ -16,9 +16,10 @@ namespace Logica
         private string destino;
         private DateTime horaDeSalida;
         private DateTime horaDeLlegada;
+        private float precioDePasaje;
 
         protected Pasaje(string codigoDeVuelo, int dniDePasajero, string nombrePasajero, string apellidoDePasajero, 
-            string origen,DateTime horaDeSalida, string destino,DateTime horaDeLlegada)
+            string origen,DateTime horaDeSalida, string destino,DateTime horaDeLlegada, float precioDePasaje)
         {
             this.codigoDeVuelo = codigoDeVuelo;
             this.dniDePasajero = dniDePasajero;
@@ -28,6 +29,8 @@ namespace Logica
             this.destino = destino;
             this.horaDeSalida = horaDeSalida;
             this.horaDeLlegada = horaDeLlegada;
+            this.precioDePasaje = precioDePasaje;
+
         }
 
         public string CodigoDeVuelo { get => codigoDeVuelo;}
@@ -38,11 +41,13 @@ namespace Logica
         public string Destino { get => destino;}
         public DateTime HoraDeSalida { get => horaDeSalida;}
         public DateTime HoraDeLlegada { get => horaDeLlegada;}
+        public float PrecioDePasaje { get => precioDePasaje;}
 
         public abstract string CargarCodigoDePasaje(string codigoDePasaje);
+        public abstract float aplicarDescuento(int dni);
+        
         public abstract float cobrarPasaje();
 
-        public abstract float aplicarDescuento(int dni);
 
 
 
@@ -55,6 +60,7 @@ namespace Logica
             sb.AppendLine($"Apellido: {apellidoDePasajero}");
             sb.AppendLine($"Origen del vuelo: {origen}");
             sb.AppendLine($"Destino del vuelo: {destino}");
+            sb.AppendLine($"Precio del pasaje: {precioDePasaje}");
             return sb.ToString();   
         }
 

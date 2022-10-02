@@ -204,6 +204,19 @@ namespace Vista
         {
             GestionDeAerolinea.SubirPasajeroAlAvion(listaDePasajes,listaDePasajeros);
 
+            for (int i = 0; i < listaDePasajes.Count; i++)
+            {
+                for (int j = 0; j < vueloAux.ListaDePasajes.Count; j++)
+                {
+                    if (vueloAux.ListaDePasajes[j] != null && vueloAux.CodigoDeVuelo == listaDePasajes[i].CodigoDeVuelo)
+                    {
+                        vueloAux.ListaDePasajes.Add(listaDePasajes[i]);
+                    }
+                }
+
+
+            }
+
             this.Close();
 
 

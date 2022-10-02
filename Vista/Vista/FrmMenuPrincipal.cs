@@ -36,7 +36,7 @@ namespace Vista
         {
             this.Close();
         }
-        private void btn_MenuPasajeros_Click(object sender, EventArgs e)
+        private void btnMenuClientes_Click(object sender, EventArgs e)
         {
             FrmListaDeClientes frmClientes = new FrmListaDeClientes(0);
             frmClientes.ShowDialog();   
@@ -52,6 +52,11 @@ namespace Vista
         {
             FrmEstadisticas frmEstadisticas = new FrmEstadisticas();
             frmEstadisticas.ShowDialog(); 
+        }
+
+        private void btnMenuPasajeros_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

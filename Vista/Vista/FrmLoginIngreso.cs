@@ -38,26 +38,6 @@ namespace Vista
 
         }
 
-
-
-
-
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("El que tenga miedo a crashear, que no programe");
-        }
-
-
-        public void HiloHora()
-        {
-            lbl_Hora.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
-
-        public void HiloFecha()
-        {
-            lbl_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
         private void EventoReloj(object ob, EventArgs evt)
         {
             lbl_Hora.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -140,7 +120,7 @@ namespace Vista
 
 
             pb_avionFrontal.Show();
-            await Task.Delay(1000);
+            await Task.Delay(500);
             pb_avionFrontal.Hide();
 
             menuPrincipal.Show();

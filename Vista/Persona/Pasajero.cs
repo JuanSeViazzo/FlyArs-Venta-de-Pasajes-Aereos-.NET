@@ -25,6 +25,17 @@ namespace Logica
         private string apellidoCliente;
         private ClaseDePasajero claseDePasajero;
 
+        public Pasajero(Cliente cliente,List<Equipaje>listaDeEquipajes,string codigoDePasaje,string codigoDeVuelo,ClaseDePasajero claseDePasajero)
+        {
+            this.documento = cliente.Documento;
+            this.nombreCliente = cliente.Nombre;
+            this.apellidoCliente = cliente.Apellido;
+            this.listaDeEquipajes = listaDeEquipajes;
+            this.codigoDeVuelo = codigoDeVuelo; 
+            this.codigoDePasaje = codigoDePasaje;
+            this.claseDePasajero = claseDePasajero;
+
+        }
 
         public Pasajero(int documento, string codigoDePasaje, string codigoDeVuelo, List<Equipaje> listaDeEquipajes, string nombreCliente, string apellidoCliente, ClaseDePasajero claseDePasajero)
         {

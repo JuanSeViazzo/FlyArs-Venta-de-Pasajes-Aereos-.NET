@@ -8,7 +8,6 @@ namespace Vista
     public partial class FrmElegirVuelo : Form
     {
         DataTable vuelos = new DataTable();
-        DataTable vuelosAux = new DataTable();
         string estado = "inactivo";
         public Vuelo vueloElegido;
         private FrmElegirVuelo()
@@ -20,7 +19,8 @@ namespace Vista
             if (numero == 1)
             {
                 btnSeleccionarVuelo.Visible = false;
-            }
+            }else
+                btnCargarVuelo.Visible = false;
         }
 
 
@@ -44,7 +44,7 @@ namespace Vista
             vuelos.Columns.Add("Llegada");
             vuelos.Columns.Add("Lugares Premium");
             vuelos.Columns.Add("Lugares Turistas");
-            vuelos.Columns.Add("Limite en Bodega");
+            vuelos.Columns.Add("Disponible en Bodega");
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
             vuelos.Columns.Add("Cantidad de baños");
@@ -82,11 +82,10 @@ namespace Vista
                 GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesPremium}" +
                 $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosPremium}"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesTurista}" +
                 $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosTurista}"),
-                GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega, wifi, comida, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
+                ($"{GestionDeAerolinea.ListaDeVuelos[i].EspacioBodegaDisponible}/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega}")
+                , wifi, comida, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
 
             }
-
-            vuelosAux = vuelos;
 
             dgv_vuelos.DataSource = vuelos;
 
@@ -179,14 +178,6 @@ namespace Vista
 
         }
 
-        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
-        {
-            dgv_vuelos.DataSource = null;
-            dgv_vuelos.Columns.Clear();
-            dgv_vuelos.Rows.Clear();
-            dgv_vuelos.DataSource = vuelosAux;
-
-        }
 
         private void btnCargarVuelo_Click(object sender, EventArgs e)
         {
