@@ -1,12 +1,20 @@
-# Aerolineas FlyArges
+# Venta de Pasajes Aerolineas FlyArges
 
 _Es una sistema para vender pasajes de una linea Aerea. El cliente o los clientes van a poder elegir distintos vuelos con determinadas caracteristicas.
 El usuario podra ver el listado de vuelos, sus pasajeros, y estadisticas historicas_
-## Comenzando 🚀
+
+
+## Sobre mi: 😎😥😍😫😖🤬🤡🛠🧐💀☠🦈🦆🦋🎸🕯🥂
+
+- Mi nombre es Juan Sebastian Viazzo Perrone, estoy recursando la materia, y mirando lo que codee el cuatri anterior, no puedo de sentir alegria por mi avance, aun a sabiendas que falta mucho mucho por mejorar. 
+- Los emoji son parte de lo que significo el codigo para mi, empezando por alguien confiado que iba a poder, a poco del comienzo ya me senti triste porque era una sensacion de un codigo inmenso para mi capacidad. Cuando empece a darle forma no senti otra cosa que amor por mi pequeño proyecto, aunque dias despues me senti frustrado, cansado, enojado! y hasta un payaso. Pero tome otra decision, manos a la obra y empece a buscar documentacion oficial, a investigar sobre los eventos, metodos, etc, sentia que moria, pero _MENTE DE TIBURON_ uno no tiene que aflojar, aunque sientas que sea un paso una caga**, y aunque el codigo viva un dia como una mariposa, guitarrear tal vez es lo que mejor me sale, y por eso prendo una velita, para poder brindar una buena nota.
+- Al final de cuentas disfrute el codigo, disfrute mayormente la parte de la logica y como relacionarla con la interface, como planear las clases, como entender que uno tiene que encarar estos proyectos, tal vez si hoy fuese el 1er dia y no el ultimo, tomaria un camino totalmente distinto, en el cual le daria casi por no decir la misma importancia, a lo que es la parte de planificar y diagramar el programa, como la parte de codearlo. 
+
+## RESUMEN 📜
 
 _Estas instrucciones te permitirán poder navegar dentro del proyecto y disfrutar de una experiencia satisfactoria_
 
-### Login 📋
+## Login 📋
 
 _Informacion necesaria para logearse_
 
@@ -24,7 +32,7 @@ Debido a que la etapa actual del proyecto es Beta 1.0, ud posee la opcion de ing
 "ViazzoJs", "Elciclon*"
 ```
 
-### Menu principal - Pivote de la App 🏛
+## Menu principal - Pivote de la App 🏛
 
 _Aca usted podra visualizar la ventana, en la cual donde podra ir a cada una de las opciones disponibles como usuario_
 
@@ -33,29 +41,64 @@ _Aca usted podra visualizar la ventana, en la cual donde podra ir a cada una de 
 
 _Puede navegar entre los distintas opciones, ver el nombre de usuario y la fecha actual_
 
+
+## Menu Pasajes - Venta de Pasajes 💸
+
+![image](https://user-images.githubusercontent.com/86853488/193590597-c9fe2582-8f2a-4152-b436-25bab5ab8cba.png)
+
+### Nuevas caracteristicas en la proxima version
+- Modificar Pasajes
+- Eliminar Pasajes
+
+## Vender Pasaje 🛫🛬
+
+![image](https://user-images.githubusercontent.com/86853488/193591403-cee4b496-38e9-4595-bdbe-2ba5fa441ff2.png)
+
+_Aqui ud podra realizar la venta de un pasaje o varios pasajes en simultaneo, primero deberia buscar un vuelo, posteriormente podra buscar al cliente en la base de datos o cargar un nuevo cliente, a continuacion debera cargar su equipaje y por ultimo facturarlo, finalizados estos pasos cargara el pasajero al listado, y en caso de no gestionar ninguna pasaje mas, cerrara la venta_
+
+## Buscar Vuelo 🔍
+
+![image](https://user-images.githubusercontent.com/86853488/193592765-8e387470-430e-4c3a-b849-132540029678.png)
+
+
+_En esta pantalla ud podra visualizar los distintos vuelos disponibles con su codigo de vuelo y matricula del avion, a su vez podra corrobrar el limite disponible en bodega, servicios adicionales como servicio de comida, o wifi, el estado del vuelo, y primordialmente los lugares disponibles dependiendo si es categoria Premium o Turista_
+
+_A su disposicion tendra filtros disponibles en los cuales se podran filtrar por Origen y Destino simultaneamente y por fecha de partida_
+
+_Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton seleccionar vuelo y posteriormente 
+
+
+
+![image](https://user-images.githubusercontent.com/86853488/193597416-349f2d35-0bf2-4f26-bfc9-663d27aa47a3.png)
+
+
+
+## Cargar Pasajero
+
+- Una vez obtenido el vuelo ud tendra que ingresar a la seccion cargar Pasajero, donde en el cuadro de texto izquierdo vera la informacion del pasajero, y en el cuadro de texto derecho, vera la informacion del cliente, una vez obtenido el cliente, elegira **CATEGORIA PREMIUM o CATEGORIA TURISTA**
+
+![image](https://user-images.githubusercontent.com/86853488/193632860-a61b9be8-96e6-4b39-8de0-63012d863230.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/86853488/193597765-930daa28-c215-406a-8dea-8ea2ff44a2b1.png)
+
 ```
-Podemos 
+Elegimos tres pasajeros del grupo familiar, dos iran en clase Premium y uno en clase turista, fuimos cargando uno por uno, y los tres fueron cargados en el mismo vuelo con sus respectivas clases
 ```
+##
 
-_Y repite_
 
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ### Y las pruebas de estilo de codificación ⌨️
 
