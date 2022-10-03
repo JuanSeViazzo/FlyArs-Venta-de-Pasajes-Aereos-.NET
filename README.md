@@ -75,20 +75,26 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 
 ## Cargar Pasajero
 
-- Una vez obtenido el vuelo ud tendra que ingresar a la seccion cargar Pasajero, donde en el cuadro de texto izquierdo vera la informacion del pasajero, y en el cuadro de texto derecho, vera la informacion del cliente, una vez obtenido el cliente, elegira **CATEGORIA PREMIUM o CATEGORIA TURISTA**
+- Una vez obtenido el vuelo se tendra que ingresar a la seccion cargar Pasajero, donde en el cuadro de texto izquierdo se visualizara la informacion del pasajero, y en el cuadro de texto derecho, se vera la informacion del cliente, una vez obtenido el cliente, se debera **CATEGORIA PREMIUM o CATEGORIA TURISTA**
 
 ![image](https://user-images.githubusercontent.com/86853488/193632860-a61b9be8-96e6-4b39-8de0-63012d863230.png)
 
 
 
+**En este paso se puede realizar
+![image](https://user-images.githubusercontent.com/86853488/193644194-7d2d6116-e6a4-4035-9c43-b86779e8cbb8.png)
+
+![image](https://user-images.githubusercontent.com/86853488/193644293-94c3a8ae-183b-4dde-9db2-b3e7026a0486.png)
 
 
+![image](https://user-images.githubusercontent.com/86853488/193643886-60ff915b-fcd6-4bbd-bedc-341391dbf1d1.png)
 
+![image](https://user-images.githubusercontent.com/86853488/193643920-63f8e4dd-d9f5-44af-a81f-983e5f1a3c0e.png)
 
+![image](https://user-images.githubusercontent.com/86853488/193644089-1d04b955-0796-474b-a746-656e6f5c1b65.png)
 
-
-
-
+## MENU DE VENTA COMPLETADO
+![image](https://user-images.githubusercontent.com/86853488/193646237-83587914-f295-4cef-b248-7e19380dd874.png)
 
 
 ![image](https://user-images.githubusercontent.com/86853488/193597765-930daa28-c215-406a-8dea-8ea2ff44a2b1.png)
