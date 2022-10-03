@@ -85,15 +85,15 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 
 ![image](https://user-images.githubusercontent.com/86853488/193644194-7d2d6116-e6a4-4035-9c43-b86779e8cbb8.png)
 
+![image](https://user-images.githubusercontent.com/86853488/193643886-60ff915b-fcd6-4bbd-bedc-341391dbf1d1.png)
 
 **En este caso se observa que el cliente ya fue cargado, se verifica el DNI o Pasaporte en el sistema**
 
-![image](https://user-images.githubusercontent.com/86853488/193643886-60ff915b-fcd6-4bbd-bedc-341391dbf1d1.png)
 
+![image](https://user-images.githubusercontent.com/86853488/193643920-63f8e4dd-d9f5-44af-a81f-983e5f1a3c0e.png)
 
 **Si coloca el DNI correcto, se podra proceder a la carga**
 
-![image](https://user-images.githubusercontent.com/86853488/193643920-63f8e4dd-d9f5-44af-a81f-983e5f1a3c0e.png)
 
 ![image](https://user-images.githubusercontent.com/86853488/193644293-94c3a8ae-183b-4dde-9db2-b3e7026a0486.png)
 
