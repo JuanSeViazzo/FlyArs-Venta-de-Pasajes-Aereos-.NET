@@ -68,16 +68,11 @@ _A su disposicion tendra filtros disponibles en los cuales se podran filtrar por
 _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton seleccionar vuelo y posteriormente_
 
 
-
-
-
-
 ## Cargar Pasajero
 
 - Una vez obtenido el vuelo se tendra que ingresar a la seccion cargar Pasajero, donde en el cuadro de texto izquierdo se visualizara la informacion del pasajero, y en el cuadro de texto derecho, se vera la informacion del cliente, una vez obtenido el cliente, se debera **CATEGORIA PREMIUM o CATEGORIA TURISTA**
 
 ![image](https://user-images.githubusercontent.com/86853488/193632860-a61b9be8-96e6-4b39-8de0-63012d863230.png)
-
 
 
 **En este paso se elegira el ciente de la base de datos, o cargar un nuevo cliente**
@@ -97,6 +92,21 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 ![image](https://user-images.githubusercontent.com/86853488/193644293-94c3a8ae-183b-4dde-9db2-b3e7026a0486.png)
 
 
+## CARGAR EQUIPAJE
+
+- Aca se podra cargar el equipaje, segun la categoria, el 1ero es bolso de mano, el 2do es 1er equipaje, y el 3ero, es el 2do equipaje.
+
+![image](https://user-images.githubusercontent.com/86853488/193658590-7ac1e279-e458-42ba-b111-9c02fbecc420.png)
+
+## FACTURACION
+
+- Aqui se podra Facturar, donde se vera el monto con descuento y sin descuento
+
+
+![image](https://user-images.githubusercontent.com/86853488/193658753-1da3425e-1e14-490d-a06c-acfb7bb13aed.png)
+
+
+
 **Una vez obtenido el cliente, la imagen quedara de la siguiente manera, a la izquierda los datos del cliente, a la derecha los datos del pasajero**
 
 
@@ -112,15 +122,16 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 ![image](https://user-images.githubusercontent.com/86853488/193646237-83587914-f295-4cef-b248-7e19380dd874.png)
 
 
-![image](https://user-images.githubusercontent.com/86853488/193597765-930daa28-c215-406a-8dea-8ea2ff44a2b1.png)
 
 
 
 ![image](https://user-images.githubusercontent.com/86853488/193597416-349f2d35-0bf2-4f26-bfc9-663d27aa47a3.png)
 
 ```
-Elegimos tres pasajeros del grupo familiar, dos iran en clase Premium y uno en clase turista, fuimos cargando uno por uno, y los tres fueron cargados en el mismo vuelo con sus respectivas clases
+Elegimos tres pasajeros del grupo familiar, dos iran en clase Premium y uno en clase turista, fuimos cargando uno por uno, y los tres fueron cargados en el mismo vuelo con sus respectivas clases, al salir podemos ver como los tres pasajeros fueron cargados al vuelo.
 ```
+![image](https://user-images.githubusercontent.com/86853488/193597765-930daa28-c215-406a-8dea-8ea2ff44a2b1.png)
+
 ##
 
 ## MENU VUELOS
@@ -134,6 +145,67 @@ Elegimos tres pasajeros del grupo familiar, dos iran en clase Premium y uno en c
 - 
 ![image](https://user-images.githubusercontent.com/86853488/193650093-f0308dd7-b574-48a4-b4e9-8b81f3c81dc7.png)
 
+
+## MENU CLIENTES DESDE MENU PRINCIPAL
+
+- Al ingresar al menu de clientes, desde el menu principal, solo se visualizara la opcion de poder cargar un cliente, a diferencia de ingresar por venta de pasajes y venderle un pasaje, tambien se podra modificar y eliminar un cliente.
+
+
+## ELIMINAR CLIENTE
+
+- Se debera elegir en el menu de clientes, la opcion eliminar y hacer doble click en el cliente deseado.
+
+![image](https://user-images.githubusercontent.com/86853488/193660647-b85fa189-217d-4246-b82c-7aabed41e45d.png)
+
+
+## MODIFICAR CLIENTE
+
+- Se debera elegir en el menu de clientes, la opcion modificar y hacer doble click en el cliente deseado.
+
+![image](https://user-images.githubusercontent.com/86853488/193660890-27673761-8e85-4488-99f5-886917ccd2a3.png)
+
+
+![image](https://user-images.githubusercontent.com/86853488/193650564-ae799548-5e0e-4a46-8ec6-1a61572a3030.png)
+
+
+## MENU ESTADISTICAS
+
+- En el mismo se podran visualizar los historiales y estadisticas, con formularios MDI.
+
+![image](https://user-images.githubusercontent.com/86853488/193662011-91ccde94-6f61-44a1-9bf2-5f6f31e1dd33.png)
+
+## MENU FACTURACION POR DESTINO
+
+- Se podran visualizar los destinos sumado el precio de sus pasajes
+
+![image](https://user-images.githubusercontent.com/86853488/193662135-65511851-69ef-4d65-9620-7e2e2e362f19.png)
+
+## FACTURACION POR CATEGORIA
+
+- Se podran visualizar las ganancias por categorias _(BETA 1.1 Se podran visualizar por dias, impuestos, costos de viajes, servicios, etc)_
+
+![image](https://user-images.githubusercontent.com/86853488/193664885-b0205874-1746-4818-80ec-495982c7fda9.png)
+
+
+## MENU DESTINO PREFERIDO
+
+- Se podra ver la cantidad de pasajeros que han volado a cada destino. _(BETA 1.1 Se podra visualizar la cantidad de vuelos a ademas de los pasajeros)
+
+![image](https://user-images.githubusercontent.com/86853488/193665261-e18b15a1-82c5-404f-9d3f-2d319a242615.png)
+
+
+## HORAS DE VUELO POR AVION
+
+- Se podra ver la cantidad de horas vuelo por avion. _(BETA 1.1 Se podra visualizar la cantidad de viajes por avion, origen y destinos mas frecuentes por avion).-
+
+![image](https://user-images.githubusercontent.com/86853488/193665618-b508b89c-6ad2-4678-87d6-cb76c2b04dfa.png)
+
+
+## MENU PASAJEROS FRECUENTES
+
+- Se podran visualizar los pasajeros que mas han viajado con la compañia _(BETA 1.1 Solo se tomaran vuelos finalizados y no pasajeros activos)_
+
+![image](https://user-images.githubusercontent.com/86853488/193664666-abcf237e-5b09-4e79-9d49-e340edea9967.png)
 
 
 ### Y las pruebas de estilo de codificación ⌨️
