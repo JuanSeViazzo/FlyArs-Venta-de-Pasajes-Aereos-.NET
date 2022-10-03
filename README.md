@@ -81,17 +81,22 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 
 
 
-**En este paso se puede realizar
+**En este paso se elegira el ciente de la base de datos, o cargar un nuevo cliente**
 ![image](https://user-images.githubusercontent.com/86853488/193644194-7d2d6116-e6a4-4035-9c43-b86779e8cbb8.png)
 
-![image](https://user-images.githubusercontent.com/86853488/193644293-94c3a8ae-183b-4dde-9db2-b3e7026a0486.png)
 
-
+**En este caso se observa que el cliente ya fue cargado, se verifica el DNI o Pasaporte en el sistema**
 ![image](https://user-images.githubusercontent.com/86853488/193643886-60ff915b-fcd6-4bbd-bedc-341391dbf1d1.png)
 
+
+**Si coloca el DNI correcto, se podra proceder a la carga*
 ![image](https://user-images.githubusercontent.com/86853488/193643920-63f8e4dd-d9f5-44af-a81f-983e5f1a3c0e.png)
 
+**Una vez obtenido el cliente, la imagen quedara de la siguiente manera, a la izquierda los datos del cliente, a la derecha los datos del pasajero**
 ![image](https://user-images.githubusercontent.com/86853488/193644089-1d04b955-0796-474b-a746-656e6f5c1b65.png)
+
+
+![image](https://user-images.githubusercontent.com/86853488/193644293-94c3a8ae-183b-4dde-9db2-b3e7026a0486.png)
 
 ## MENU DE VENTA COMPLETADO
 ![image](https://user-images.githubusercontent.com/86853488/193646237-83587914-f295-4cef-b248-7e19380dd874.png)
