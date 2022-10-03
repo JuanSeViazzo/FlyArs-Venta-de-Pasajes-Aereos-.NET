@@ -65,11 +65,10 @@ _En esta pantalla ud podra visualizar los distintos vuelos disponibles con su co
 
 _A su disposicion tendra filtros disponibles en los cuales se podran filtrar por Origen y Destino simultaneamente y por fecha de partida_
 
-_Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton seleccionar vuelo y posteriormente 
+_Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton seleccionar vuelo y posteriormente_
 
 
 
-![image](https://user-images.githubusercontent.com/86853488/193597416-349f2d35-0bf2-4f26-bfc9-663d27aa47a3.png)
 
 
 
@@ -115,10 +114,25 @@ _Por ultimo para para seleccionar un vuelo debera hacer click sobre el boton sel
 
 ![image](https://user-images.githubusercontent.com/86853488/193597765-930daa28-c215-406a-8dea-8ea2ff44a2b1.png)
 
+
+
+![image](https://user-images.githubusercontent.com/86853488/193597416-349f2d35-0bf2-4f26-bfc9-663d27aa47a3.png)
+
 ```
 Elegimos tres pasajeros del grupo familiar, dos iran en clase Premium y uno en clase turista, fuimos cargando uno por uno, y los tres fueron cargados en el mismo vuelo con sus respectivas clases
 ```
 ##
+
+## MENU VUELOS
+
+- En el mismo se podra visualizar todos los vuelos disponibles y cargar nuevos vuelos. _(BETA 1.1, solo podran cargar nuevos vuelos, los usuarios con permisos para la tarea correspondiente)_
+![image](https://user-images.githubusercontent.com/86853488/193649379-b7ccfb3a-b954-4a83-b9aa-8eec436aba59.png)
+
+
+## CARGA DE VUELO
+- Se podra cargar nuevos vuelos a partir de la flota de aviones disponibles, no es posible cargar vuelos anteriores a la fecha de hoy.
+- 
+![image](https://user-images.githubusercontent.com/86853488/193650093-f0308dd7-b574-48a4-b4e9-8b81f3c81dc7.png)
 
 
 
