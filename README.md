@@ -216,13 +216,114 @@ _Explica que verifican estas pruebas y por qué_
 Da un ejemplo
 ```
 
-## Despliegue 📦
+## Diagrama de Clases 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+![image](https://user-images.githubusercontent.com/86853488/193667479-56fb3180-0c1f-4b1b-8e56-cbaddbd67276.png)
+![image](https://user-images.githubusercontent.com/86853488/193667560-e40ea6b0-3525-44c6-b333-b2d94be9e0bf.png)
 
-## Construido con 🛠️
+## Construido 🛠️ con Amor y Odio, no no, solo con Amor 🥰
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+
+**Justificacion Tecnica**
+
+### 1- NameSpace, solucion, proyecto, bibliotecas de clase.
+![image](https://user-images.githubusercontent.com/86853488/193668370-fedc9aa4-ac9a-46b3-9915-eb82297fdd66.png)
+![image](https://user-images.githubusercontent.com/86853488/193668418-cc133cc1-4dfb-4e58-8cd1-777341296665.png)
+
+### 234- Sobrecarga de metodos
+![image](https://user-images.githubusercontent.com/86853488/193668755-4025c1e1-3bbe-4996-b991-ac1fa11ab6ee.png)
+
+### 234- POO
+![image](https://user-images.githubusercontent.com/86853488/193668811-2e02962d-56ce-4c99-ac23-6981610deb2c.png)
+
+- Objetos - Vuelos - Pasajeros - Equipaje - Cliente - Usuario - Persona
+- Decidi realizar la clase pasajero que no tenga relacion de herencia con Cliente : Persona.
+
+
+
+## 234 - Sobrecarga de Constructores
+
+- Elegi la sobrecarga de constructores en mas de un formulario, y en estos de MDI
+- En los ctor de Pasajero, el 1ero corresponde al metodo de harcodeo, el 2do corresponde a dar de alta a los pasajeros.-
+
+![image](https://user-images.githubusercontent.com/86853488/193670249-26fe8ec3-ec3a-44c3-a4b8-06924823bc83.png)
+![image](https://user-images.githubusercontent.com/86853488/193671232-7bcde511-41f2-497a-898d-2b2d3bcb000b.png)
+
+
+## 234 - Propiedades, ESTADO es una propiedad en base a un atributo, pero Asientos disponibles es solamente una propiedad.-
+
+![image](https://user-images.githubusercontent.com/86853488/193670967-99c995fe-2804-4fe4-bee1-5cf091fcbf47.png)
+
+## 234 Enumerados, Modificadores de acceso
+
+- los atributos van privados y las propiedades son publicas, entiendo que mas adelante con base de datos para generar un archivo debere tener todo atributo publico
+
+![image](https://user-images.githubusercontent.com/86853488/193672200-f905419d-45a8-4579-baef-76859eb084c5.png)
+
+## 234 Clases estaticas
+
+- Decidi crear cuatro clases estaticas, Facturacion, Gestion de Aerolinea Estadisticas y Validaciones.
+
+**Facturacion aca voy a realizar los metodos contables, descuento, facturacion, etc**
+![image](https://user-images.githubusercontent.com/86853488/193672969-2548f9c6-f20c-4d17-bec2-626035fef971.png)
+
+**Gestion de Aerolinea, se encarga de manejar toda la informacion, listas de pasajeros, pasajes, vuelos, aviones, personas, y diccionario de destinos**
+![image](https://user-images.githubusercontent.com/86853488/193673542-d2b3853e-e278-401c-a2c1-6751f3d498af.png)
+
+**Estadisticas: En esta clase me encargo de realizar todas las validaciones sobre datos estadisticos y el uso indiscriminado, demente de diccionarios**
+![image](https://user-images.githubusercontent.com/86853488/193674134-7a0d3eeb-be0f-4596-8abf-ce12034ceaf0.png)
+
+**Validaciones: En esta clase me encargo de validar los datos, usando Excepciones
+![image](https://user-images.githubusercontent.com/86853488/193674620-09b910f1-0c90-424d-80db-402bc795af37.png)
+
+**Valido contraseña que al menos tenga un caracter no alfanumerico**
+![image](https://user-images.githubusercontent.com/86853488/193674676-0743462f-d02f-4680-b51a-d2f5a4c3287f.png)
+
+## 6 Colecciones 
+**Uso de Listas, y Diccionarios, Los diccionarios los aproveche al tener un valor unico e irrepetible como la KEY, por lo cual para las estadisticas era muy conveniente para sacar por destinos, y el diccionario de destinos, la Key es un numero del 1 al 15 para nacionales y del 1000 en adelante para internacionales, lo cual da una flexibilidad para agregar mas destinos y para entender que hasta cierto valor son nacionales, las listas son de PASAJERO PASAJE VUELO AVION PERSONA, la de Persona incluye USUARIO y CLIENTE por el principio SOLID**
+
+![image](https://user-images.githubusercontent.com/86853488/193676271-d7a187b4-beab-4562-a7be-ad2cf19672b2.png)
+![image](https://user-images.githubusercontent.com/86853488/193676860-68c2d8b2-39d6-4a0e-993f-bbd285ca3f44.png)
+![image](https://user-images.githubusercontent.com/86853488/193676916-3ab8dd01-0166-44f2-b833-1959bbae0629.png)
+
+
+### 7 - DRY - ENCAPSULAMIENTO - ENUMERADOS
+
+![image](https://user-images.githubusercontent.com/86853488/193669316-f5e65045-8070-4e35-9752-d8f8bb9102ec.png)
+![image](https://user-images.githubusercontent.com/86853488/193669349-7a71fc13-e0a2-4783-918e-4f312b43c04f.png)
+![image](https://user-images.githubusercontent.com/86853488/193669791-ec453135-8506-4da9-acaf-cee45bc65ef0.png)
+
+- Se puede ver el encapsulamiento de metodos y el proceso de no repetir codigo, otra opcion hubiese sido pasar por parametro una condicion y segun esa condicion iterar una u otra lista, o ambas en el mismo scope, tambien hago uso de Enumerados.-
+
+
+### 8 - Herencia - Sealed una clase que no voy quiero que sea heredada. 
+![image](https://user-images.githubusercontent.com/86853488/193669082-ffccb20d-31b3-48ff-b38e-9ed7387dca0a.png)
+
+### 9 - Herencia - Abstract Persona es una clase que si participa de Herencia pero que no quiero que se realice una instancia de la misma.-
+![image](https://user-images.githubusercontent.com/86853488/193677112-18ca3dbe-c1f7-4cec-ba4e-7454daadeaca.png)
+
+### 9 - POLIMORFISMO - Hubiera sido sencillo usar el METODO MOSTRAR()
+**Dentro de la clase pasaje decidi realizar 3 metodos abstractos (probablemente cobrar pasaje sera virtual en la version BETA 1.1)
+**En las clases derivadas realizo un override, y cada una realiza en su escope un metodo distinto, en descuento es segun los viajes realizados, pero segun la categoria seran menos o mas viajes necesarios para un mejor descuento.
+
+![image](https://user-images.githubusercontent.com/86853488/193678107-2be648bb-1960-4ef2-9d55-fcb66b5608b2.png)
+![image](https://user-images.githubusercontent.com/86853488/193678379-56fef8cc-445b-4158-a763-8c8ccb1dd386.png)
+![image](https://user-images.githubusercontent.com/86853488/193678425-0d4112e1-9081-4797-986c-333e9c4ce2fa.png)
+
+
+### 10 Estructura Try Catch - Excepciones
+**Aplique excepciones para validar los datos ingresados y mostrarselo en la interface al usuario, por Herencia, cuando instancio un cliente y hago :base() para llamar a Persona, puedo recibir las excepciones de Persona, y las atrapo en la vista, dentro del FRMCARGAR CLIENTE.
+
+![image](https://user-images.githubusercontent.com/86853488/193677331-69477918-7a6c-42d9-adec-50765c7f5698.png)
+![image](https://user-images.githubusercontent.com/86853488/193677558-e37e4ad3-cd1f-4c7b-af92-a0c94a6524b2.png)
+
+
+### 11 FUNCIONALIDAD EXTRA
+
+**HUBIESE QUERIDO DESARROLLAR LA PARTE DE USUARIO Y ADMINISTRADOR, EL CUAL COMO ADMIN PODIAS DAR DE ALTA AVIONES Y VUELOS Y NO COMO USUARIO.
+
+
+
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
