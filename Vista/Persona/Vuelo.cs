@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 
 
 
@@ -29,7 +28,7 @@ namespace Logica
         private int bodegaDisponible;
 
 
-        public double DuracionDeVuelo { get => (horaDeLlegada-horaDePartida).TotalHours;}
+        public double DuracionDeVuelo { get => (horaDeLlegada - horaDePartida).TotalHours; }
         public Avion Avion { get => avion; set => avion = value; }
         public bool OfreceComida { get => ofreceComida; set => ofreceComida = value; }
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
@@ -39,24 +38,33 @@ namespace Logica
 
         public DateTime HoraDePartida { get => horaDePartida; set => horaDePartida = value; }
         public DateTime HoraDeLlegada { get => horaDeLlegada; set => horaDeLlegada = value; }
+        public List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
 
         public string Destino { get => destino; set => destino = value; }
         public string Origen { get => origen; set => origen = value; }
         public int AsientosDisponiblesPremium
         {
-            get => asientosDisponibles = avion.CantidadDeAsientosPremium - listaDePasajerosPremium.Count;
+            get => asientosDisponibles = avion.CantidadDeAsientosPremium - ListaDePasajerosPremium.Count;
 
         }
         public int AsientosDisponiblesTurista
         {
-            get => asientosDisponibles = avion.CantidadDeAsientosTurista - listaDePasajerosTurista.Count;
+            get => asientosDisponibles = avion.CantidadDeAsientosTurista - ListaDePasajerosTurista.Count;
 
         }
-        public List<Pasaje> ListaDePasajes { get => listaDePasajes; set => listaDePasajes = value; }
-
         public int EspacioBodegaDisponible
         {
             get => bodegaDisponible = avion.CapacidadDeBodega - TotalDeBodegaDisponible();
+        }
+        public string Estado
+        { get
+            {
+                if (0 > DateTime.Compare(HoraDePartida, DateTime.Now))
+                    return "Finalizado";
+                else
+                    return "Abierto";
+
+            }
         }
 
         private Vuelo()
@@ -65,6 +73,11 @@ namespace Logica
             listaDePasajerosPremium = new List<Pasajero>();
             listaDePasajes = new List<Pasaje>();
         }
+
+
+
+
+
         public Vuelo(DateTime horaDePartida, DateTime horaDeLlegada, Avion avion, bool ofreceComida, bool tieneWifi,
             string codigoDeVuelo, int origen, int destino) : this()
         {
@@ -76,7 +89,7 @@ namespace Logica
             this.avion = avion;
             this.ofreceComida = ofreceComida;
             this.tieneWifi = tieneWifi;
-            this.codigoDeVuelo = GenerarCodigoDeVuelo(avion,origen,destino);
+            this.codigoDeVuelo = GenerarCodigoDeVuelo(avion, origen, destino);
             this.destino = CargarDestinoOrigen(destino);
             this.origen = CargarDestinoOrigen(origen);
 
@@ -100,7 +113,7 @@ namespace Logica
 
         public override string ToString()
         {
-            string respuestaComida; 
+            string respuestaComida;
             string respuestaWifi;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Codigo de Vuelo {codigoDeVuelo}");
@@ -108,20 +121,20 @@ namespace Logica
             sb.AppendLine($"Destino: {destino}");
             sb.AppendLine($"Hora de partida: {horaDePartida}");
             sb.AppendLine($"Hora de llegada: {horaDeLlegada}");
-            sb.AppendLine($"Ofrece comida: {respuestaComida = ((ofreceComida == true) ? "SI": "NO") }");
+            sb.AppendLine($"Ofrece comida: {respuestaComida = ((ofreceComida == true) ? "SI" : "NO") }");
             sb.AppendLine($"Ofrece comida: {respuestaWifi = ((tieneWifi == true) ? "SI" : "NO") }");
 
             return sb.ToString();
         }
 
 
-        public DateTime CargarOrigenConHora (DateTime fecha)
+        public DateTime CargarOrigenConHora(DateTime fecha)
         {
             Random r = new Random();
 
             int horaInt = r.Next(2, 23);
 
-            fecha = fecha.AddHours((double)horaInt);
+            fecha = fecha.AddHours(horaInt);
 
             return fecha;
 
@@ -135,47 +148,55 @@ namespace Logica
 
                 int horaInt = r.Next(8, 12);
 
-                fecha = fecha.AddHours((double)horaInt);
+                fecha = fecha.AddHours(horaInt);
 
                 return fecha;
-            }else
+            }
+            else
             {
                 Random r = new Random();
 
                 int horaInt = r.Next(1, 4);
 
-                fecha = fecha.AddHours((double)horaInt);
+                fecha = fecha.AddHours(horaInt);
 
                 return fecha;
             }
-           
+
 
         }
 
-
+        /// <summary>
+        /// Es el metodo para generar el codigo de vuelo, SIN BASE HARCODEADA, AL FINAL DE DESTINOSTRING, SE AGREGARIA horaDePartida.ToString("yyMMdd")
+        /// </summary>
+        /// <param name="avion"></param>
+        /// <param name="origen"></param>
+        /// <param name="destino"></param>
+        /// <returns></returns>
         public string GenerarCodigoDeVuelo(Avion avion, int origen, int destino)
         {
             //LV - 350LA
             //BUELV777ULMIA
             string codigoDeVuelo = avion.Matricula;
             string origenString = "";
-            string destinoString= "";
+            string destinoString = "";
 
-            foreach (KeyValuePair<int,string> item in GestionDeAerolinea.DiccionarioDeAeropuertos)
+            foreach (KeyValuePair<int, string> item in GestionDeAerolinea.DiccionarioDeAeropuertos)
             {
-                if(origen == item.Key)
+                if (origen == item.Key)
                 {
-                    origenString = item.Value.Substring(0, 3);
+                    origenString = horaDePartida.ToString("yyMMdd")+item.Value.Substring(0, 3);
                 }
                 if (destino == item.Key)
                 {
-                    destinoString = item.Value.Substring(0, 3);
+                    destinoString = item.Value.Substring(0, 3)+horaDePartida.ToString("HHmm");
+                    
                 }
 
             }
 
 
-            codigoDeVuelo = codigoDeVuelo.Replace("-","");
+            codigoDeVuelo = codigoDeVuelo.Replace("-", "");
             codigoDeVuelo = codigoDeVuelo.Replace(" ", "");
             codigoDeVuelo = origenString + codigoDeVuelo;
             codigoDeVuelo = codigoDeVuelo + destinoString;
@@ -190,16 +211,16 @@ namespace Logica
 
         public int TotalDeBodegaDisponible()
         {
-            int acumuladorDePeso=0;
+            int acumuladorDePeso = 0;
 
-            for (int i = 0; i < listaDePasajerosPremium.Count; i++)
-            {
-                for (int j = 0; j < listaDePasajerosPremium[i].ListaDeEquipajes.Count; j++)
-                {
-                    acumuladorDePeso += listaDePasajerosPremium[i].ListaDeEquipajes[j].PesoDelEquipaje;
-                }
-            }
+            acumuladorDePeso = IterarPesoDeEquipajePremium(acumuladorDePeso);
+            acumuladorDePeso = IterarPesoDeEquipajeTurista(acumuladorDePeso);
 
+            return acumuladorDePeso;
+        }
+
+        private int IterarPesoDeEquipajeTurista(int acumuladorDePeso)
+        {
             for (int i = 0; i < listaDePasajerosTurista.Count; i++)
             {
                 for (int j = 0; j < listaDePasajerosTurista[i].ListaDeEquipajes.Count; j++)
@@ -208,15 +229,20 @@ namespace Logica
                 }
             }
 
-
-
             return acumuladorDePeso;
         }
 
+        private int IterarPesoDeEquipajePremium(int acumuladorDePeso)
+        {
+            for (int i = 0; i < listaDePasajerosPremium.Count; i++)
+            {
+                for (int j = 0; j < listaDePasajerosPremium[i].ListaDeEquipajes.Count; j++)
+                {
+                    acumuladorDePeso += listaDePasajerosPremium[i].ListaDeEquipajes[j].PesoDelEquipaje;
+                }
+            }
 
-
-
-
-
+            return acumuladorDePeso;
+        }
     }
 }

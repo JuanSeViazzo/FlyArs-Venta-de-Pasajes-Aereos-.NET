@@ -27,7 +27,7 @@ namespace Vista
         public FrmVenderPasaje()
         {
             InitializeComponent();
-            listaDePasajes = new List<Pasaje>();   
+            listaDePasajes = new List<Pasaje>();
             listaDePasajeros = new List<Pasajero>();
 
         }
@@ -68,10 +68,11 @@ namespace Vista
             pasajeros.Columns.Add("Hora de Salida");
             pasajeros.Columns.Add("Destino");
             pasajeros.Columns.Add("Hora de Llegada");
-            dgvListaDePasajes.DataSource = pasajeros;   
+            dgvListaDePasajes.DataSource = pasajeros;
             //CargarItemsDataTable();
         }
-
+        #region
+        //no abrir
         private void CargarItemsDataTable()
         {
             dgvListaDePasajes.DataSource = null;
@@ -80,7 +81,7 @@ namespace Vista
             {
                 if (item is PasajeTurista pasajeAux)
                 {
-                    pasajeros.Rows.Add(pasajeAux.CodigoDeVuelo, pasajeAux.CodigoDePasaje,pasajeAux.CategoriaPasaje,pasajeAux.PrecioDePasaje,
+                    pasajeros.Rows.Add(pasajeAux.CodigoDeVuelo, pasajeAux.CodigoDePasaje, pasajeAux.CategoriaPasaje, pasajeAux.PrecioDePasaje,
                         pasajeAux.DniDePasajero, pasajeAux.NombrePasajero, pasajeAux.ApellidoDePasajero,
                                         pasajeAux.Origen, pasajeAux.HoraDeSalida, pasajeAux.Destino, pasajeAux.HoraDeLlegada);
 
@@ -97,9 +98,7 @@ namespace Vista
             dgvListaDePasajes.DataSource = pasajeros;
 
         }
-
-
-
+        #endregion
 
 
         private void btnElegirVuelo_Click(object sender, EventArgs e)
@@ -120,15 +119,38 @@ namespace Vista
 
             frmCargarPasajero frmCargarPasajero = new frmCargarPasajero(vueloAux.CodigoDeVuelo);
             frmCargarPasajero.ShowDialog();
-            if (frmCargarPasajero.DialogResult == DialogResult.OK)
+            pasajeroAux = frmCargarPasajero.pasajeroElegido;
+            int flag = 0;
+            if (listaDePasajeros.Count == 0)
             {
                 pasajeroAux = frmCargarPasajero.pasajeroElegido;
                 rtbPasajero.Text = pasajeroAux.ToString();
                 btnCargarEquipaje.Enabled = true;
             }
-
-
+            else
+            {
+                if (frmCargarPasajero.DialogResult == DialogResult.OK)
+                {
+                    for (int i = 0; i < listaDePasajeros.Count; i++)
+                    {
+                        if (listaDePasajeros[i].Documento == pasajeroAux.Documento)
+                        {
+                            MessageBox.Show("Pasajero Ya elegido", "Pasajero Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            flag = 1;
+                            btnCargarEquipaje.Enabled = false;
+                            break;
+                        }
+                    }
+                    if (flag == 0)
+                    {
+                        pasajeroAux = frmCargarPasajero.pasajeroElegido;
+                        rtbPasajero.Text = pasajeroAux.ToString();
+                        btnCargarEquipaje.Enabled = true;
+                    }
+                }
+            }
         }
+
 
         private void btnCargarEquipaje_Click(object sender, EventArgs e)
         {
@@ -153,7 +175,7 @@ namespace Vista
             if (frmFacturar.DialogResult == DialogResult.OK)
                 rtbFacturacion.Text = frmFacturar.montoFacturado;
             montoFacturado = frmFacturar.montoFinal;
-            btnSubirPasajero.Enabled = true;    
+            btnSubirPasajero.Enabled = true;
 
 
         }
@@ -162,10 +184,34 @@ namespace Vista
         {
             Pasaje pasajeAux = null;
 
+           
+
+            if (montoFacturado != 0)
+            {
+                pasajeAux = CargarPasajero();
+
+                CargarPasaje(pasajeAux);
+                listaDePasajes.Add(pasajeAux);
+
+                btnAceptarModificacion.Enabled = true;
+                btnCargarOtroPasajero.Enabled = true;
+                btnElegirVuelo.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El monto facturado no puede ser 0");
+
+            }
+
+        }
+
+        private Pasaje CargarPasajero()
+        {
+            Pasaje pasajeAux;
             if (pasajeroAux.ClaseDePasajero1 == ClaseDePasajero.Turista)
             {
                 pasajeAux = new PasajeTurista(pasajeroAux.CodigoDePasaje, vueloAux.CodigoDeVuelo, pasajeroAux.Documento, pasajeroAux.NombreCliente,
-                                   pasajeroAux.ApellidoCliente, vueloAux.Origen, vueloAux.HoraDePartida, vueloAux.Destino, 
+                                   pasajeroAux.ApellidoCliente, vueloAux.Origen, vueloAux.HoraDePartida, vueloAux.Destino,
                                    vueloAux.HoraDeLlegada, "Turista", montoFacturado);
             }
             else
@@ -176,7 +222,11 @@ namespace Vista
 
             }
 
+            return pasajeAux;
+        }
 
+        private void CargarPasaje(Pasaje pasajeAux)
+        {
             if (pasajeAux is PasajeTurista pasajeAuxT)
             {
                 pasajeros.Rows.Add(pasajeAuxT.CodigoDeVuelo, pasajeAuxT.CodigoDePasaje, pasajeAuxT.CategoriaPasaje, pasajeAuxT.PrecioDePasaje,
@@ -191,18 +241,14 @@ namespace Vista
                                     pasajeAuxP.Origen, pasajeAuxP.HoraDeSalida, pasajeAuxP.Destino, pasajeAuxP.HoraDeLlegada);
 
             }
-            listaDePasajes.Add(pasajeAux);
-
-            btnAceptarModificacion.Enabled = true;
-            btnCargarOtroPasajero.Enabled = true;
-
-
-
         }
 
         private void btnAceptarModificacion_Click(object sender, EventArgs e)
         {
-            GestionDeAerolinea.SubirPasajeroAlAvion(listaDePasajes,listaDePasajeros);
+
+            
+
+            GestionDeAerolinea.SubirPasajeroAlAvion(listaDePasajes, listaDePasajeros);
 
             for (int i = 0; i < listaDePasajes.Count; i++)
             {
@@ -227,7 +273,9 @@ namespace Vista
             rtbEquipaje.Clear();
             rtbFacturacion.Clear();
             rtbPasajero.Clear();
-            rtbVuelo.Clear();   
+            
+            btnElegirVuelo.Enabled = false;
+
         }
     }
 

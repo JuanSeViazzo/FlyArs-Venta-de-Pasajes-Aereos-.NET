@@ -38,14 +38,13 @@
             this.btn_Soporte = new System.Windows.Forms.Button();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_HoraActualMenuPrincipal = new System.Windows.Forms.Label();
-            this.btnMenuPasajeros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(157, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(509, 391);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -57,7 +56,7 @@
             this.btn_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Salir.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salir.Location = new System.Drawing.Point(683, 416);
+            this.btn_Salir.Location = new System.Drawing.Point(665, 356);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(132, 61);
             this.btn_Salir.TabIndex = 4;
@@ -70,7 +69,7 @@
             this.btn_MenuPasajes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_MenuPasajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_MenuPasajes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_MenuPasajes.Location = new System.Drawing.Point(12, 26);
+            this.btn_MenuPasajes.Location = new System.Drawing.Point(12, 129);
             this.btn_MenuPasajes.Name = "btn_MenuPasajes";
             this.btn_MenuPasajes.Size = new System.Drawing.Size(132, 61);
             this.btn_MenuPasajes.TabIndex = 8;
@@ -83,7 +82,7 @@
             this.btn_MenuVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_MenuVuelos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_MenuVuelos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_MenuVuelos.Location = new System.Drawing.Point(683, 26);
+            this.btn_MenuVuelos.Location = new System.Drawing.Point(665, 129);
             this.btn_MenuVuelos.Name = "btn_MenuVuelos";
             this.btn_MenuVuelos.Size = new System.Drawing.Size(132, 61);
             this.btn_MenuVuelos.TabIndex = 9;
@@ -96,7 +95,7 @@
             this.btn_Estadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Estadisticas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Estadisticas.Location = new System.Drawing.Point(683, 215);
+            this.btn_Estadisticas.Location = new System.Drawing.Point(665, 196);
             this.btn_Estadisticas.Name = "btn_Estadisticas";
             this.btn_Estadisticas.Size = new System.Drawing.Size(132, 61);
             this.btn_Estadisticas.TabIndex = 10;
@@ -109,7 +108,7 @@
             this.btnMenuClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMenuClientes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMenuClientes.Location = new System.Drawing.Point(12, 150);
+            this.btnMenuClientes.Location = new System.Drawing.Point(12, 196);
             this.btnMenuClientes.Name = "btnMenuClientes";
             this.btnMenuClientes.Size = new System.Drawing.Size(132, 61);
             this.btnMenuClientes.TabIndex = 13;
@@ -122,7 +121,7 @@
             this.btn_Soporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Soporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Soporte.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Soporte.Location = new System.Drawing.Point(12, 416);
+            this.btn_Soporte.Location = new System.Drawing.Point(12, 356);
             this.btn_Soporte.Name = "btn_Soporte";
             this.btn_Soporte.Size = new System.Drawing.Size(132, 61);
             this.btn_Soporte.TabIndex = 14;
@@ -151,30 +150,17 @@
             this.lbl_HoraActualMenuPrincipal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_HoraActualMenuPrincipal.Location = new System.Drawing.Point(442, 443);
             this.lbl_HoraActualMenuPrincipal.Name = "lbl_HoraActualMenuPrincipal";
-            this.lbl_HoraActualMenuPrincipal.Size = new System.Drawing.Size(117, 20);
+            this.lbl_HoraActualMenuPrincipal.Size = new System.Drawing.Size(120, 20);
             this.lbl_HoraActualMenuPrincipal.TabIndex = 17;
-            this.lbl_HoraActualMenuPrincipal.Text = "Hora actual: ";
-            // 
-            // btnMenuPasajeros
-            // 
-            this.btnMenuPasajeros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuPasajeros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMenuPasajeros.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMenuPasajeros.Location = new System.Drawing.Point(12, 255);
-            this.btnMenuPasajeros.Name = "btnMenuPasajeros";
-            this.btnMenuPasajeros.Size = new System.Drawing.Size(132, 61);
-            this.btnMenuPasajeros.TabIndex = 18;
-            this.btnMenuPasajeros.Text = "Menu Pasajeros";
-            this.btnMenuPasajeros.UseVisualStyleBackColor = true;
-            this.btnMenuPasajeros.Click += new System.EventHandler(this.btnMenuPasajeros_Click);
+            this.lbl_HoraActualMenuPrincipal.Text = "Fecha actual:";
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(827, 489);
-            this.Controls.Add(this.btnMenuPasajeros);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(807, 533);
             this.Controls.Add(this.lbl_HoraActualMenuPrincipal);
             this.Controls.Add(this.lbl_Usuario);
             this.Controls.Add(this.btn_Soporte);
@@ -207,6 +193,5 @@
         private System.Windows.Forms.Button btn_Soporte;
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.Label lbl_HoraActualMenuPrincipal;
-        private System.Windows.Forms.Button btnMenuPasajeros;
     }
 }

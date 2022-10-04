@@ -7,7 +7,10 @@ namespace Vista
     {
         FrmMostrarHorasDeVueloPorAvion frmMostrarHorasDeVueloPorAvion;
         FrmDestinoPorFacturacion frmDestinoPorFacturacion;
+        FrmDestinoFavorito frmDestinoFavorito;
+        FrmPasajerosFrecuentes frmPasajerosFrecuentes;
 
+        int dato;
         public FrmEstadisticas()
         {
             InitializeComponent();
@@ -18,7 +21,6 @@ namespace Vista
         private void FrmEstadisticas_Load(object sender, EventArgs e)
         {
             frmMostrarHorasDeVueloPorAvion = new FrmMostrarHorasDeVueloPorAvion();
-            frmDestinoPorFacturacion = new FrmDestinoPorFacturacion();
         }
 
         private void horasDeVueloPorAvionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,6 +33,8 @@ namespace Vista
 
         private void destinosPorFacturacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dato = 0;
+            frmDestinoPorFacturacion = new FrmDestinoPorFacturacion(dato);
             frmDestinoPorFacturacion.MdiParent = this;
             frmDestinoPorFacturacion.Show();
         }
@@ -39,6 +43,33 @@ namespace Vista
         {
             frmMostrarHorasDeVueloPorAvion.MdiParent = this;
             frmMostrarHorasDeVueloPorAvion.Show();
+        }
+
+        private void destinoFavoritoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            dato = 0;
+            frmDestinoFavorito = new FrmDestinoFavorito(dato);
+            frmDestinoFavorito.MdiParent = this;
+            frmDestinoFavorito.Show();
+        }
+
+        private void listaDePasajerosFrecuentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmPasajerosFrecuentes frmPasajerosFrecuentes = new FrmPasajerosFrecuentes();
+            frmPasajerosFrecuentes.MdiParent = this;
+            frmPasajerosFrecuentes.Show();  
+
+
+        }
+
+        private void gananciasTotalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dato = 1;
+            frmDestinoPorFacturacion = new FrmDestinoPorFacturacion(dato);
+            frmDestinoPorFacturacion.MdiParent = this;
+            frmDestinoPorFacturacion.Show();
         }
     }
 }

@@ -29,16 +29,6 @@ namespace Logica
                     precioSinImpuestos = (float)vueloAux.DuracionDeVuelo * 100;
                 
             }
-            #region           
-            //if (vueloAux.DuracionDeVuelo > 4)
-            //{
-            //    precioSinImpuestos = (float)vueloAux.DuracionDeVuelo * 100;
-            //}
-            //else
-            //{
-            //    precioSinImpuestos = (float)vueloAux.DuracionDeVuelo * 50;
-            //}
-            #endregion
 
             if (pasajeroAux.ClaseDePasajero1 != ClaseDePasajero.Turista)
                 precioSinImpuestos = precioSinImpuestos * 1.15f;

@@ -49,6 +49,7 @@
             // nmrSegundoEquipaje
             // 
             this.nmrSegundoEquipaje.BackColor = System.Drawing.Color.White;
+            this.nmrSegundoEquipaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nmrSegundoEquipaje.Location = new System.Drawing.Point(345, 228);
             this.nmrSegundoEquipaje.Maximum = new decimal(new int[] {
             21,
@@ -62,9 +63,10 @@
             // nmrPrimerEquipaje
             // 
             this.nmrPrimerEquipaje.BackColor = System.Drawing.Color.White;
+            this.nmrPrimerEquipaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nmrPrimerEquipaje.Location = new System.Drawing.Point(345, 175);
             this.nmrPrimerEquipaje.Maximum = new decimal(new int[] {
-            50000000,
+            25,
             0,
             0,
             0});
@@ -102,6 +104,7 @@
             // nmrDeMano
             // 
             this.nmrDeMano.BackColor = System.Drawing.Color.White;
+            this.nmrDeMano.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nmrDeMano.Location = new System.Drawing.Point(345, 119);
             this.nmrDeMano.Maximum = new decimal(new int[] {
             1,
@@ -114,8 +117,10 @@
             // 
             // rtbCliente
             // 
+            this.rtbCliente.BackColor = System.Drawing.Color.White;
             this.rtbCliente.Location = new System.Drawing.Point(31, 98);
             this.rtbCliente.Name = "rtbCliente";
+            this.rtbCliente.ReadOnly = true;
             this.rtbCliente.Size = new System.Drawing.Size(277, 246);
             this.rtbCliente.TabIndex = 48;
             this.rtbCliente.Text = "";
@@ -134,6 +139,7 @@
             this.btnCancelarModificacion.Text = "Cancelar";
             this.btnCancelarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarModificacion.UseVisualStyleBackColor = false;
+            this.btnCancelarModificacion.Click += new System.EventHandler(this.btnCancelarModificacion_Click);
             // 
             // btnAceptarModificacion
             // 
@@ -187,6 +193,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.pasajeros2;
             this.ClientSize = new System.Drawing.Size(711, 507);
             this.Controls.Add(this.lblMaximo);
             this.Controls.Add(this.lstEquipaje);

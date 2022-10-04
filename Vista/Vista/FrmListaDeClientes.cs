@@ -81,12 +81,9 @@ namespace Vista
         {
             int documento;
 
-            if (estado == "inactivo")
+            if (estado != "inactivo")
             {
 
-            }
-            else
-            {
                 try
                 {
                     int row = e.RowIndex;
@@ -127,7 +124,9 @@ namespace Vista
 
                     return;
                 }
+
             }
+
 
 
         }

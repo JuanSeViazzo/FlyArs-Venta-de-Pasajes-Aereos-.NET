@@ -41,9 +41,11 @@
             // 
             // rtbCliente
             // 
-            this.rtbCliente.Location = new System.Drawing.Point(12, 96);
+            this.rtbCliente.BackColor = System.Drawing.Color.White;
+            this.rtbCliente.Location = new System.Drawing.Point(12, 194);
             this.rtbCliente.Name = "rtbCliente";
-            this.rtbCliente.Size = new System.Drawing.Size(277, 246);
+            this.rtbCliente.ReadOnly = true;
+            this.rtbCliente.Size = new System.Drawing.Size(277, 193);
             this.rtbCliente.TabIndex = 19;
             this.rtbCliente.Text = "";
             // 
@@ -52,7 +54,7 @@
             this.btnTraerCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTraerCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTraerCliente.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTraerCliente.Location = new System.Drawing.Point(12, 348);
+            this.btnTraerCliente.Location = new System.Drawing.Point(12, 393);
             this.btnTraerCliente.Name = "btnTraerCliente";
             this.btnTraerCliente.Size = new System.Drawing.Size(277, 39);
             this.btnTraerCliente.TabIndex = 18;
@@ -96,7 +98,7 @@
             this.btnCargarPasajero.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarPasajero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargarPasajero.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarPasajero.Location = new System.Drawing.Point(295, 348);
+            this.btnCargarPasajero.Location = new System.Drawing.Point(306, 393);
             this.btnCargarPasajero.Name = "btnCargarPasajero";
             this.btnCargarPasajero.Size = new System.Drawing.Size(277, 39);
             this.btnCargarPasajero.TabIndex = 29;
@@ -107,30 +109,36 @@
             // rdbPremium
             // 
             this.rdbPremium.AutoSize = true;
-            this.rdbPremium.Location = new System.Drawing.Point(467, 71);
+            this.rdbPremium.BackColor = System.Drawing.Color.Transparent;
+            this.rdbPremium.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rdbPremium.Location = new System.Drawing.Point(12, 170);
             this.rdbPremium.Name = "rdbPremium";
-            this.rdbPremium.Size = new System.Drawing.Size(105, 19);
+            this.rdbPremium.Size = new System.Drawing.Size(124, 18);
             this.rdbPremium.TabIndex = 1;
             this.rdbPremium.TabStop = true;
             this.rdbPremium.Text = "Clase Premium";
-            this.rdbPremium.UseVisualStyleBackColor = true;
+            this.rdbPremium.UseVisualStyleBackColor = false;
             // 
             // rdbTurista
             // 
             this.rdbTurista.AutoSize = true;
-            this.rdbTurista.Location = new System.Drawing.Point(306, 71);
+            this.rdbTurista.BackColor = System.Drawing.Color.Transparent;
+            this.rdbTurista.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rdbTurista.Location = new System.Drawing.Point(178, 170);
             this.rdbTurista.Name = "rdbTurista";
-            this.rdbTurista.Size = new System.Drawing.Size(91, 19);
+            this.rdbTurista.Size = new System.Drawing.Size(111, 18);
             this.rdbTurista.TabIndex = 0;
             this.rdbTurista.TabStop = true;
             this.rdbTurista.Text = "Clase Turista";
-            this.rdbTurista.UseVisualStyleBackColor = true;
+            this.rdbTurista.UseVisualStyleBackColor = false;
             // 
             // rtbPasajero
             // 
-            this.rtbPasajero.Location = new System.Drawing.Point(295, 96);
+            this.rtbPasajero.BackColor = System.Drawing.Color.White;
+            this.rtbPasajero.Location = new System.Drawing.Point(306, 194);
             this.rtbPasajero.Name = "rtbPasajero";
-            this.rtbPasajero.Size = new System.Drawing.Size(277, 246);
+            this.rtbPasajero.ReadOnly = true;
+            this.rtbPasajero.Size = new System.Drawing.Size(277, 193);
             this.rtbPasajero.TabIndex = 30;
             this.rtbPasajero.Text = "";
             // 
@@ -138,7 +146,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 518);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.pasajeros;
+            this.ClientSize = new System.Drawing.Size(600, 509);
             this.Controls.Add(this.rtbPasajero);
             this.Controls.Add(this.rdbPremium);
             this.Controls.Add(this.rdbTurista);
@@ -147,9 +157,11 @@
             this.Controls.Add(this.btnAceptarCargaDePasajero);
             this.Controls.Add(this.rtbCliente);
             this.Controls.Add(this.btnTraerCliente);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCargarPasajero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCargarPasajero";
+            this.Text = "Cargar Pasajero";
             this.Load += new System.EventHandler(this.frmCargarPasajero_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

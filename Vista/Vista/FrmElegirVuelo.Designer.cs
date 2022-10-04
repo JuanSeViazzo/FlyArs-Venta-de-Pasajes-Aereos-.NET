@@ -37,6 +37,7 @@
             this.btnSeleccionarVuelo = new System.Windows.Forms.Button();
             this.lblFechaDePartida = new System.Windows.Forms.Label();
             this.btnCargarVuelo = new System.Windows.Forms.Button();
+            this.btnMostrarVuelo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vuelos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,12 +103,15 @@
             // 
             // btnSeleccionarVuelo
             // 
-            this.btnSeleccionarVuelo.Location = new System.Drawing.Point(600, 307);
+            this.btnSeleccionarVuelo.BackColor = System.Drawing.Color.White;
+            this.btnSeleccionarVuelo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSeleccionarVuelo.ForeColor = System.Drawing.Color.Black;
+            this.btnSeleccionarVuelo.Location = new System.Drawing.Point(600, 308);
             this.btnSeleccionarVuelo.Name = "btnSeleccionarVuelo";
             this.btnSeleccionarVuelo.Size = new System.Drawing.Size(108, 23);
             this.btnSeleccionarVuelo.TabIndex = 9;
             this.btnSeleccionarVuelo.Text = "Seleccionar Vuelo";
-            this.btnSeleccionarVuelo.UseVisualStyleBackColor = true;
+            this.btnSeleccionarVuelo.UseVisualStyleBackColor = false;
             this.btnSeleccionarVuelo.Click += new System.EventHandler(this.btnSeleccionarVuelo_Click_1);
             // 
             // lblFechaDePartida
@@ -121,19 +125,36 @@
             // 
             // btnCargarVuelo
             // 
-            this.btnCargarVuelo.Location = new System.Drawing.Point(600, 307);
+            this.btnCargarVuelo.BackColor = System.Drawing.Color.White;
+            this.btnCargarVuelo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCargarVuelo.Location = new System.Drawing.Point(600, 308);
             this.btnCargarVuelo.Name = "btnCargarVuelo";
             this.btnCargarVuelo.Size = new System.Drawing.Size(108, 23);
             this.btnCargarVuelo.TabIndex = 13;
             this.btnCargarVuelo.Text = "Cargar Vuelo";
-            this.btnCargarVuelo.UseVisualStyleBackColor = true;
+            this.btnCargarVuelo.UseVisualStyleBackColor = false;
             this.btnCargarVuelo.Click += new System.EventHandler(this.btnCargarVuelo_Click);
+            // 
+            // btnMostrarVuelo
+            // 
+            this.btnMostrarVuelo.BackColor = System.Drawing.Color.White;
+            this.btnMostrarVuelo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarVuelo.Location = new System.Drawing.Point(714, 307);
+            this.btnMostrarVuelo.Name = "btnMostrarVuelo";
+            this.btnMostrarVuelo.Size = new System.Drawing.Size(108, 23);
+            this.btnMostrarVuelo.TabIndex = 14;
+            this.btnMostrarVuelo.Text = "Mostrar Vuelo";
+            this.btnMostrarVuelo.UseVisualStyleBackColor = false;
+            this.btnMostrarVuelo.Click += new System.EventHandler(this.btnMostrarVuelo_Click);
             // 
             // FrmElegirVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.FLYARG;
             this.ClientSize = new System.Drawing.Size(1479, 600);
+            this.Controls.Add(this.btnMostrarVuelo);
             this.Controls.Add(this.btnCargarVuelo);
             this.Controls.Add(this.lblFechaDePartida);
             this.Controls.Add(this.btnSeleccionarVuelo);
@@ -147,7 +168,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmElegirVuelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Elegir Vuelo";
+            this.Text = "Menu de Vuelos";
             this.Load += new System.EventHandler(this.FrmElegirVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vuelos)).EndInit();
             this.ResumeLayout(false);
@@ -165,5 +186,6 @@
         private System.Windows.Forms.Button btnSeleccionarVuelo;
         private System.Windows.Forms.Label lblFechaDePartida;
         private System.Windows.Forms.Button btnCargarVuelo;
+        private System.Windows.Forms.Button btnMostrarVuelo;
     }
 }

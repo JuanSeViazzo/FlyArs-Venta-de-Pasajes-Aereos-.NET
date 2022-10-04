@@ -14,7 +14,7 @@ namespace Logica
         public static bool ValidarString(string dato)
         {
 
-            return !String.IsNullOrEmpty(dato) && dato.All(char.IsLetter);
+            return !String.IsNullOrEmpty(dato) && (!dato.All(char.IsNumber));
             
 
         }

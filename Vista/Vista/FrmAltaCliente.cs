@@ -14,7 +14,7 @@ namespace Vista
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             cmb_tipoDeDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
-
+            btnGuardar.Enabled = false;
         }
 
         private void btn_aceptarPasajero_Click(object sender, EventArgs e)
@@ -36,10 +36,7 @@ namespace Vista
                 int.Parse(Txt_numeroDeDocumento.Text), txtEdad.Text, txtNacionalidad.Text, calMyDate.SelectionStart, sexoElegido);
 
                 rtbPasajero.Text = cliente.ToString();
-
-                GestionDeAerolinea.CargarClienteEnLineaAerea((Cliente)cliente);
-
-                this.DialogResult = DialogResult.OK;
+                btnGuardar.Enabled = true;
 
             }
             catch (Exception ex)
@@ -49,19 +46,30 @@ namespace Vista
 
             }
 
-
-
         }
+
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GestionDeAerolinea.CargarClienteEnLineaAerea((Cliente)cliente);
 
 
+                this.DialogResult = DialogResult.OK;
+            }
 
 
+            catch (Exception ex)
+            {
+                lbl_errorExcep.Text = ex.Message;
+
+            }
+        }
 
 
 

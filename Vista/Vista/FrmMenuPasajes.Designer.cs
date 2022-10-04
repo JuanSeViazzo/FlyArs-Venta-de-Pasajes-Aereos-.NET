@@ -79,6 +79,8 @@
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_VenderPasaje);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMenuPasajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Pasajes";

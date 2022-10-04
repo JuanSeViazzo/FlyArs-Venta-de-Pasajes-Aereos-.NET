@@ -47,7 +47,8 @@ namespace Vista
             vuelos.Columns.Add("Disponible en Bodega");
             vuelos.Columns.Add("Wifi");
             vuelos.Columns.Add("Comida");
-            vuelos.Columns.Add("Cantidad de baños");
+            vuelos.Columns.Add("Cantidad de baños", typeof(int));
+            vuelos.Columns.Add("Estado");
             dgv_vuelos.DataSource = vuelos;
 
 
@@ -78,12 +79,12 @@ namespace Vista
 
                 vuelos.Rows.Add(GestionDeAerolinea.ListaDeVuelos[i].CodigoDeVuelo, GestionDeAerolinea.ListaDeVuelos[i].Avion.Matricula,
                     GestionDeAerolinea.ListaDeVuelos[i].Origen,
-                GestionDeAerolinea.ListaDeVuelos[i].Destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("dd/MM/yyyy hh:mm tt"),
-                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy hh:mm tt"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesPremium}" +
+                GestionDeAerolinea.ListaDeVuelos[i].Destino, GestionDeAerolinea.ListaDeVuelos[i].HoraDePartida.ToString("dd/MM/yyyy HH:mm"),
+                GestionDeAerolinea.ListaDeVuelos[i].HoraDeLlegada.ToString("dd/MM/yyyy HH:mm"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesPremium}" +
                 $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosPremium}"), ($"{GestionDeAerolinea.ListaDeVuelos[i].AsientosDisponiblesTurista}" +
                 $"/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeAsientosTurista}"),
                 ($"{GestionDeAerolinea.ListaDeVuelos[i].EspacioBodegaDisponible}/{GestionDeAerolinea.ListaDeVuelos[i].Avion.CapacidadDeBodega}")
-                , wifi, comida, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios);
+                , wifi, comida, GestionDeAerolinea.ListaDeVuelos[i].Avion.CantidadDeBanios,GestionDeAerolinea.ListaDeVuelos[i].Estado);
 
             }
 
@@ -118,54 +119,66 @@ namespace Vista
         private void dgv_clientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string codigoDeVuelo;
+            Vuelo vueloAux;
 
-            if (estado == "inactivo")
-            {
+            
 
-            }
-            else
+            if (estado != "inactivo")
             {
                 try
                 {
                     int row = e.RowIndex;
                     int column = e.ColumnIndex;
                     codigoDeVuelo = dgv_vuelos.Rows[row].Cells[0].Value.ToString();
+                    vueloAux = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
 
-                    ;
-                    DialogResult resultado = MessageBox.Show($"Codigo De Vuelo: {codigoDeVuelo} \n desea avanzar? ", "Vuelo Elegido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (DialogResult.Yes == resultado)
+                    if (estado == "abrirVuelo")
                     {
-                        if (estado == "venderVuelo")
-                        {
-                            vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
-                            this.DialogResult = DialogResult.OK;
-                        }
-                        //else
-                        //{
-                        //    if (estado == "eliminar")
-                        //    {
-                        //        FrmEliminarCliente frmEliminarCliente = new FrmEliminarCliente(documento);
-                        //        this.Hide();
-                        //        frmEliminarCliente.ShowDialog();
-                        //    }
-                        //    else
-                        //    {
-                        //       vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
-                        //         this.DialogResult = DialogResult.OK;
-                        //    }
+                        FrmListaDePasajeros frmListaDePasajeros = new FrmListaDePasajeros(codigoDeVuelo);
+                        frmListaDePasajeros.ShowDialog();
 
-                        //}
 
                     }
+                    else
+                    {
+                        if (vueloAux.Estado == "Abierto")
+                        {
+                            if (vueloAux.AsientosDisponiblesPremium > 0 && vueloAux.AsientosDisponiblesTurista > 0)
+                            {
+                                DialogResult resultado = MessageBox.Show($"Codigo De Vuelo: {codigoDeVuelo} \n desea avanzar? ", "Vuelo Elegido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (DialogResult.Yes == resultado)
+                                {
+                                    if (estado == "venderVuelo")
+                                    {
+                                        vueloElegido = GestionDeAerolinea.obtenerVueloPorCodigo(codigoDeVuelo);
+                                        this.DialogResult = DialogResult.OK;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("No hay lugares disponibles");
+                            }
+
+                        }
+                        else
+                        {
+                            throw new Exception("Vuelo ya finalizado");
+
+                        }
+                    }
+
+                   
+
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
-                    return;
+                    MessageBox.Show(ex.Message);
                 }
             }
-
 
         }
 
@@ -185,6 +198,11 @@ namespace Vista
             frmCargarVuelo.ShowDialog();
 
 
+        }
+
+        private void btnMostrarVuelo_Click(object sender, EventArgs e)
+        {
+            estado = "abrirVuelo";
         }
     }
 

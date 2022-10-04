@@ -73,12 +73,13 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(2, 277);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 25);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
@@ -137,6 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.pasajeros;
             this.ClientSize = new System.Drawing.Size(1100, 661);
             this.Controls.Add(this.btnCargarCliente);
             this.Controls.Add(this.btnVenderPasaje);
@@ -148,6 +150,7 @@
             this.Controls.Add(this.txt_filtroNombre);
             this.Controls.Add(this.dgv_clientes);
             this.Name = "FrmListaDeClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();

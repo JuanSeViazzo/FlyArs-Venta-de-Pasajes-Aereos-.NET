@@ -50,7 +50,7 @@
             this.btnElegirVuelo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnElegirVuelo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnElegirVuelo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnElegirVuelo.Location = new System.Drawing.Point(12, 108);
+            this.btnElegirVuelo.Location = new System.Drawing.Point(12, 151);
             this.btnElegirVuelo.Name = "btnElegirVuelo";
             this.btnElegirVuelo.Size = new System.Drawing.Size(302, 42);
             this.btnElegirVuelo.TabIndex = 18;
@@ -60,9 +60,9 @@
             // 
             // rtbVuelo
             // 
-            this.rtbVuelo.Location = new System.Drawing.Point(12, 156);
+            this.rtbVuelo.Location = new System.Drawing.Point(12, 199);
             this.rtbVuelo.Name = "rtbVuelo";
-            this.rtbVuelo.Size = new System.Drawing.Size(302, 261);
+            this.rtbVuelo.Size = new System.Drawing.Size(302, 244);
             this.rtbVuelo.TabIndex = 19;
             this.rtbVuelo.Text = "";
             // 
@@ -71,7 +71,7 @@
             this.btnCargarPasajero.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarPasajero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargarPasajero.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarPasajero.Location = new System.Drawing.Point(320, 108);
+            this.btnCargarPasajero.Location = new System.Drawing.Point(320, 151);
             this.btnCargarPasajero.Name = "btnCargarPasajero";
             this.btnCargarPasajero.Size = new System.Drawing.Size(302, 42);
             this.btnCargarPasajero.TabIndex = 20;
@@ -81,9 +81,9 @@
             // 
             // rtbPasajero
             // 
-            this.rtbPasajero.Location = new System.Drawing.Point(320, 156);
+            this.rtbPasajero.Location = new System.Drawing.Point(320, 199);
             this.rtbPasajero.Name = "rtbPasajero";
-            this.rtbPasajero.Size = new System.Drawing.Size(302, 261);
+            this.rtbPasajero.Size = new System.Drawing.Size(302, 244);
             this.rtbPasajero.TabIndex = 21;
             this.rtbPasajero.Text = "";
             // 
@@ -92,7 +92,7 @@
             this.btnCargarEquipaje.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarEquipaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargarEquipaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarEquipaje.Location = new System.Drawing.Point(628, 109);
+            this.btnCargarEquipaje.Location = new System.Drawing.Point(628, 152);
             this.btnCargarEquipaje.Name = "btnCargarEquipaje";
             this.btnCargarEquipaje.Size = new System.Drawing.Size(302, 42);
             this.btnCargarEquipaje.TabIndex = 22;
@@ -102,9 +102,9 @@
             // 
             // rtbEquipaje
             // 
-            this.rtbEquipaje.Location = new System.Drawing.Point(628, 156);
+            this.rtbEquipaje.Location = new System.Drawing.Point(628, 199);
             this.rtbEquipaje.Name = "rtbEquipaje";
-            this.rtbEquipaje.Size = new System.Drawing.Size(302, 261);
+            this.rtbEquipaje.Size = new System.Drawing.Size(302, 244);
             this.rtbEquipaje.TabIndex = 23;
             this.rtbEquipaje.Text = "";
             // 
@@ -144,7 +144,7 @@
             this.btnFacturar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFacturar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFacturar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFacturar.Location = new System.Drawing.Point(936, 108);
+            this.btnFacturar.Location = new System.Drawing.Point(936, 151);
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(302, 42);
             this.btnFacturar.TabIndex = 31;
@@ -154,9 +154,9 @@
             // 
             // rtbFacturacion
             // 
-            this.rtbFacturacion.Location = new System.Drawing.Point(936, 156);
+            this.rtbFacturacion.Location = new System.Drawing.Point(936, 199);
             this.rtbFacturacion.Name = "rtbFacturacion";
-            this.rtbFacturacion.Size = new System.Drawing.Size(302, 261);
+            this.rtbFacturacion.Size = new System.Drawing.Size(302, 244);
             this.rtbFacturacion.TabIndex = 32;
             this.rtbFacturacion.Text = "";
             // 
@@ -171,7 +171,7 @@
             this.btnSubirPasajero.Name = "btnSubirPasajero";
             this.btnSubirPasajero.Size = new System.Drawing.Size(241, 38);
             this.btnSubirPasajero.TabIndex = 34;
-            this.btnSubirPasajero.Text = "Cargar Pasajero";
+            this.btnSubirPasajero.Text = "Subir Pasajero";
             this.btnSubirPasajero.UseVisualStyleBackColor = false;
             this.btnSubirPasajero.Click += new System.EventHandler(this.btnSubirPasajero_Click);
             // 
@@ -190,8 +190,11 @@
             // 
             // dgvListaDePasajes
             // 
-            this.dgvListaDePasajes.Location = new System.Drawing.Point(12, 423);
+            this.dgvListaDePasajes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaDePasajes.GridColor = System.Drawing.Color.Black;
+            this.dgvListaDePasajes.Location = new System.Drawing.Point(12, 449);
             this.dgvListaDePasajes.Name = "dgvListaDePasajes";
+            this.dgvListaDePasajes.ReadOnly = true;
             this.dgvListaDePasajes.RowTemplate.Height = 25;
             this.dgvListaDePasajes.Size = new System.Drawing.Size(1226, 245);
             this.dgvListaDePasajes.TabIndex = 36;
@@ -200,7 +203,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 755);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.logo_menu_ventas;
+            this.ClientSize = new System.Drawing.Size(1272, 755);
             this.Controls.Add(this.dgvListaDePasajes);
             this.Controls.Add(this.btnCargarOtroPasajero);
             this.Controls.Add(this.btnSubirPasajero);
@@ -219,7 +224,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmVenderPasaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmVentaPasaje";
+            this.Text = "Venta de Pasajes";
             this.Load += new System.EventHandler(this.FrmVentaPasaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDePasajes)).EndInit();
             this.ResumeLayout(false);

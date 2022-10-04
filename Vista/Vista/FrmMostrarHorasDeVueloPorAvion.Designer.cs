@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMostrarHorasDeVueloPorAvion));
             this.dtgAvionesPorHora = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAvionesPorHora)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgAvionesPorHora
             // 
+            this.dtgAvionesPorHora.BackgroundColor = System.Drawing.Color.White;
             this.dtgAvionesPorHora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAvionesPorHora.Location = new System.Drawing.Point(12, 262);
             this.dtgAvionesPorHora.Name = "dtgAvionesPorHora";
@@ -42,15 +44,16 @@
             this.dtgAvionesPorHora.Size = new System.Drawing.Size(880, 238);
             this.dtgAvionesPorHora.TabIndex = 0;
             // 
-            // FrmMostrarEstadistica
+            // FrmMostrarHorasDeVueloPorAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(904, 512);
             this.Controls.Add(this.dtgAvionesPorHora);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmMostrarEstadistica";
+            this.Name = "FrmMostrarHorasDeVueloPorAvion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Horas de Vuelo por Avion";
             this.Load += new System.EventHandler(this.FrmMostrarEstadistica_Load);

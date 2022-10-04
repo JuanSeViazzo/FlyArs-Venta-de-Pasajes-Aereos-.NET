@@ -37,7 +37,7 @@ namespace Vista
         {
             txtNombre.Text = pasajeroAux.Nombre;
             txtApellido.Text = pasajeroAux.Apellido;
-            txtEdad.Text = pasajeroAux.Edad;    
+            txtEdad.Text = pasajeroAux.Edad.ToString();    
             txtNacionalidad.Text = pasajeroAux.Nacionalidad;
             txtDocumento.Text = Convert.ToString(pasajeroAux.Documento);
             cmbTipoDeDocumento.SelectedIndex = (int)pasajeroAux.TipoDocumento1;

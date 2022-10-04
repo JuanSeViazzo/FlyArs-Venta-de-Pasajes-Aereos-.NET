@@ -28,27 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDestinoPorFacturacion));
             this.dgvDestinosPorFacturacion = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinosPorFacturacion)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDestinosPorFacturacion
             // 
+            this.dgvDestinosPorFacturacion.BackgroundColor = System.Drawing.Color.White;
             this.dgvDestinosPorFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDestinosPorFacturacion.Location = new System.Drawing.Point(12, 250);
+            this.dgvDestinosPorFacturacion.Location = new System.Drawing.Point(11, 159);
             this.dgvDestinosPorFacturacion.Name = "dgvDestinosPorFacturacion";
+            this.dgvDestinosPorFacturacion.ReadOnly = true;
             this.dgvDestinosPorFacturacion.RowTemplate.Height = 25;
-            this.dgvDestinosPorFacturacion.Size = new System.Drawing.Size(1007, 255);
+            this.dgvDestinosPorFacturacion.Size = new System.Drawing.Size(978, 232);
             this.dgvDestinosPorFacturacion.TabIndex = 0;
             // 
             // FrmDestinoPorFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 517);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1001, 517);
             this.Controls.Add(this.dgvDestinosPorFacturacion);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmDestinoPorFacturacion";
-            this.Text = "DestinoPorFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Historial de Facturacion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDestinoPorFacturacion_FormClosing);
             this.Load += new System.EventHandler(this.FrmDestinoPorFacturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinosPorFacturacion)).EndInit();
             this.ResumeLayout(false);

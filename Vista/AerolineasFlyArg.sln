@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Vista\Vista.csproj", "{E3E8B221-6630-4543-8CCB-BF2C03D668A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vista", "Vista\Vista.csproj", "{E3E8B221-6630-4543-8CCB-BF2C03D668A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Persona\Logica.csproj", "{ACCE1777-A1A7-4C7F-AAA2-DFDDE3DAF556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logica", "Persona\Logica.csproj", "{ACCE1777-A1A7-4C7F-AAA2-DFDDE3DAF556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

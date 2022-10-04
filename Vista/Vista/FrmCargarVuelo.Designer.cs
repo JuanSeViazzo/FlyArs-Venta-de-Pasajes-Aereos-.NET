@@ -33,7 +33,6 @@
             this.cmbOrigen = new System.Windows.Forms.ComboBox();
             this.cmbDestino = new System.Windows.Forms.ComboBox();
             this.mncFechaDePartida = new System.Windows.Forms.MonthCalendar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptarCargaVuelo = new System.Windows.Forms.Button();
             this.chkWifi = new System.Windows.Forms.CheckBox();
@@ -76,13 +75,6 @@
             this.mncFechaDePartida.Location = new System.Drawing.Point(12, 103);
             this.mncFechaDePartida.Name = "mncFechaDePartida";
             this.mncFechaDePartida.TabIndex = 3;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 290);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(394, 23);
-            this.progressBar1.TabIndex = 4;
             // 
             // btnCancelar
             // 
@@ -155,8 +147,10 @@
             // 
             // rtbVuelo
             // 
+            this.rtbVuelo.BackColor = System.Drawing.Color.White;
             this.rtbVuelo.Location = new System.Drawing.Point(12, 319);
             this.rtbVuelo.Name = "rtbVuelo";
+            this.rtbVuelo.ReadOnly = true;
             this.rtbVuelo.Size = new System.Drawing.Size(394, 182);
             this.rtbVuelo.TabIndex = 34;
             this.rtbVuelo.Text = "";
@@ -175,6 +169,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(416, 579);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.rtbVuelo);
@@ -183,13 +179,15 @@
             this.Controls.Add(this.chkWifi);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptarCargaVuelo);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.mncFechaDePartida);
             this.Controls.Add(this.cmbDestino);
             this.Controls.Add(this.cmbOrigen);
             this.Controls.Add(this.cmbAvion);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCargarVuelo";
-            this.Text = "FrmCargarVuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cargar Vuelo";
             this.Load += new System.EventHandler(this.FrmCargarVuelo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,7 +200,6 @@
         private System.Windows.Forms.ComboBox cmbOrigen;
         private System.Windows.Forms.ComboBox cmbDestino;
         private System.Windows.Forms.MonthCalendar mncFechaDePartida;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptarCargaVuelo;
         private System.Windows.Forms.CheckBox chkWifi;

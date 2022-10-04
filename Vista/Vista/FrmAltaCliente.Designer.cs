@@ -48,14 +48,15 @@
             this.radSexMasc = new System.Windows.Forms.RadioButton();
             this.radSexFem = new System.Windows.Forms.RadioButton();
             this.btnCancelarModificacion = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.grpSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(76, 55);
+            this.txtNombre.Location = new System.Drawing.Point(44, 129);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.PlaceholderText = "Nombre";
+            this.txtNombre.PlaceholderText = "1er Nombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 23);
             this.txtNombre.TabIndex = 2;
             // 
@@ -87,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 94);
+            this.label1.Location = new System.Drawing.Point(44, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 15);
             this.label1.TabIndex = 8;
@@ -95,7 +96,7 @@
             // 
             // txtNacionalidad
             // 
-            this.txtNacionalidad.Location = new System.Drawing.Point(226, 307);
+            this.txtNacionalidad.Location = new System.Drawing.Point(192, 381);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.PlaceholderText = "Nacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(100, 23);
@@ -104,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 289);
+            this.label2.Location = new System.Drawing.Point(192, 363);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 10;
@@ -117,9 +118,9 @@
             this.btnAceptarModificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAceptarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarModificacion.Image")));
             this.btnAceptarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarModificacion.Location = new System.Drawing.Point(213, 510);
+            this.btnAceptarModificacion.Location = new System.Drawing.Point(105, 410);
             this.btnAceptarModificacion.Name = "btnAceptarModificacion";
-            this.btnAceptarModificacion.Size = new System.Drawing.Size(113, 38);
+            this.btnAceptarModificacion.Size = new System.Drawing.Size(121, 38);
             this.btnAceptarModificacion.TabIndex = 13;
             this.btnAceptarModificacion.Text = "Cargar";
             this.btnAceptarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -128,7 +129,7 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(78, 307);
+            this.txtEdad.Location = new System.Drawing.Point(44, 381);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(47, 23);
             this.txtEdad.TabIndex = 14;
@@ -136,7 +137,7 @@
             // Edad
             // 
             this.Edad.AutoSize = true;
-            this.Edad.Location = new System.Drawing.Point(78, 289);
+            this.Edad.Location = new System.Drawing.Point(44, 363);
             this.Edad.Name = "Edad";
             this.Edad.Size = new System.Drawing.Size(33, 15);
             this.Edad.TabIndex = 15;
@@ -144,15 +145,17 @@
             // 
             // rtbPasajero
             // 
+            this.rtbPasajero.BackColor = System.Drawing.Color.White;
             this.rtbPasajero.Location = new System.Drawing.Point(389, 228);
             this.rtbPasajero.Name = "rtbPasajero";
-            this.rtbPasajero.Size = new System.Drawing.Size(250, 320);
+            this.rtbPasajero.ReadOnly = true;
+            this.rtbPasajero.Size = new System.Drawing.Size(250, 261);
             this.rtbPasajero.TabIndex = 16;
             this.rtbPasajero.Text = "";
             // 
             // calMyDate
             // 
-            this.calMyDate.Location = new System.Drawing.Point(78, 118);
+            this.calMyDate.Location = new System.Drawing.Point(44, 192);
             this.calMyDate.Name = "calMyDate";
             this.calMyDate.TabIndex = 19;
             // 
@@ -161,7 +164,7 @@
             this.lbl_errorExcep.AutoSize = true;
             this.lbl_errorExcep.BackColor = System.Drawing.Color.Red;
             this.lbl_errorExcep.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_errorExcep.Location = new System.Drawing.Point(197, 491);
+            this.lbl_errorExcep.Location = new System.Drawing.Point(415, 451);
             this.lbl_errorExcep.Name = "lbl_errorExcep";
             this.lbl_errorExcep.Size = new System.Drawing.Size(0, 16);
             this.lbl_errorExcep.TabIndex = 22;
@@ -177,6 +180,7 @@
             // 
             // grpSex
             // 
+            this.grpSex.BackColor = System.Drawing.Color.White;
             this.grpSex.Controls.Add(this.radSexMasc);
             this.grpSex.Controls.Add(this.radSexFem);
             this.grpSex.Location = new System.Drawing.Point(389, 94);
@@ -184,7 +188,6 @@
             this.grpSex.Size = new System.Drawing.Size(241, 76);
             this.grpSex.TabIndex = 24;
             this.grpSex.TabStop = false;
-            this.grpSex.Text = "groupBox1";
             // 
             // radSexMasc
             // 
@@ -217,21 +220,39 @@
             this.btnCancelarModificacion.ForeColor = System.Drawing.Color.Red;
             this.btnCancelarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarModificacion.Image")));
             this.btnCancelarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarModificacion.Location = new System.Drawing.Point(78, 510);
+            this.btnCancelarModificacion.Location = new System.Drawing.Point(42, 451);
             this.btnCancelarModificacion.Name = "btnCancelarModificacion";
-            this.btnCancelarModificacion.Size = new System.Drawing.Size(113, 38);
+            this.btnCancelarModificacion.Size = new System.Drawing.Size(121, 38);
             this.btnCancelarModificacion.TabIndex = 26;
             this.btnCancelarModificacion.Text = "Cancelar";
             this.btnCancelarModificacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarModificacion.UseVisualStyleBackColor = false;
             this.btnCancelarModificacion.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(173, 451);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(121, 38);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // FrmAltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(669, 566);
+            this.BackgroundImage = global::Vista.Properties.Resources.pasajeros;
+            this.ClientSize = new System.Drawing.Size(654, 509);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelarModificacion);
             this.Controls.Add(this.grpSex);
             this.Controls.Add(this.lbl_ExceptionErrorApellido);
@@ -248,8 +269,11 @@
             this.Controls.Add(this.cmb_tipoDeDocumento);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAltaCliente";
-            this.Text = "FrmAltaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alta de Cliente";
             this.Load += new System.EventHandler(this.FrmAltaCliente_Load);
             this.grpSex.ResumeLayout(false);
             this.grpSex.PerformLayout();
@@ -278,5 +302,6 @@
         private System.Windows.Forms.RadioButton radSexMasc;
         private System.Windows.Forms.RadioButton radSexFem;
         private System.Windows.Forms.Button btnCancelarModificacion;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

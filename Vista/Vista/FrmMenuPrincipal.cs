@@ -20,6 +20,7 @@ namespace Vista
         public FrmMenuPrincipal(string dato) :this()
         {
             this.lbl_Usuario.Text= dato;
+            this.lbl_HoraActualMenuPrincipal.Text= DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -54,9 +55,6 @@ namespace Vista
             frmEstadisticas.ShowDialog(); 
         }
 
-        private void btnMenuPasajeros_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -53,7 +53,28 @@ namespace Vista
 
         private void btnAceptarModificacion_Click(object sender, EventArgs e)
         {
+            if (montoFinal > 0)
+            {
             this.DialogResult = DialogResult.OK;
+            }else
+            {
+                MessageBox.Show("No puede ser importe 0");
+            }
+
+
+        }
+
+        private void btnCancelarModificacion_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
+
+        private void btnAplicarDescuento_Click(object sender, EventArgs e)
+        {
+            if (pasajeroAux.ClaseDePasajero1 == ClaseDePasajero.Premium)
+            {
+                
+            }
         }
     }
 }

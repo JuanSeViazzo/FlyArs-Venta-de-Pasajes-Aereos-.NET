@@ -35,6 +35,7 @@ namespace Vista
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             GestionDeAerolinea.EliminarPasajeroEnLineaAerea(documentoAux);
+            DialogResult = DialogResult.OK; 
 
         }
 

@@ -63,39 +63,44 @@
             // destinosPorFacturacionToolStripMenuItem
             // 
             this.destinosPorFacturacionToolStripMenuItem.Name = "destinosPorFacturacionToolStripMenuItem";
-            this.destinosPorFacturacionToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.destinosPorFacturacionToolStripMenuItem.Text = "Destinos por Facturacion";
+            this.destinosPorFacturacionToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.destinosPorFacturacionToolStripMenuItem.Text = "Facturacion por destino";
             this.destinosPorFacturacionToolStripMenuItem.Click += new System.EventHandler(this.destinosPorFacturacionToolStripMenuItem_Click);
             // 
             // listaDePasajerosFrecuentesToolStripMenuItem
             // 
             this.listaDePasajerosFrecuentesToolStripMenuItem.Name = "listaDePasajerosFrecuentesToolStripMenuItem";
-            this.listaDePasajerosFrecuentesToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.listaDePasajerosFrecuentesToolStripMenuItem.Text = "Lista de Pasajeros Frecuentes";
+            this.listaDePasajerosFrecuentesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.listaDePasajerosFrecuentesToolStripMenuItem.Text = "Pasajeros frecuentes";
+            this.listaDePasajerosFrecuentesToolStripMenuItem.Click += new System.EventHandler(this.listaDePasajerosFrecuentesToolStripMenuItem_Click);
             // 
             // gananciasTotalesToolStripMenuItem
             // 
             this.gananciasTotalesToolStripMenuItem.Name = "gananciasTotalesToolStripMenuItem";
-            this.gananciasTotalesToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.gananciasTotalesToolStripMenuItem.Text = "Ganancias Totales";
+            this.gananciasTotalesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.gananciasTotalesToolStripMenuItem.Text = "Total de ganancia";
+            this.gananciasTotalesToolStripMenuItem.Click += new System.EventHandler(this.gananciasTotalesToolStripMenuItem_Click);
             // 
             // horaDeVueloDeCadaAeronaveToolStripMenuItem
             // 
             this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Name = "horaDeVueloDeCadaAeronaveToolStripMenuItem";
-            this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Text = "Hora de Vuelo de cada aeronave";
+            this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Text = "Destinos favoritos";
+            this.horaDeVueloDeCadaAeronaveToolStripMenuItem.Click += new System.EventHandler(this.destinoFavoritoToolStripMenuItem_Click);
             // 
             // horasDeVueloPorAvionToolStripMenuItem1
             // 
             this.horasDeVueloPorAvionToolStripMenuItem1.Name = "horasDeVueloPorAvionToolStripMenuItem1";
-            this.horasDeVueloPorAvionToolStripMenuItem1.Size = new System.Drawing.Size(244, 22);
-            this.horasDeVueloPorAvionToolStripMenuItem1.Text = "Horas De Vuelo por Avion";
+            this.horasDeVueloPorAvionToolStripMenuItem1.Size = new System.Drawing.Size(206, 22);
+            this.horasDeVueloPorAvionToolStripMenuItem1.Text = "Horas de vuelo por avion";
             this.horasDeVueloPorAvionToolStripMenuItem1.Click += new System.EventHandler(this.horasDeVueloPorAvionToolStripMenuItem1_Click);
             // 
             // FrmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Vista.Properties.Resources.logo_menu_ventas;
             this.ClientSize = new System.Drawing.Size(1115, 548);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -103,7 +108,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmEstadisticas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEstadisticas";
+            this.Text = "Estadisticas";
             this.Load += new System.EventHandler(this.FrmEstadisticas_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

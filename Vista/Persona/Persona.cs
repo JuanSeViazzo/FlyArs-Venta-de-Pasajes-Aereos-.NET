@@ -33,12 +33,13 @@ namespace Logica
         public DateTime FechaDeNacimiento { get => fechaDeNacimiento; }
         public TipoDeSexo TipoDeSexo1 { get => tipoDeSexo; }
 
+
         protected Persona(string nombre, string apellido, TipoDocumento tipoDocumento, int documento, string edad, string nacionalidad, DateTime fechaDeNacimiento, TipoDeSexo sexo)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Documento = documento;
-            this.Edad = edad;
+            this.Edad = Convert.ToInt32(edad);
             this.tipoDeDocumento = tipoDocumento;
             this.nacionalidad = nacionalidad;
             this.fechaDeNacimiento = fechaDeNacimiento;
@@ -80,17 +81,18 @@ namespace Logica
                     throw new Exception("Error en documento");
             }
         }
-        public string Edad  
-        { get => edad; 
+        public int Edad  
+        { get => DateTime.Today.AddTicks(-this.fechaDeNacimiento.Ticks).Year - 1;  
             set
             {
-                if (!Validaciones.ValidarSoloEdad(value))
-                  this.edad = value;
+                if (!Validaciones.ValidarSoloEdad(Convert.ToString(value)))
+                  this.edad = Convert.ToString(value);
                 else
                     throw new Exception("Error en edad");
 
             }
         }
+
 
         public override string ToString()
         {
@@ -107,11 +109,6 @@ namespace Logica
             return sb.ToString();
         }
 
-
-        public static void ObtenerPersonaPorDNI(string documento)
-        {
-
-        }
 
 
 

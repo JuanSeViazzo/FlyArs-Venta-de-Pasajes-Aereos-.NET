@@ -10,14 +10,15 @@ namespace Vista
         DataTable pasajeros = new DataTable();
         string estado = "inactivo";
         public Cliente pasajeroElegido;
+        string dato;
         private FrmListaDePasajeros()
         {
             InitializeComponent();
         }
 
-        public FrmListaDePasajeros(int dato) : this()
+        public FrmListaDePasajeros(string dato) : this()
         {
-            
+            this.dato = dato;
         }
 
 
@@ -29,7 +30,6 @@ namespace Vista
 
         private void IniciarDataGrid()
         {
-            //        public Pasajero(int documento, string codigoDePasaje, string codigoDeVuelo, List<Equipaje> listaDeEquipajes, string nombreCliente, string apellidoCliente, ClaseDePasajero claseDePasajero)
 
             pasajeros.Columns.Add("Documento");
             pasajeros.Columns.Add("Nombre");
@@ -44,26 +44,21 @@ namespace Vista
 
         private void CargarDataGrid()
         {
+            Vuelo vueloAux = GestionDeAerolinea.obtenerVueloPorCodigo(dato);
 
-
-            
-
-
-            for (int i = 0; i < GestionDeAerolinea.ListaDePersonas.Count; i++)
+            for (int i = 0; i < vueloAux.ListaDePasajerosPremium.Count; i++)
             {
-                Pasajero pasajeroAux = GestionDeAerolinea.ListaDePasajeros[i];
-                {
-                    pasajeros.Rows.Add(pasajeroAux.Documento, pasajeroAux.NombreCliente, pasajeroAux.ApellidoCliente,
-                    pasajeroAux.ClaseDePasajero1, pasajeroAux.CodigoDePasaje, pasajeroAux.CodigoDeVuelo);
+                Pasajero pasajeroPremiumAux = vueloAux.ListaDePasajerosPremium[i];
+                pasajeros.Rows.Add(pasajeroPremiumAux.Documento, pasajeroPremiumAux.NombreCliente, pasajeroPremiumAux.ApellidoCliente, pasajeroPremiumAux.ClaseDePasajero1, pasajeroPremiumAux.CodigoDePasaje,
+                    dato, pasajeroPremiumAux.ListaDeEquipajes[0].ToString(), pasajeroPremiumAux.ListaDeEquipajes[1].ToString());
 
-                    for (int j = 0; j < pasajeroAux.ListaDeEquipajes.Count; j++)
-                    {
-                        pasajeros.Rows.Add(pasajeroAux.ListaDeEquipajes[i]);
-                    }
+            }
+            for (int i = 0; i < vueloAux.ListaDePasajerosTurista.Count; i++)
+            {
 
-                }
-
-
+                Pasajero pasajeroTurista = vueloAux.ListaDePasajerosTurista[i];
+                pasajeros.Rows.Add(pasajeroTurista.Documento, pasajeroTurista.NombreCliente, pasajeroTurista.ApellidoCliente, pasajeroTurista.ClaseDePasajero1, pasajeroTurista.CodigoDePasaje,
+                    dato, pasajeroTurista.ListaDeEquipajes[0].ToString(), pasajeroTurista.ListaDeEquipajes[1].ToString(), pasajeroTurista.ListaDeEquipajes[2].ToString());
 
             }
 

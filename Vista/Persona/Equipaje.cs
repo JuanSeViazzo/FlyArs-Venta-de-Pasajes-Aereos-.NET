@@ -28,8 +28,8 @@ namespace Logica
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Numero de orden: {numeroDeOrden}");
-            sb.AppendLine($"Peso del equipaje {pesoDelEquipaje}");
+            sb.AppendLine($"N°: {numeroDeOrden}");
+            sb.AppendLine($"Peso: {pesoDelEquipaje}");
 
             return sb.ToString();   
 

@@ -36,9 +36,9 @@
             // 
             // rtbPasajeroAEliminar
             // 
-            this.rtbPasajeroAEliminar.Location = new System.Drawing.Point(12, 12);
+            this.rtbPasajeroAEliminar.Location = new System.Drawing.Point(50, 12);
             this.rtbPasajeroAEliminar.Name = "rtbPasajeroAEliminar";
-            this.rtbPasajeroAEliminar.Size = new System.Drawing.Size(237, 346);
+            this.rtbPasajeroAEliminar.Size = new System.Drawing.Size(455, 147);
             this.rtbPasajeroAEliminar.TabIndex = 1;
             this.rtbPasajeroAEliminar.Text = "";
             // 
@@ -49,7 +49,7 @@
             this.btnCancelarModificacion.ForeColor = System.Drawing.Color.Red;
             this.btnCancelarModificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarModificacion.Image")));
             this.btnCancelarModificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarModificacion.Location = new System.Drawing.Point(12, 394);
+            this.btnCancelarModificacion.Location = new System.Drawing.Point(31, 337);
             this.btnCancelarModificacion.Name = "btnCancelarModificacion";
             this.btnCancelarModificacion.Size = new System.Drawing.Size(113, 38);
             this.btnCancelarModificacion.TabIndex = 28;
@@ -65,7 +65,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(136, 394);
+            this.btnEliminar.Location = new System.Drawing.Point(438, 347);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(113, 38);
             this.btnEliminar.TabIndex = 27;
@@ -78,10 +78,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 453);
+            this.BackgroundImage = global::Vista.Properties.Resources.FLYARG1;
+            this.ClientSize = new System.Drawing.Size(615, 453);
             this.Controls.Add(this.btnCancelarModificacion);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.rtbPasajeroAEliminar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEliminarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Pasajero";

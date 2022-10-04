@@ -22,12 +22,12 @@ namespace Logica
 
         static GestionDeAerolinea()
         {
+            listaDePasajeros = new List<Pasajero>();
             listaDePasajes = new List<Pasaje>();
             listaDePersonas = new List<Persona>();
             listaDeVuelos = new List<Vuelo>();
             listaDeAviones = new List<Avion>();
             listaDeAeropuertos = new Dictionary<int, string>();
-            listaDePasajeros = new List<Pasajero>();
 
         }
 
@@ -68,7 +68,6 @@ namespace Logica
         public static void SubirPasajeroAlAvion(List<Pasaje> listaDePasajes, List<Pasajero> listaDePasajeros)
         {
             Vuelo vueloAux;
-            Pasajero pasajeroAux;
 
             foreach (Pasaje itemPasaje in listaDePasajes)
             {
@@ -76,13 +75,12 @@ namespace Logica
 
                 foreach (Pasajero itemPasajeros in listaDePasajeros)
                 {
-                    if (itemPasaje.DniDePasajero == itemPasajeros.Documento)
+                    if (itemPasaje.DniDePasajero == itemPasajeros.Documento && itemPasaje.HoraDeSalida == vueloAux.HoraDePartida)
                     {
                         if (itemPasaje is PasajePremium)
                             vueloAux.ListaDePasajerosPremium.Add(itemPasajeros);
                         else
                             vueloAux.ListaDePasajerosTurista.Add(itemPasajeros);
-
                     }
 
                 }

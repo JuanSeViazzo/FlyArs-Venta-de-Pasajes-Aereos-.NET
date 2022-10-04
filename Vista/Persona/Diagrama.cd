@@ -1,51 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Logica.Avion">
-    <Position X="12" Y="1.75" Width="1.5" />
+    <Position X="14.25" Y="1.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAIQAAAAAAAAAAABAAAAAAAAAAAIAAAAEA=</HashCode>
+      <HashCode>AAAQAAAAEAAACAAAACAAAAABAAAACCgAAEAgAQBAAAA=</HashCode>
       <FileName>Avion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Equipaje">
-    <Position X="9.75" Y="1.75" Width="1.5" />
+    <Position X="9.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAQAAEAEAAEAAAAAAAAAAAAAAAAIAAAAQAAAAA=</HashCode>
       <FileName>Equipaje.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Pasaje">
-    <Position X="5.25" Y="1.75" Width="1.5" />
+    <Position X="5.25" Y="1.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>QABAAEAAKAIAQAAEAAEAAQAACAICQAAKQAAgAgAAQAI=</HashCode>
       <FileName>Pasaje.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Pasajero">
-    <Position X="0.75" Y="5" Width="1.5" />
+    <Position X="13.75" Y="6" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>ABBAAAAAAARAAACAAAAAAAAEAAIgAAAKAAZAAAAAAAA=</HashCode>
+      <HashCode>AAACCAAAAAgAQAAEAABAAAAEQAIAQAACAABQAAQAEAA=</HashCode>
       <FileName>Pasajero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Persona">
-    <Position X="1.75" Y="1.75" Width="1.5" />
+    <Position X="1.5" Y="1" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="Logica.Persona.TipoDocumento" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Persona.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Logica.Persona.TipoDeSexo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Persona.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAQAAACAAAAAAAAAAAAgAAAAAAYAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAgCQAABCEAAAQgCAAAAIgAgACAAIAgAAAAAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Vuelo">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="9" Y="1.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAFBAAAAA=</HashCode>
+      <HashCode>gAAAAAgAICAYQAAmIAAgQAQAIAICQDBSAkAgGpAAAAo=</HashCode>
       <FileName>Vuelo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logica.Usuario">
-    <Position X="3" Y="5" Width="1.5" />
+    <Position X="3.25" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAgAAAAAAEAAAAgAAAAAIAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>QAABAAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAgAAAQA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -53,19 +65,26 @@
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Enum Name="Logica.TipoDeEquipaje">
-    <Position X="13.5" Y="0.5" Width="1.5" />
+  <Class Name="Logica.Cliente">
+    <Position X="0.5" Y="7.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Equipaje.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAgAAgAAEAAAAAAAIAABAAAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
-  </Enum>
-  <Enum Name="Logica.TipoDocumento">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+  </Class>
+  <Class Name="Logica.PasajeTurista">
+    <Position X="7.25" Y="10.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Persona.cs</FileName>
+      <HashCode>QAAAAAAAAAAgAAAEIAAAAAAEAAACAAAIAABAAAAAAAA=</HashCode>
+      <FileName>PasajeTurista.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
+  <Class Name="Logica.PasajePremium">
+    <Position X="3.75" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAgAAAEIAAAAAAEAAACAAAIAABAAAAAAAA=</HashCode>
+      <FileName>PasajePremium.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
