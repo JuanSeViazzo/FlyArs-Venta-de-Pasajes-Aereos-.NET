@@ -318,9 +318,19 @@ Da un ejemplo
 ![image](https://user-images.githubusercontent.com/86853488/193677558-e37e4ad3-cd1f-4c7b-af92-a0c94a6524b2.png)
 
 
+
+### DETALLES PROPIOS DE LA APP
+
+- Los Tiempos del avion son aleatorios pero relacionados.
+![image](https://user-images.githubusercontent.com/86853488/193730096-460e44ac-84c1-43a2-91f5-90bccf878904.png)
+
+- El codigo de vuelo es en base a la matricula del avion, el año mes dia de salida, la hora, minutos de llegada, destino y origen.
+![image](https://user-images.githubusercontent.com/86853488/193730223-b484e700-f443-451a-93e9-4dd33f8c7284.png)
+
+-
+
+
+
 ### 11 FUNCIONALIDAD EXTRA
 
 **HUBIESE QUERIDO DESARROLLAR LA PARTE DE USUARIO Y ADMINISTRADOR, EL CUAL COMO ADMIN PODIAS DAR DE ALTA AVIONES Y VUELOS Y NO COMO USUARIO**
-
-
-
