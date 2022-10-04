@@ -331,6 +331,30 @@ Da un ejemplo
 
 
 
-### 11 FUNCIONALIDAD EXTRA
+### 11 FUNCIONALIDAD EXTRA _(BETA 1.1 Se lanzara la funcion de Administrador - Usuario, el cual el administrador podra hacer ABM de Aviones, y ABM de vuelos, el usuario quedara limitado a la venta de pasajes, gestion de clientes, etc).-
+
 
 ABM DESTINOS
+
+### MENU MDI 
+
+![image](https://user-images.githubusercontent.com/86853488/193866380-50476d4e-185f-463b-824b-fabb61f73b1d.png)
+
+
+**SE PODRA REALIZAR ABM**
+
+
+
+![image](https://user-images.githubusercontent.com/86853488/193866612-edad8612-2e01-4b79-a7fd-8c5ac28151b7.png)
+![image](https://user-images.githubusercontent.com/86853488/193866668-004779a4-863c-4481-9281-5ba8ebe42cb6.png)
+![image](https://user-images.githubusercontent.com/86853488/193866715-955dcd29-f351-4641-9c89-6d51455907bf.png)
+
+
+
+
+GRACIAS POR TODO. QUE DISFRUTEN LA EXPERIENCIA.
+
+
+
+
+
