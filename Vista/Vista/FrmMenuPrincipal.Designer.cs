@@ -168,6 +168,7 @@
             this.btnSoporte.TabIndex = 18;
             this.btnSoporte.Text = "Soporte";
             this.btnSoporte.UseVisualStyleBackColor = true;
+            this.btnSoporte.MouseLeave += new System.EventHandler(this.btnSoporte_MouseLeave);
             this.btnSoporte.MouseHover += new System.EventHandler(this.btnSoporte_MouseHover);
             // 
             // txtSoporte

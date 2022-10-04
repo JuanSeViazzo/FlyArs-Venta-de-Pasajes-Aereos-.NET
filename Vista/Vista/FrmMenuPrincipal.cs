@@ -27,10 +27,7 @@ namespace Vista
         {
             ManejoDeVista.PausarMusica();
             txtSoporte.Visible = false;
-            txtSoporte.Text = "MENU PASAJES: SE PODRA REALIZAR LA VENTA DE PASAJES\n\n  " +
-                "MENU CLIENTES: SE VISUALIZARA LA INFORMACION DE LOS CLIENTES Y " +
-                "PODRA DAR DE ALTA UN CLIENTE NUEVO \n\n DESTINOS: SE PODRAN VISUALIZAR LOS DESTINOS Y LA INFORMACION DE LOS MISMOS \n\n ESTADISTICAS:" +
-                "SE PODRAN VISUALIZAR LOS HISTORICOS Y ESTADISTICAS DE LOS DESTINOS, AVIONES, VUELOS, PASAJEROS";
+            
         }
 
         private void btn_MenuPasajes_Click(object sender, EventArgs e)
@@ -71,6 +68,17 @@ namespace Vista
         private void btnSoporte_MouseHover(object sender, EventArgs e)
         {
             txtSoporte.Visible = true;
+            txtSoporte.Text = "MENU PASAJES: SE PODRA REALIZAR LA VENTA DE PASAJES\n\n  " +
+                "MENU CLIENTES: SE VISUALIZARA LA INFORMACION DE LOS CLIENTES Y " +
+                "PODRA DAR DE ALTA UN CLIENTE NUEVO \n\n DESTINOS: SE PODRAN VISUALIZAR LOS DESTINOS Y LA INFORMACION DE LOS MISMOS \n\n ESTADISTICAS:" +
+                "SE PODRAN VISUALIZAR LOS HISTORICOS Y ESTADISTICAS DE LOS DESTINOS, AVIONES, VUELOS, PASAJEROS";
+        }
+
+       
+        private void btnSoporte_MouseLeave(object sender, EventArgs e)
+        {
+            txtSoporte.Visible = false;
+
         }
     }
 }
