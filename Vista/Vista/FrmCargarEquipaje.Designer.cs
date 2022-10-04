@@ -180,7 +180,7 @@
             // lblMaximo
             // 
             this.lblMaximo.AutoSize = true;
-            this.lblMaximo.BackColor = System.Drawing.Color.White;
+            this.lblMaximo.BackColor = System.Drawing.Color.Transparent;
             this.lblMaximo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMaximo.ForeColor = System.Drawing.Color.Red;
             this.lblMaximo.Location = new System.Drawing.Point(422, 390);

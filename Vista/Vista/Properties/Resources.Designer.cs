@@ -160,6 +160,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap destinos1 {
+            get {
+                object obj = ResourceManager.GetObject("destinos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap FLYARG {
             get {
                 object obj = ResourceManager.GetObject("FLYARG", resourceCulture);
@@ -214,6 +224,15 @@ namespace Vista.Properties {
             get {
                 object obj = ResourceManager.GetObject("logo menu ventas1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream main_teme {
+            get {
+                return ResourceManager.GetStream("main teme", resourceCulture);
             }
         }
         

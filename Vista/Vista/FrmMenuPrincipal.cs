@@ -55,6 +55,12 @@ namespace Vista
             frmEstadisticas.ShowDialog(); 
         }
 
-       
+        private void btnDestinos_Click(object sender, EventArgs e)
+        {
+            FrmDestinos frmDestinos = new FrmDestinos();
+            frmDestinos.ShowDialog();
+
+
+        }
     }
 }

@@ -35,14 +35,14 @@ namespace Vista
 
         public static void ReproducirMusica()
         {
-            SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.cpwJAt5k_888a76891a3e148017cb0a3f859454ed);
+            SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.main_teme);
             soundPlayer.Play();
         }
 
         
         public static void PausarMusica()
         {
-            SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.cpwJAt5k_888a76891a3e148017cb0a3f859454ed);
+            SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.main_teme);
             soundPlayer.Stop();
         }
 

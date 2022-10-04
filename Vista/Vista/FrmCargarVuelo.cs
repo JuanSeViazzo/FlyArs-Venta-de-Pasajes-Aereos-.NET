@@ -38,7 +38,7 @@ namespace Vista
             cmbDestino.Items.Clear();
             foreach (KeyValuePair<int, string> item in GestionDeAerolinea.DiccionarioDeAeropuertos)
             {
-                if (cmbOrigen.SelectedIndex != 15)
+                if ((string)cmbOrigen.SelectedItem == item.Value || (string)cmbOrigen.SelectedItem != "BUE Buenos Aires")
                 {
                     if (item.Key < 1000)
                         cmbDestino.Items.Add(item.Value);
@@ -47,11 +47,10 @@ namespace Vista
                 {
                     cmbDestino.Items.Add(item.Value);
                 }
-                if (cmbOrigen.SelectedIndex == item.Key)
-                {
-                    cmbDestino.Items.Remove(item.Value);
-                }
+
+               
             }
+                cmbDestino.Items.Remove((string)cmbOrigen.SelectedItem);
 
 
 

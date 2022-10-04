@@ -34,7 +34,7 @@ namespace Vista
             lbl_IngresoOkNo.Visible = false;
             ManejoDeVista.ReproducirMusica();
             BaseDeDatosHardCodeo.numero = 1;
-            
+
 
         }
 
@@ -51,48 +51,47 @@ namespace Vista
             {
                 if (item is Usuario usuarioAux)
                 {
-                    if (this.tb_usuario.Text == usuarioAux.User)
+                    if (this.tb_usuario.Text == usuarioAux.User && this.tb_password.Text == usuarioAux.Password)
                     {
-                        if (this.tb_password.Text == usuarioAux.Password)
+
+                        lbl_IngresoOkNo.Visible = true;
+                        lbl_IngresoOkNo.ForeColor = System.Drawing.Color.Green;
+                        pc_LoginOk.Visible = true;
+                        lbl_IngresoOkNo.Text = "Ingreso Correcto";
+
+                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(tb_usuario.Text);
+
+                        await Task.Delay(2000);
+                        pb_avionFrontal.Show();
+                        await Task.Delay(8000);
+                        pb_avionFrontal.Hide();
+
+                        menuPrincipal.Show();
+
+                        ManejoDeVista.BlanqueoVista(this.tb_usuario, this.tb_password);
+                    }
+                    else
+                    {
+                        pc_LoginNo.Visible = true;
+                        lbl_IngresoOkNo.Visible = true;
+                        lbl_IngresoOkNo.ForeColor = System.Drawing.Color.Red;
+                        lbl_IngresoOkNo.Text = "Datos Incorrectos";
+
+
+                        DialogResult resultado = MessageBox.Show("Elija una opcion", "Datos Incorrectos", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question);
+
+
+                        if (resultado == DialogResult.Retry)
                         {
-                            lbl_IngresoOkNo.Visible = true;
-                            lbl_IngresoOkNo.ForeColor = System.Drawing.Color.Green;
-                            pc_LoginOk.Visible = true;
-                            lbl_IngresoOkNo.Text = "Ingreso Correcto";
-
-                            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(tb_usuario.Text);
-
-
-                            pb_avionFrontal.Show();
-                            await Task.Delay(10000);
-                            pb_avionFrontal.Hide();
-
-                            menuPrincipal.Show();
-
+                            pc_LoginNo.Visible = false;
+                            lbl_IngresoOkNo.Visible = false;
                             ManejoDeVista.BlanqueoVista(this.tb_usuario, this.tb_password);
+                            break;
                         }
                         else
-                        {
-                            pc_LoginNo.Visible = true;
-                            lbl_IngresoOkNo.Visible = true;
-                            lbl_IngresoOkNo.ForeColor = System.Drawing.Color.Red;
-                            lbl_IngresoOkNo.Text = "Datos Incorrectos";
-
-
-                            DialogResult resultado = MessageBox.Show("Elija una opcion", "Datos Incorrectos", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question);
-
-
-                            if (resultado == DialogResult.Retry)
-                            {
-                                pc_LoginNo.Visible = false;
-                                lbl_IngresoOkNo.Visible = false;
-                                ManejoDeVista.BlanqueoVista(this.tb_usuario, this.tb_password);
-                                break;
-                            }
-                            else
-                                this.Close();
-                        }
+                            this.Close();
                     }
+
 
                 }
 
@@ -118,9 +117,9 @@ namespace Vista
 
             FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal("Usuario Invitado");
 
-
+            await Task.Delay(2500);
             pb_avionFrontal.Show();
-            await Task.Delay(500);
+            await Task.Delay(9500);
             pb_avionFrontal.Hide();
 
             menuPrincipal.Show();

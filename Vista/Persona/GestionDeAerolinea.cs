@@ -202,41 +202,6 @@ namespace Logica
 
 
 
-        public static bool ValidarUsuario(string user)
-        {
-
-            foreach (Usuario item in GestionDeAerolinea.listaDePersonas)
-            {
-                if (item.User == user)
-                {
-                    return true;
-                }
-
-            }
-
-            throw new Exception("Usuario Incorrecto");
-
-
-        }
-
-
-
-        internal static Pasaje obtenerPasajePorId(string codigoVuelo)
-        {
-            Pasaje pasaje = null;
-
-            for (int i = 0; i < ListaDePasajes.Count; i++)
-            {
-                if (codigoVuelo == ListaDePasajes[i].CodigoDeVuelo)
-                {
-                    pasaje = ListaDePasajes[i];
-                    break;
-                }
-            }
-            return pasaje;
-        }
-
-
 
 
 

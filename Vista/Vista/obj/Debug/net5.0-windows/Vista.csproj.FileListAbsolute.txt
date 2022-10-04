@@ -67,3 +67,5 @@ C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmMostrarHorasDeVueloPorAvion.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmDestinoFavorito.resources
 C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmPasajerosFrecuentes.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmAbmDestinos.resources
+C:\Users\juans\source\JuanSViazzo2DLabo2-1erParcial\Vista\Vista\obj\Debug\net5.0-windows\Vista.FrmDestinos.resources

@@ -35,7 +35,7 @@
             this.btn_MenuVuelos = new System.Windows.Forms.Button();
             this.btn_Estadisticas = new System.Windows.Forms.Button();
             this.btnMenuClientes = new System.Windows.Forms.Button();
-            this.btn_Soporte = new System.Windows.Forms.Button();
+            this.btnDestinos = new System.Windows.Forms.Button();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_HoraActualMenuPrincipal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@
             this.btn_MenuPasajes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_MenuPasajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_MenuPasajes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_MenuPasajes.Location = new System.Drawing.Point(12, 129);
+            this.btn_MenuPasajes.Location = new System.Drawing.Point(12, 46);
             this.btn_MenuPasajes.Name = "btn_MenuPasajes";
             this.btn_MenuPasajes.Size = new System.Drawing.Size(132, 61);
             this.btn_MenuPasajes.TabIndex = 8;
@@ -82,7 +82,7 @@
             this.btn_MenuVuelos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_MenuVuelos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_MenuVuelos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_MenuVuelos.Location = new System.Drawing.Point(665, 129);
+            this.btn_MenuVuelos.Location = new System.Drawing.Point(663, 59);
             this.btn_MenuVuelos.Name = "btn_MenuVuelos";
             this.btn_MenuVuelos.Size = new System.Drawing.Size(132, 61);
             this.btn_MenuVuelos.TabIndex = 9;
@@ -116,17 +116,18 @@
             this.btnMenuClientes.UseVisualStyleBackColor = true;
             this.btnMenuClientes.Click += new System.EventHandler(this.btnMenuClientes_Click);
             // 
-            // btn_Soporte
+            // btnDestinos
             // 
-            this.btn_Soporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Soporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Soporte.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Soporte.Location = new System.Drawing.Point(12, 356);
-            this.btn_Soporte.Name = "btn_Soporte";
-            this.btn_Soporte.Size = new System.Drawing.Size(132, 61);
-            this.btn_Soporte.TabIndex = 14;
-            this.btn_Soporte.Text = "Soporte";
-            this.btn_Soporte.UseVisualStyleBackColor = true;
+            this.btnDestinos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDestinos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDestinos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDestinos.Location = new System.Drawing.Point(12, 356);
+            this.btnDestinos.Name = "btnDestinos";
+            this.btnDestinos.Size = new System.Drawing.Size(132, 61);
+            this.btnDestinos.TabIndex = 14;
+            this.btnDestinos.Text = "Destinos";
+            this.btnDestinos.UseVisualStyleBackColor = true;
+            this.btnDestinos.Click += new System.EventHandler(this.btnDestinos_Click);
             // 
             // lbl_Usuario
             // 
@@ -163,7 +164,7 @@
             this.ClientSize = new System.Drawing.Size(807, 533);
             this.Controls.Add(this.lbl_HoraActualMenuPrincipal);
             this.Controls.Add(this.lbl_Usuario);
-            this.Controls.Add(this.btn_Soporte);
+            this.Controls.Add(this.btnDestinos);
             this.Controls.Add(this.btnMenuClientes);
             this.Controls.Add(this.btn_Estadisticas);
             this.Controls.Add(this.btn_MenuVuelos);
@@ -190,7 +191,7 @@
         private System.Windows.Forms.Button btn_MenuVuelos;
         private System.Windows.Forms.Button btn_Estadisticas;
         private System.Windows.Forms.Button btnMenuClientes;
-        private System.Windows.Forms.Button btn_Soporte;
+        private System.Windows.Forms.Button btnDestinos;
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.Label lbl_HoraActualMenuPrincipal;
     }

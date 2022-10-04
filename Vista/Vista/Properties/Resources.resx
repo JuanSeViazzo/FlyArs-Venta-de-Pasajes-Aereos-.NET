@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dedo no" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dedo no1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>check ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avion gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avion gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,11 +127,11 @@
   <data name="dedo ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dedo ok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avion sonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>cpwJAt5k-888a76891a3e148017cb0a3f859454ed.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cancel button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cpwJAt5k-888a76891a3e148017cb0a3f859454ed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>cpwJAt5k-888a76891a3e148017cb0a3f859454ed.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="destinos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\destinos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo menu ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo menu ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +139,14 @@
   <data name="FLYARG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FLYARG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pasajeros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pasajeros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FLYARG11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FLYARG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="main teme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main teme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="check ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check ok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +154,8 @@
   <data name="FLYARG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FLYARG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cpwJAt5k-888a76891a3e148017cb0a3f859454ed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cpwJAt5k-888a76891a3e148017cb0a3f859454ed.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="avion llegando" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avion llegando.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -169,22 +172,25 @@
   <data name="plane-s" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plane-s1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dedo no" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dedo no1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>check ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="avion sonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cpwJAt5k-888a76891a3e148017cb0a3f859454ed.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="logo menu ventas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo menu ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FLYARG11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FLYARG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FLYARG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FLYARG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="destinos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\destinos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="avion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avion21.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo menu ventas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo menu ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="destinos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\destinos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

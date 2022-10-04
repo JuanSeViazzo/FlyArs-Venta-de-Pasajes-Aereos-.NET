@@ -7,9 +7,9 @@ namespace Logica
     {
         static BaseDeDatosHardCodeo()
         {
+            BaseDeDatosHardCodeo.HarcodeoDeUsuarios();
             BaseDeDatosHardCodeo.HarcodeoDeDestinos();
             BaseDeDatosHardCodeo.Harcodeo();
-            BaseDeDatosHardCodeo.HarcodeoDeUsuarios();
             BaseDeDatosHardCodeo.HarcodeoDePasajeros();
         }
 

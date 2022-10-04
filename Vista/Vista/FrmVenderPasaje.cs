@@ -123,9 +123,13 @@ namespace Vista
             int flag = 0;
             if (listaDePasajeros.Count == 0)
             {
-                pasajeroAux = frmCargarPasajero.pasajeroElegido;
-                rtbPasajero.Text = pasajeroAux.ToString();
-                btnCargarEquipaje.Enabled = true;
+                if (frmCargarPasajero.DialogResult == DialogResult.OK)
+                {
+                    pasajeroAux = frmCargarPasajero.pasajeroElegido;
+                    rtbPasajero.Text = pasajeroAux.ToString();
+                    btnCargarEquipaje.Enabled = true;
+                }
+               
             }
             else
             {
@@ -163,9 +167,7 @@ namespace Vista
                 rtbEquipaje.Text = pasajeroAux.ToString();
                 listaDePasajeros.Add(pasajeroAux);
                 btnFacturar.Enabled = true;
-
             }
-
         }
 
         private void btnFacturar_Click(object sender, EventArgs e)
@@ -176,15 +178,11 @@ namespace Vista
                 rtbFacturacion.Text = frmFacturar.montoFacturado;
             montoFacturado = frmFacturar.montoFinal;
             btnSubirPasajero.Enabled = true;
-
-
         }
 
         private void btnSubirPasajero_Click(object sender, EventArgs e)
         {
             Pasaje pasajeAux = null;
-
-           
 
             if (montoFacturado != 0)
             {
@@ -192,7 +190,6 @@ namespace Vista
 
                 CargarPasaje(pasajeAux);
                 listaDePasajes.Add(pasajeAux);
-
                 btnAceptarModificacion.Enabled = true;
                 btnCargarOtroPasajero.Enabled = true;
                 btnElegirVuelo.Enabled = false;
@@ -200,9 +197,7 @@ namespace Vista
             else
             {
                 MessageBox.Show("El monto facturado no puede ser 0");
-
             }
-
         }
 
         private Pasaje CargarPasajero()
@@ -245,9 +240,6 @@ namespace Vista
 
         private void btnAceptarModificacion_Click(object sender, EventArgs e)
         {
-
-            
-
             GestionDeAerolinea.SubirPasajeroAlAvion(listaDePasajes, listaDePasajeros);
 
             for (int i = 0; i < listaDePasajes.Count; i++)
@@ -259,13 +251,8 @@ namespace Vista
                         vueloAux.ListaDePasajes.Add(listaDePasajes[i]);
                     }
                 }
-
-
             }
-
             this.Close();
-
-
         }
 
         private void btnCargarOtroPasajero_Click(object sender, EventArgs e)
@@ -273,9 +260,7 @@ namespace Vista
             rtbEquipaje.Clear();
             rtbFacturacion.Clear();
             rtbPasajero.Clear();
-            
             btnElegirVuelo.Enabled = false;
-
         }
     }
 

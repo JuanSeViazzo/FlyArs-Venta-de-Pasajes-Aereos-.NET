@@ -78,19 +78,5 @@ namespace Vista
         {
             this.DialogResult = DialogResult.OK;
         }
-
-
-
-
-
-        //string codigoDePasaje = ($"{vueloAux.CodigoDeVuelo[0]}") + ($"{vueloAux.CodigoDeVuelo[1]}");
-
-        //pasajeroAux = new Pasajero(clienteAux.Documento, codigoDePasaje, vueloAux.CodigoDeVuelo, listaDeEquipaje, clienteAux.Nombre, clienteAux.Apellido, claseDePasajero); ;
-        //rtbPasajero.Text = pasajeroAux.ToString();
-
-        //    listaDeEquipaje.Reverse();
-
-
-
     }
 }

@@ -53,8 +53,55 @@ namespace Logica
 
 
 
+        public static int obtenerCantidadDeViajesPorPasajero(Pasajero pasajeroAux)
+        {
+
+            Vuelo vueloAux;
+            int sumaUno = 0;
+            int sumaDos = 0;
+
+            for (int j = 0; j < GestionDeAerolinea.ListaDeVuelos.Count; j++)
+            {
+               
+
+                vueloAux = GestionDeAerolinea.ListaDeVuelos[j];
+                sumaUno += IterarListaDePasajerosPremium(pasajeroAux, vueloAux);
+                sumaDos += IterarListaDePasajerosTurista(pasajeroAux, vueloAux);
 
 
+
+            }
+
+            return sumaUno + sumaDos;
+
+        }
+        private static int IterarListaDePasajerosTurista(Pasajero pasajero, Vuelo vueloAux)
+        {
+            int contador = 0;
+            foreach (var item in vueloAux.ListaDePasajerosTurista)
+            {
+                if (pasajero.Documento == item.Documento)
+                {
+                    contador++;
+                    break;
+                }
+            }
+            return contador;
+        }
+        private static int IterarListaDePasajerosPremium(Pasajero pasajero, Vuelo vueloAux)
+        {
+            int contador = 0;
+
+            foreach (var item in vueloAux.ListaDePasajerosPremium)
+            {
+                if (pasajero.Documento == item.Documento)
+                {
+                    contador++;
+                    break;
+                }
+            }
+            return contador;
+        }
 
     }
 
