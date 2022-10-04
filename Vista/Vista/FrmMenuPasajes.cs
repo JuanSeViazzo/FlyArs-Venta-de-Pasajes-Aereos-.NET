@@ -22,5 +22,10 @@ namespace Vista
             FrmVenderPasaje formVentaPasaje = new FrmVenderPasaje();
             formVentaPasaje.ShowDialog();   
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

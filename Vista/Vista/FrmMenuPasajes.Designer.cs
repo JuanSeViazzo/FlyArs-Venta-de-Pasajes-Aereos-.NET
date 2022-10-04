@@ -59,6 +59,7 @@
             this.btn_Salir.TabIndex = 8;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // pictureBox1
             // 

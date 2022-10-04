@@ -38,6 +38,8 @@
             this.btnDestinos = new System.Windows.Forms.Button();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_HoraActualMenuPrincipal = new System.Windows.Forms.Label();
+            this.btnSoporte = new System.Windows.Forms.Button();
+            this.txtSoporte = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +138,7 @@
             this.lbl_Usuario.Cursor = System.Windows.Forms.Cursors.No;
             this.lbl_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbl_Usuario.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Usuario.Location = new System.Drawing.Point(197, 443);
+            this.lbl_Usuario.Location = new System.Drawing.Point(194, 420);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(107, 20);
             this.lbl_Usuario.TabIndex = 16;
@@ -149,11 +151,36 @@
             this.lbl_HoraActualMenuPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.lbl_HoraActualMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbl_HoraActualMenuPrincipal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HoraActualMenuPrincipal.Location = new System.Drawing.Point(442, 443);
+            this.lbl_HoraActualMenuPrincipal.Location = new System.Drawing.Point(432, 420);
             this.lbl_HoraActualMenuPrincipal.Name = "lbl_HoraActualMenuPrincipal";
             this.lbl_HoraActualMenuPrincipal.Size = new System.Drawing.Size(120, 20);
             this.lbl_HoraActualMenuPrincipal.TabIndex = 17;
             this.lbl_HoraActualMenuPrincipal.Text = "Fecha actual:";
+            // 
+            // btnSoporte
+            // 
+            this.btnSoporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSoporte.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSoporte.Location = new System.Drawing.Point(326, 460);
+            this.btnSoporte.Name = "btnSoporte";
+            this.btnSoporte.Size = new System.Drawing.Size(132, 61);
+            this.btnSoporte.TabIndex = 18;
+            this.btnSoporte.Text = "Soporte";
+            this.btnSoporte.UseVisualStyleBackColor = true;
+            this.btnSoporte.MouseHover += new System.EventHandler(this.btnSoporte_MouseHover);
+            // 
+            // txtSoporte
+            // 
+            this.txtSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSoporte.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoporte.ForeColor = System.Drawing.Color.ForestGreen;
+            this.txtSoporte.Location = new System.Drawing.Point(223, 131);
+            this.txtSoporte.Multiline = true;
+            this.txtSoporte.Name = "txtSoporte";
+            this.txtSoporte.ReadOnly = true;
+            this.txtSoporte.Size = new System.Drawing.Size(348, 190);
+            this.txtSoporte.TabIndex = 19;
             // 
             // FrmMenuPrincipal
             // 
@@ -162,6 +189,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(807, 533);
+            this.Controls.Add(this.txtSoporte);
+            this.Controls.Add(this.btnSoporte);
             this.Controls.Add(this.lbl_HoraActualMenuPrincipal);
             this.Controls.Add(this.lbl_Usuario);
             this.Controls.Add(this.btnDestinos);
@@ -194,5 +223,7 @@
         private System.Windows.Forms.Button btnDestinos;
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.Label lbl_HoraActualMenuPrincipal;
+        private System.Windows.Forms.Button btnSoporte;
+        private System.Windows.Forms.TextBox txtSoporte;
     }
 }

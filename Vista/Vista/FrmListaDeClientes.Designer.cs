@@ -149,6 +149,8 @@
             this.Controls.Add(this.txt_FiltroDNI);
             this.Controls.Add(this.txt_filtroNombre);
             this.Controls.Add(this.dgv_clientes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmListaDeClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Clientes";
